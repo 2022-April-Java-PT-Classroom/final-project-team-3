@@ -6,17 +6,19 @@ import ContactScreen from '../../pages/contact-screen';
 import EventsScreen from '../../pages/events-screen';
 import FaqScreen from '../../pages/faq-screen'
 import FindFoodScreen from '../../pages/find-food-screen';
-import HomeScreen from '../../pages/home-screen';
+import LandingpageScreen from '../../pages/landingpage-screen';
 import LoginScreen from '../../pages/login-screen';
 import ProfileScreen from '../../pages/profile-screen';
 import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
+import UserHomeScreen from '../../pages/userhome-screen';
 
 const AppRouter = () => {
     return (
         <Switch>
-            <Route exact path={'/'} component={HomeScreen} />
+            <Route exact path={'/'} component={LandingpageScreen} />
+            <Route exact path={'/userhome'} component={UserHomeScreen} />
             <Route exact path={'/about'} component={AboutScreen} />
             <Route exact path={'/contact'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
