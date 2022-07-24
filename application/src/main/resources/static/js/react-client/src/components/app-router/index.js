@@ -26,7 +26,7 @@ const AppRouter = () => {
             <Route exact path={'/login'} component={LoginScreen} />
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
-            <Route exact path={'/Signup'} component={SignupScreen} />
+            <Route exact path={'/signup'} component={SignupScreen} />
 
         </Switch>
     );
