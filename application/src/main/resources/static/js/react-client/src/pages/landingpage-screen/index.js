@@ -7,27 +7,15 @@ import style from './style.module.scss';
 
 const LandingpageScreen = () => {
  
-    <div className="wrapper">
-        <div className="slide">
-            <img src={meal1} alt="meal1">
-                <div className="text">First Caption</div>
-            </img>
-        </div>
-        <div className="slide">
-            <img src={meal2} alt="meal2">
-                <div className="text">Second Caption</div>
-            </img>
-        </div>
-        <div className="slide">
-            <img src={meal3} alt="meal3">
-                <div className="text">Third Caption</div>
-            </img>
-        </div>
+    let currentSlide = 0;
+    function moveSlide(direction) {
+        currentSlide = currentSlide + direction;
 
-        <div className="prev">&#10094;</div>
-        <div className="next">&#10095;</div>
-    </div>
-
+        const slides = document.querySelectorAll(".slide");
+        slides.forEach(slide => slide.style.display = "none");
+        slides[currentSlide].style.display = "flex";
+    }
+                                           
 
     return (
         <div>
@@ -36,12 +24,24 @@ const LandingpageScreen = () => {
             </div>
 
             
-            {/* <section className={style.slideshows}>
-                <div className="slideshow-pics">
-                    
+            <section className={style.slideshow}>
+                <div className="slide">
+                    <img className="imgslide" src={meal1} alt="meal1" />
+                        <div className="text">First Caption</div>
                 </div>
+                <div className="slide">
+                    <img className="imgslide" src={meal2} alt="meal2" />
+                        <div className="text">Second Caption</div>
+
+                </div>
+                <div className="slide">
+                    <img className="imgslide" src={meal3} alt="meal3" />
+                        <div className="text">Third Caption</div>
+                </div>
+                <div className="prev" onClick={moveSlide(-1)}>&#10094;</div>
+                <div className="next" onClick={moveSlide(1)}>&#10095;</div>
                 
-            </section> */}
+            </section>
             
 
             <section className={style.events}>
