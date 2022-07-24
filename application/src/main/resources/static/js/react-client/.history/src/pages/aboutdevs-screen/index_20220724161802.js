@@ -3,10 +3,12 @@ import style from './style.module.scss'
 
 const AboutDevs = () => {
     return (
+<<<<<<< HEAD
         <div>
         </div>
     );
 }
+=======
         <div className={style.container}>
 
             {/* <div className={style.section1}>
@@ -55,3 +57,4 @@ const AboutDevs = () => {
     );
 }
 export default AboutDevs;
+>>>>>>> main
