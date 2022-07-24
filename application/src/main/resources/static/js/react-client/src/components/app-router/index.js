@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
-import AboutScreen from '../../pages/aboutcompany-screen';
+import AboutCompanyScreen from '../../pages/aboutcompany-screen';
+import AboutDevs from '../../pages/aboutdevs-screen';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
 import EventsScreen from '../../pages/events-screen';
@@ -19,7 +20,8 @@ const AppRouter = () => {
         <Switch>
             <Route exact path={'/'} component={LandingpageScreen} />
             <Route exact path={'/userhome'} component={UserHomeScreen} />
-            <Route exact path={'/about'} component={AboutScreen} />
+            <Route exact path={'/about-developers'} component={AboutDevs} />
+            <Route exact path={'/about-company'} component={AboutCompanyScreen} />
             <Route exact path={'/contact'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
