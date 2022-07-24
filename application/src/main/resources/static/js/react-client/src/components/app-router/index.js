@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
-import AboutScreen from '../../pages/about-screen';
+import AboutScreen from '../../pages/aboutcompany-screen';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
 import EventsScreen from '../../pages/events-screen';
