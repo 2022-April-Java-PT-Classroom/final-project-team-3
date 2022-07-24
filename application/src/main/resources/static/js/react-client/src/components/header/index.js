@@ -9,6 +9,7 @@ const Header = () => {
             <h1>Community</h1>
             <ul className={style.navList}>
                 <NavLink to={'/'}>Home</NavLink>
+                <NavLink to={'/userhome'}>UserHome</NavLink>
                 <NavLink to={'/about'}>About</NavLink>
                 <NavLink to={'/contact'}>Contact</NavLink>
                 <NavLink to={'/article'}>Article</NavLink>
