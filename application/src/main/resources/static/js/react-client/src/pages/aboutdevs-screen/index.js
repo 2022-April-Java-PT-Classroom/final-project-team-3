@@ -9,6 +9,7 @@ import style from './style.module.scss'
 
 const AboutDevs = () => {
     return (
+
         <div className={style.aboutDevs}>
             <div className={style.container}>
 
@@ -64,7 +65,9 @@ const AboutDevs = () => {
 
             </div>
 
+
+        <div>
+
         </div>
     );
 }
-export default AboutDevs;
