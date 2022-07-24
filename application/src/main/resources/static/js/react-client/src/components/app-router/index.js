@@ -13,6 +13,8 @@ import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
+import AdminRoleScreen from '../../admin/pages/role-screen';
+import AdminUserScreen from '../../admin/pages/user-screen';
 
 const AppRouter = () => {
     return (
@@ -29,7 +31,8 @@ const AppRouter = () => {
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/signup'} component={SignupScreen} />
-
+            <Route exact path={'/admin/role'} component={AdminRoleScreen} />
+            
         </Switch>
     );
 }
