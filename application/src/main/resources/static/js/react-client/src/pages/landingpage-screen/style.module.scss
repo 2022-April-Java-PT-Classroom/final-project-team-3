@@ -1,0 +1,23 @@
+.slide {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    position: absolute;
+    color: rgb(0, 0, 0);
+}
+
+.prev, .next {
+    color: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 0;
+}
