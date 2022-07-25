@@ -37,12 +37,11 @@ const options = {
     zoomControl: true,
 }
 
-export default function App() {
-    const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-      libraries,
-    });
-    
+export default function App(){
+    const {isLoaded, loadError} = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        libraries,
+    })
     const [markers, setMarkers]  = React.useState([]);
     
     const [selected, setSelected] = React.useState(null);
@@ -83,7 +82,7 @@ export default function App() {
         
         
 
-    <Locate panTo={panTo} />
+        <Locate panTo={panTo} />
       <Search panTo={panTo} />
 
       <GoogleMap
@@ -94,7 +93,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -150,7 +149,7 @@ function Locate({ panTo }) {
           );
         }}
       >
-        <img src="src/assets/logo/1f9ed.png" alt="compass" />
+        <img src="/compass.svg" alt="compass" />
       </button>
     );
   }

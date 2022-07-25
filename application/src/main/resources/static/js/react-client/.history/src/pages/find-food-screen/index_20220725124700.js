@@ -83,7 +83,7 @@ export default function App() {
         
         
 
-    <Locate panTo={panTo} />
+        <Locate panTo={panTo} />
       <Search panTo={panTo} />
 
       <GoogleMap
@@ -94,7 +94,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -150,7 +150,7 @@ function Locate({ panTo }) {
           );
         }}
       >
-        <img src="src/assets/logo/1f9ed.png" alt="compass" />
+        <img src="/compass.svg" alt="compass" />
       </button>
     );
   }
