@@ -23,8 +23,8 @@ public class Role {
         this.description = description;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId() {
+        this.id = 100L;
     }
 
     public Long getId() {

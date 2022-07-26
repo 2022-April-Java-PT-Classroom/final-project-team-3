@@ -1,0 +1,30 @@
+a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #c30;
+}
+
+.navListAdmin {
+    display:flex;
+    flex-direction: column;
+    background: #ddd;
+    border: 1px solid #333;
+    border-radius: 10px;
+    float: right;
+    padding:5px 20px ;
+    margin: 10px;
+    
+    & a {
+        margin: 2px 0px;
+        text-decoration: none;
+        color: #333;
+    }
+    
+    & a:hover {
+        color: #c30;
+    }
+}

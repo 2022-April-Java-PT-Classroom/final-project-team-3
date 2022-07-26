@@ -3,7 +3,7 @@ form {
     flex-direction: column;
     width: 300px;
 
-    & input, textarea {
+    & input, textarea, select {
         // background-color: lightgreen;
         border: 2px solid #333;
         border-radius: 8px;
@@ -14,6 +14,9 @@ form {
     & button {
         border-radius: 4px; 
         cursor: pointer;
+        font-weight: 100;
+        font-size: 18px;
+        font-family: Impact;
         
     }
     & button:hover{
@@ -50,4 +53,9 @@ td{
     color:rgb(20, 0, 204);
 
     }
+}
+.fixLenght{
+    max-width:200px;
+    overflow-x: scroll;
+    margin:10px;
 }
