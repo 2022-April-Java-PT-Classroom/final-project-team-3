@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(199, 233, 148, 1) 100%
+  );
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}
+
+.wrapper{
+    background-image: url("../../assets/teampics/victor.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+.accordion {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #39b9d2;
+}
+.accordion1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #39b9d2;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #21aeca;
+}
+
+.title:hover {
+  background-color: #3ab4cc;
+}
+
+.title,
+.content {
+  padding: 1rem;
+  
+}
+
+.content {
+  background-color: #39b9d2;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 18px;
+  }
+
+  .accordion {
+    width: 90%;
+  }
+}
