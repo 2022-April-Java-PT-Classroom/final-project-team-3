@@ -1,0 +1,48 @@
+.footer_wrapper{
+    padding-bottom: 40px;
+    
+}
+
+
+.footer{
+    
+    margin: auto;
+    width: 80%;
+    
+    background-color: rgba(202, 227, 213, 0.853);
+   align-items: center;
+    border-radius: 6px;
+    position: relative;
+}
+
+.small{
+    width: 50px;
+    padding: 10px;
+    margin-top: 30px;
+    text-align: right;
+    position: relative;
+}
+
+.socialList{
+    display:flex;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 80%;
+    padding: 2%;
+    
+    & li{
+        align-items: center;
+        list-style-type: none;
+        margin: 0 5px;
+        width: 100%;
+        padding: 2px;
+        text-decoration: none;
+        text-align: right;
+    }
+
+    & a:hover{
+        background-color: cadetblue;
+        transition: .5s;
+    }
+
+}
