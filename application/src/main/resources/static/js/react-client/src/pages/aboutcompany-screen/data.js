@@ -1,5 +1,7 @@
 import React from 'react';
 import Accordion from './accordionValue';
+import topImage from '../../assets/aboutimages/image3.jpg';
+import topImage2 from '../../assets/aboutimages/image2.jpg';
 import style from './style.module.scss'
 
 
@@ -57,9 +59,16 @@ const AboutCompany = () => {
 
   return (
     <div className={style.wrapper}>
-    <h1>Who we are</h1>
-    <div className={style.container}>
       
+    {/* <div className={style.section1}>
+        
+            <img className={style.bgtopimage} src={topImage} alt='food'></img>
+        </div> */}
+
+    <div className={style.container}>
+      <div className={style.who}>
+        <h1 >Who we are</h1>
+        </div>  
       <div className={style.accordion}>
         <h1>Our Value</h1>
         {accordionData.map(({ title, content }) => (
