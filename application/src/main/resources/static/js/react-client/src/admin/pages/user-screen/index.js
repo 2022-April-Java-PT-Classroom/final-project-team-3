@@ -209,7 +209,7 @@ const AdminUserScreen = () => {
                                 <td>{user.lastName}</td>
                                 <td>{user.email}</td>
                                 <td>{user.phone}</td>
-                                <td className={style.fixLenght}>{user.avatar}</td>
+                                <td ><img src={user.avatar} width="50" title={user.avatar} /></td>
                                 <td className={style.fixLenght}>{user.description}</td>
                                 <td className={style.fixLenght}>{user.password}</td>
                                 <td>
