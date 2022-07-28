@@ -14,7 +14,7 @@ import style from './style.module.scss'
 const AboutCompany = () => {
   const accordionData = [
     {
-      title: 'Value 1',
+      title: 'CARING',
       content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
       laborum cupiditate possimus labore, hic temporibus velit dicta earum
       suscipit commodi eum enim atque at? Et perspiciatis dolore iure
@@ -22,7 +22,7 @@ const AboutCompany = () => {
       image: <img className={style.bgtopimage} src={topImage3} alt='food'></img>
     },
     {
-      title: 'Value 2',
+      title: 'RESOURCEFUL',
       content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
       reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
       quaerat iure quos dolorum accusantium ducimus in illum vero commodi
@@ -32,7 +32,7 @@ const AboutCompany = () => {
       image: <img className={style.bgtopimage} src={topImage5} alt='food'></img>
     },
     {
-      title: 'Value 3',
+      title: 'INCLUSIVE',
       content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas?`,
