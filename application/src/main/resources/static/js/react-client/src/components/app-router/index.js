@@ -1,13 +1,13 @@
-import React from "react";
 import { Route, Switch } from 'react-router-dom';
 
-
-import Accordion from '../../pages/aboutcompany-screen/accordionValue';
 import AboutCompany from '../../pages/aboutcompany-screen/data';
 import AboutDevs from '../../pages/aboutdevs-screen';
-
-// import AboutScreen from '../../pages/aboutcompany-screen';
-
+import AboutScreen from '../../pages/aboutcompany-screen';
+import Accordion from '../../pages/aboutcompany-screen/accordionValue';
+import AdminContentScreen from '../../admin/pages/content-screen';
+import AdminPictureScreen from '../../admin/pages/picture-screen';
+import AdminRoleScreen from '../../admin/pages/role-screen';
+import AdminUserScreen from '../../admin/pages/user-screen';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
 import EventsScreen from '../../pages/events-screen';
@@ -16,27 +16,19 @@ import FindFoodScreen from '../../pages/find-food-screen';
 import LandingpageScreen from '../../pages/landingpage-screen';
 import LoginScreen from '../../pages/login-screen';
 import ProfileScreen from '../../pages/profile-screen';
+import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
-import AdminRoleScreen from '../../admin/pages/role-screen';
-import AdminUserScreen from '../../admin/pages/user-screen';
-import AdminContentScreen from '../../admin/pages/content-screen';
-import AdminPictureScreen from '../../admin/pages/picture-screen';
-
 
 const AppRouter = () => {
     return (
         <Switch>
             <Route exact path={'/'} component={LandingpageScreen} />
             <Route exact path={'/userhome'} component={UserHomeScreen} />
-
             <Route exact path={'/about-developers'} component={AboutDevs} />
             <Route exact path={'/about-company'} component={AboutCompany} />
             <Route exact path={'/about-company-value'} component={Accordion} />
-
-            {/* <Route exact path={'/about'} component={AboutScreen} /> */}
-
             <Route exact path={'/contact'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
