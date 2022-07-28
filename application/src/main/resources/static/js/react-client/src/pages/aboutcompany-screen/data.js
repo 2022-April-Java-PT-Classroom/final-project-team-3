@@ -67,11 +67,6 @@ const AboutCompany = () => {
   return (
     <div className={style.wrapper}>
       
-    {/* <div className={style.section1}>
-        
-            <img className={style.bgtopimage} src={topImage} alt='food'></img>
-        </div> */}
-
     <div className={style.container}>
       <div className={style.who}>
         <h1 >Who we are</h1>
