@@ -16,6 +16,7 @@ import UserHomeScreen from '../../pages/userhome-screen';
 import AdminRoleScreen from '../../admin/pages/role-screen';
 import AdminUserScreen from '../../admin/pages/user-screen';
 import AdminContentScreen from '../../admin/pages/content-screen';
+import AdminPictureScreen from '../../admin/pages/picture-screen';
 
 
 const AppRouter = () => {
@@ -36,6 +37,7 @@ const AppRouter = () => {
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
+            <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
             
         </Switch>
     );

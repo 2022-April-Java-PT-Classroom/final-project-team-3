@@ -27,8 +27,9 @@ const Header = () => {
                 <span>ADMIN</span>
                 <NavLink to={'/admin/role'}>Role</NavLink>
                 <NavLink to={'/admin/user'}>User</NavLink>
+                <NavLink to={'/admin/picture'}>Picture</NavLink>
                 <NavLink to={'/admin/content'}>Content</NavLink>
-                
+                        
             </div>
         </div>
     )

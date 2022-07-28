@@ -13,8 +13,8 @@ public class Role {
     @Lob
     private String description;
 
-    @ManyToMany
-    private Collection<User> users;
+//    @ManyToMany
+//    private Collection<User> users;
 
     public Role(){}
 

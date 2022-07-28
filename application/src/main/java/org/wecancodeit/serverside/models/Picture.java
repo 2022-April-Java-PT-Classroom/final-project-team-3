@@ -15,8 +15,8 @@ public class Picture {
     private String description;
     private String commentary;
 
-    @OneToMany//(mappedBy = "contentName")
-    private Collection<Content> content;
+   // @OneToMany//(mappedBy = "contentName")
+    //private Collection<Content> content;
 
     public Picture(){}
 
@@ -57,9 +57,13 @@ public class Picture {
         return description;
     }
 
-    public Collection<Content> getContent() {
-        return content;
+    public String getCommentary() {
+        return commentary;
     }
+
+    //    public Collection<Content> getContent() {
+//        return content;
+//    }
 
     public void setPictureAll(String pictureName, String pictureUrl, String title, String subtitle, String description, String commentary){
         this.pictureName = pictureName;

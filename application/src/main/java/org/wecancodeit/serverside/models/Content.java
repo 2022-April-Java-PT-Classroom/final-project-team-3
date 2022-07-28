@@ -82,4 +82,5 @@ public class Content {
         this.content = content;
         this.pictures = new ArrayList<>(); //Arrays.asList()
     }
+
 }

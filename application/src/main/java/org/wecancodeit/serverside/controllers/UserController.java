@@ -92,7 +92,7 @@ public class UserController {
         if(userToRemoveOpt.isPresent()){
             userRepo.delete(userToRemoveOpt.get());
         }
-        System.out.println(id);
+        //System.out.println(id);
         return (Collection<User>) userRepo.findAll();
     }
 
