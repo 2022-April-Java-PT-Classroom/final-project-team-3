@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './style.module.scss'
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ title, content, image }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ const Accordion = ({ title, content }) => {
         <div>{title}</div>
         <div>{isActive ? '-' : '+'}</div>
       </div>
-      {isActive && <div className={style.content}>{content}</div>}
+      {isActive && <div className={style.content}>{content}, {image}</div>}
     </div>
   );
 };

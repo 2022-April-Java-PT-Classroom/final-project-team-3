@@ -75,7 +75,7 @@ const AboutDevs =() => {
                 </div>
                 
                 
-                <div className={style.section5}>
+                {/* <div className={style.section5}>
                     <br></br>
                     <div className={style.section11}>
                         <h2 className={style.name}>Hailey Fate</h2>
@@ -85,8 +85,8 @@ const AboutDevs =() => {
                         <p>Self-motivated Junior Software developer with experience in design and application development. A fast learner with strong time management and multi-taking skills. Proficient troubleshooting and problem-solving skills with an analytical mindset. Loyal, reliable, and ready to be challenged. Experienced in training and creating course curriculum for small, med-sized, and large business entities. Team player with exemplary managerial skills.</p><br></br>
                         
                             <a href="https://www.linkedin.com/in/haileyfate/"><h5 className={style.linked}>LinkedIn</h5></a>
-                        
-                </div>
+                         */}
+                {/* </div> */}
                 
                 
                 
