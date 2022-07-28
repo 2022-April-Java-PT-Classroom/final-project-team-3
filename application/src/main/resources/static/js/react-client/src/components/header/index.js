@@ -23,6 +23,13 @@ const Header = () => {
                 <NavLink to={'/review'}>Review</NavLink>
                 <NavLink to={'/signup'}>Sign Up</NavLink>
             </ul>
+            <div className={style.navListAdmin}>
+                <span>ADMIN</span>
+                <NavLink to={'/admin/role'}>Role</NavLink>
+                <NavLink to={'/admin/user'}>User</NavLink>
+                <NavLink to={'/admin/content'}>Content</NavLink>
+                
+            </div>
         </div>
     )
 }
