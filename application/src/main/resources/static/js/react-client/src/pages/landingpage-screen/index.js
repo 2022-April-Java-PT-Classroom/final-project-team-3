@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
-import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
-import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
+
+// import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
+// import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
+// import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
+
 
 const LandingpageScreen = () => {
  
@@ -41,7 +43,7 @@ const LandingpageScreen = () => {
                 <div className="prev" onClick={moveSlide(-1)}>&#10094;</div>
                 <div className="next" onClick={moveSlide(1)}>&#10095;</div>
                 
-            </section> */}
+            </section>
             
 
             <section className={style.events}>
@@ -65,7 +67,7 @@ const LandingpageScreen = () => {
                 <div>
                     
                 </div>
-            </section>
+            </section> */}
 
         </div>
 
