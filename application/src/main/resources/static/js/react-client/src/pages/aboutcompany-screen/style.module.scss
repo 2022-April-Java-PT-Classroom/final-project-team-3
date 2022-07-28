@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}
+
+.wrapper{
+    // background-image: url("../../assets/aboutimages/image1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgtopimage{
+    width: 80%;
+  height: 300px;
+  margin-left: 10%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.section1{
+    // grid-column-start: 1;
+    // grid-column-end: 3;
+    // grid-row-start: 1;
+    // grid-row-end: 2;
+  
+}
+
+.accordion {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  width: 80%;
+//   margin: 2rem auto;
+  background: radial-gradient(
+    circle,
+     rgb(235, 241, 106) 0%,
+    rgb(118, 155, 61) 100%
+  );
+  font-family: cursive;
+  border-radius: 10px;
+}
+.accordion1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  width: 80%;
+  margin: 2rem auto;
+  background: radial-gradient(
+    circle,
+    rgb(235, 241, 106) 0%,
+    rgb(118, 155, 61) 100%
+  );
+  font-family: cursive;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background: radial-gradient(
+    circle,
+    rgb(214, 212, 122) 0%,
+    rgb(234, 235, 232) 100%
+  );
+  font-family: cursive;
+  border-radius: 10px;
+}
+
+.title:hover {
+  background-color: #3ab4cc;
+}
+
+.title,
+.content {
+  padding: 1rem;
+  
+}
+
+.content {
+  background-color: rgb(183, 197, 185);
+border-radius: 10px;
+}
+
+.who{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-image: url("../../assets/aboutimages/image3.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: rgb(12, 113, 26);
+    font-size: 30px;
+    text-align: center;
+    font-family: cursive;
+    width: 80%;
+  height: 40%;
+  margin-left: 10%;
+  padding-top: 20%;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 18px;
+  }
+
+  .accordion {
+    width: 90%;
+  }
+}
