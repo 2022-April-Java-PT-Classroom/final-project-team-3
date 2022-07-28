@@ -1,13 +1,14 @@
 import React from "react";
-import picGian from '../../assets/teampics/gian.jpg'
 import picFarida from '../../assets/teampics/farida.jpg'
-import picHakan from '../../assets/teampics/hakan.jpg'
-import picVictor from '../../assets/teampics/victor.jpg'
+import picGian from '../../assets/teampics/gian.jpg'
 import picHailey from '../../assets/teampics/hailey.jpg'
+import picHakan from '../../assets/teampics/hakan.jpg'
 import picLouis from '../../assets/teampics/louis.jpg'
+import picVictor from '../../assets/teampics/victor.jpg'
 import style from './style.module.scss'
 
-const AboutDevs = () => {
+const AboutDevs =() => {
+
     return (
         <div className={style.aboutDevs}>
             <div>
