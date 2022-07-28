@@ -1,0 +1,2 @@
+const NEWS_API_KEY= 0c749615e4f54f1892a566d56dbdca85; 
+export const NEWS_API_KEY = "YOUR API KEY";
