@@ -24,7 +24,7 @@ const LandingpageScreen = () => {
             </div>
 
             
-            <section className={style.slideshow}>
+            {/* <section className={style.slideshow}>
                 <div className="slide">
                     <img className="imgslide" src={meal1} alt="meal1" />
                         <div className="text">First Caption</div>
@@ -41,7 +41,7 @@ const LandingpageScreen = () => {
                 <div className="prev" onClick={moveSlide(-1)}>&#10094;</div>
                 <div className="next" onClick={moveSlide(1)}>&#10095;</div>
                 
-            </section>
+            </section> */}
             
 
             <section className={style.events}>
@@ -70,7 +70,7 @@ const LandingpageScreen = () => {
         </div>
 
 
-        );
+    );
 }
 
 export default LandingpageScreen;
