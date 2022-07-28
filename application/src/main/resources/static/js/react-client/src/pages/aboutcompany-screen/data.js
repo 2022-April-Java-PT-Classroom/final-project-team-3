@@ -2,6 +2,12 @@ import React from 'react';
 import Accordion from './accordionValue';
 import topImage from '../../assets/aboutimages/image1.jpg';
 import topImage2 from '../../assets/aboutimages/image2.jpg';
+import topImage3 from '../../assets/aboutimages/donate.jpg';
+import topImage4 from '../../assets/aboutimages/freefood.jpg';
+import topImage5 from '../../assets/aboutimages/volunteer.jpg';
+import mission from '../../assets/aboutimages/smile.jpg';
+import mission2 from '../../assets/aboutimages/comunity2.jpg';
+import mission3 from '../../assets/aboutimages/comunity3.jpg';
 import style from './style.module.scss'
 
 
@@ -13,7 +19,7 @@ const AboutCompany = () => {
       laborum cupiditate possimus labore, hic temporibus velit dicta earum
       suscipit commodi eum enim atque at? Et perspiciatis dolore iure
       voluptatem.`,
-      image: <img className={style.bgtopimage} src={topImage2} alt='food'></img>
+      image: <img className={style.bgtopimage} src={topImage3} alt='food'></img>
     },
     {
       title: 'Value 2',
@@ -23,43 +29,43 @@ const AboutCompany = () => {
       pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
       quidem maiores doloremque est numquam praesentium eos voluptatem amet!
       Repudiandae, mollitia id reprehenderit a ab odit!`,
-      image: <img className={style.bgtopimage} src={topImage2} alt='food'></img>
+      image: <img className={style.bgtopimage} src={topImage5} alt='food'></img>
     },
     {
       title: 'Value 3',
       content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas?`,
-      image: <img className={style.bgtopimage} src={topImage2} alt='food'></img>
+      image: <img className={style.bgtopimage} src={topImage4} alt='food'></img>
     }
   ];
 
   const accordionData1 = [
     {
-      title: 'Mission 1',
+      title: 'Community',
       content: `<img className={style.bgtopimage} src={topImage} alt='food'/> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
       laborum cupiditate possimus labore, hic temporibus velit dicta earum
       suscipit commodi eum enim atque at? Et perspiciatis dolore iure
       voluptatem.`,
-      image: <img className={style.bgtopimage} src={topImage} alt='food'></img>
+      image: <img className={style.bgtopimage} src={mission2} alt='food'></img>
     },
     {
-      title: 'Mission 2',
+      title: 'Put smile on faces',
       content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
       reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
       quaerat iure quos dolorum accusantium ducimus in illum vero commodi
       pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
       quidem maiores doloremque est numquam praesentium eos voluptatem amet!
       Repudiandae, mollitia id reprehenderit a ab odit!`,
-      image: <img className={style.bgtopimage} src={topImage} alt='food'></img>
+      image: <img className={style.bgtopimage} src={mission} alt='food'></img>
       
     },
     {
-      title: 'Mission 3',
+      title: 'Share',
       content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas?`,
-      image: <img className={style.bgtopimage} src={topImage} alt='food'></img>
+      image: <img className={style.bgtopimage} src={mission3} alt='food'></img>
     }
   ];
 
@@ -72,7 +78,7 @@ const AboutCompany = () => {
         <h1 >Who we are</h1>
         </div>  
       <div className={style.accordion}>
-        <h1>Our Value</h1>
+        <h1 className={style.value}>Our Value</h1>
         {accordionData.map(({ title, content, image }) => (
           <Accordion title={title} content={content} image={image} />
         ))}
