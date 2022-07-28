@@ -1,31 +1,28 @@
 import "@reach/combobox/styles.css";
-import style from './style.module.scss';
 
+import {
+    Combobox,
+    ComboboxInput,
+    ComboboxList,
+    ComboboxOption,
+    ComboboxPopover,
+} from "@reach/combobox";
 import {
     GoogleMap,
     InfoWindow,
     Marker,
     useLoadScript,
 } from "@react-google-maps/api";
+import usePlacesAutocomplete, {
+    getGeocode,
+    getLatLng,
+} from "use-places-autocomplete";
 
 import React from "react";
+import compass from '../../assets/logo/1f9ed.png';
+import { formatRelative } from "date-fns";
 import mapStyles from "../../pages/find-food-screen/style.module.scss"
-
-// import { formatRelative } from "date-fns";
-
-// import {
-//     Combobox,
-//     ComboboxInput,
-//     ComboboxList,
-//     ComboboxOption,
-//     ComboboxPopover,
-// } from "@reach/combobox";
-
-// import usePlacesAutoComplete, {
-//     getGeoCode,
-//     getLatLng
-// } from "use-places-autocompletereach";
-
+import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
@@ -42,73 +39,174 @@ const options = {
     zoomControl: true,
 }
 
-export default function App(){
-    const {isLoaded, loadError} = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-        libraries,
-    })
+export default function App() {
+    const { isLoaded, loadError } = useLoadScript({
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+      libraries,
+    });
+    
     const [markers, setMarkers]  = React.useState([]);
+    
     const [selected, setSelected] = React.useState(null);
 
-    const onMapClick = React.useCallback((event)=>{
-        setMarkers(current => [
-         ...current,
-         {
-             lat: event.latLng.lat(),
-             lng: event.latLng.lng(),
-             time: new Date(),
-         },
-      ]); 
-     }, []);
-
-     const mapRef = React.useRef();
-     const onMapLoad = React.useCallback((map) =>{
-        mapRef.current = map;
-     }, []);
-
-    if(loadError) return "Error loading maps";
-    if(!isLoaded) return "Loading Maps";
+    const onMapClick = React.useCallback((e) => {
+        setMarkers((current) => [
+          ...current,
+          {
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng(),
+            time: new Date(),
+          },
+        ]);
+      }, []);
     
+
+      const mapRef = React.useRef();
+      const onMapLoad = React.useCallback((map) => {
+        mapRef.current = map;
+      }, []);
+    
+      const panTo = React.useCallback(({ lat, lng }) => {
+        mapRef.current.panTo({ lat, lng });
+        mapRef.current.setZoom(14);
+      }, []);
+    
+      if (loadError) return "Error";
+      if (!isLoaded) return "Loading...";
+
+
    return (
    <div>
     <h1>Community{" "}
     <span role="img" aria-label="chef">
         🧑‍🍳
-        </span>
-        </h1>
-    <GoogleMap 
-    mapContainerStyle={mapContainerStyle}
-    zoom={8}
-    center={center}
-    options={options}
-    onClick={onMapClick}
-    onLoad={onMapLoad}
-    >
-        {markers.map(marker =>(
-        <Marker 
-        key={marker.time.toISOString()}
-        position={{ lat: marker.lat, lng: marker.lng }}
-        icon={{
-            url: '/Users/haileyfate/wcci-pt-2022/final-project-team-3/application/src/main/resources/static/js/react-client/src/assets/logo/CardItem.jpeg',
-            scaledSize: new window.google.maps.Size(30,30),
-            origin: new window.google.maps.Point(0,0),
-            anchor: new window.google.maps.Point(15,15),
-        }}
-        onClick={() =>{
-            setSelected(marker);
-        }}
-        />
-        ))}
+    </span>
+    </h1>
+        
+        
 
-        {selected ? (
-        <InfoWindow position={{ lat: selected.lat, lng: selected.lng}}>
+    <Locate panTo={panTo} />
+      <Search panTo={panTo} />
+
+      <GoogleMap
+        id="map"
+        mapContainerStyle={mapContainerStyle}
+        zoom={8}
+        center={center}
+        options={options}
+        onClick={onMapClick}
+        onLoad={onMapLoad}
+    >
+        {markers.map((marker) => (
+          <Marker
+            key={`${marker.lat}-${marker.lng}`}
+            position={{ lat: marker.lat, lng: marker.lng }}
+            onClick={() => {
+              setSelected(marker);
+            }}
+            icon={{
+              url: `../../assets/logo/CardItem.jpeg`,
+              origin: new window.google.maps.Point(0, 0),
+              anchor: new window.google.maps.Point(15, 15),
+              scaledSize: new window.google.maps.Size(30, 30),
+            }}
+          />
+        ))}
+        
+{selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
             <div>
-                <h2>Food pick up</h2>
-                {/* <p>Pickup {formatRelative(selected.time, new Date())}</p> */}
+              <h2>
+                <span role="img" aria-label="chef">
+                  🧑‍🍳
+                  </span>{" "}
+                Alert
+              </h2>
+              <p>Spotted {formatRelative(selected.time, new Date())}</p>
             </div>
-        </InfoWindow>
-        ): null}
-    </GoogleMap>
+          </InfoWindow>
+        ) : null}
+      </GoogleMap>
     </div>
-    );
+  );
 }
+
+function Locate({ panTo }) {
+    return (
+      <button
+        className="locate"
+        onClick={() => {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              panTo({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              });
+            },
+            () => null
+          );
+        }}
+      >
+        <img className={style.compassimg} src={compass} alt="compass"  />
+      </button>
+    );
+  }
+
+
+function Search({ panTo }) {
+    const {
+      ready,
+      value,
+      suggestions: { status, data },
+      setValue,
+      clearSuggestions,
+    } = usePlacesAutocomplete({
+      requestOptions: {
+        location: { lat: () => 43.6532, lng: () => -79.3832 },
+        radius: 100 * 1000,
+      },
+    });
+
+    const handleInput = (e) => {
+        setValue(e.target.value);
+      };
+    
+      const handleSelect = async (address) => {
+        setValue(address, false);
+        clearSuggestions();
+    
+        try {
+          const results = await getGeocode({ address });
+          const { lat, lng } = await getLatLng(results[0]);
+          panTo({ lat, lng });
+        } catch (error) {
+          console.log("😱 Error: ", error);
+        }
+      };
+
+      return (
+        <div className="search">
+          <Combobox onSelect={handleSelect}>
+            <ComboboxInput
+              value={value}
+              onChange={handleInput}
+              disabled={!ready}
+              placeholder="Search your location"
+            />
+            <ComboboxPopover>
+              <ComboboxList>
+                {status === "OK" &&
+                  data.map(({ id, description }) => (
+                    <ComboboxOption key={id} value={description} />
+                  ))}
+              </ComboboxList>
+            </ComboboxPopover>
+          </Combobox>
+        </div>
+      );
+    }
