@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -15,10 +16,14 @@ import FindFoodScreen from '../../pages/find-food-screen';
 import LandingpageScreen from '../../pages/landingpage-screen';
 import LoginScreen from '../../pages/login-screen';
 import ProfileScreen from '../../pages/profile-screen';
-import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
+import AdminRoleScreen from '../../admin/pages/role-screen';
+import AdminUserScreen from '../../admin/pages/user-screen';
+import AdminContentScreen from '../../admin/pages/content-screen';
+import AdminPictureScreen from '../../admin/pages/picture-screen';
+
 
 const AppRouter = () => {
     return (
@@ -41,7 +46,11 @@ const AppRouter = () => {
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/signup'} component={SignupScreen} />
-
+            <Route exact path={'/admin/role'} component={AdminRoleScreen} />
+            <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
+            <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
+            <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
+            
         </Switch>
     );
 }
