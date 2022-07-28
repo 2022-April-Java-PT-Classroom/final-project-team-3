@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Axios from 'axios'; 
+
+import Axios from 'axios';
 import Roles from '../../components/roles';
 import style from './style.module.scss';
 
