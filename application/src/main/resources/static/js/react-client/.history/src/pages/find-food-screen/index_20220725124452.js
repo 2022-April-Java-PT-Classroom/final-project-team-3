@@ -19,10 +19,8 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 
 import React from "react";
-import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
 import mapStyles from "../../pages/find-food-screen/style.module.scss"
-import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
@@ -39,12 +37,11 @@ const options = {
     zoomControl: true,
 }
 
-export default function App() {
-    const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-      libraries,
-    });
-    
+export default function App(){
+    const {isLoaded, loadError} = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        libraries,
+    })
     const [markers, setMarkers]  = React.useState([]);
     
     const [selected, setSelected] = React.useState(null);
@@ -59,33 +56,32 @@ export default function App() {
           },
         ]);
       }, []);
-    
 
-      const mapRef = React.useRef();
-      const onMapLoad = React.useCallback((map) => {
+     const mapRef = React.useRef();
+     
+     const onMapLoad = React.useCallback((map) =>{
         mapRef.current = map;
-      }, []);
-    
-      const panTo = React.useCallback(({ lat, lng }) => {
+     }, []);
+
+     const panTo = React.useCallback(({ lat, lng }) => {
         mapRef.current.panTo({ lat, lng });
         mapRef.current.setZoom(14);
       }, []);
+     
+    if(loadError) return "Error loading maps";
+    if(!isLoaded) return "Loading Maps";
     
-      if (loadError) return "Error";
-      if (!isLoaded) return "Loading...";
-
-
    return (
    <div>
     <h1>Community{" "}
     <span role="img" aria-label="chef">
         🧑‍🍳
-    </span>
-    </h1>
+        </span>
+        </h1>
         
         
 
-    <Locate panTo={panTo} />
+        <Locate panTo={panTo} />
       <Search panTo={panTo} />
 
       <GoogleMap
@@ -96,7 +92,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -105,14 +101,13 @@ export default function App() {
               setSelected(marker);
             }}
             icon={{
-              url: `../../assets/logo/CardItem.jpeg`,
+              url: `/bear.svg`,
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
             }}
           />
         ))}
-        
 {selected ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}
@@ -152,7 +147,7 @@ function Locate({ panTo }) {
           );
         }}
       >
-        <img className={style.compassimg} src={compass} alt="compass"  />
+        <img src="/compass.svg" alt="compass" />
       </button>
     );
   }

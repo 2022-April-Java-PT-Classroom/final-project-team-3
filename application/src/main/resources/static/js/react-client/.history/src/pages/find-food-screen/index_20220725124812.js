@@ -19,10 +19,8 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 
 import React from "react";
-import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
 import mapStyles from "../../pages/find-food-screen/style.module.scss"
-import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
@@ -96,7 +94,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -105,7 +103,7 @@ export default function App() {
               setSelected(marker);
             }}
             icon={{
-              url: `../../assets/logo/CardItem.jpeg`,
+              url: `/bear.svg`,
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
@@ -152,7 +150,7 @@ function Locate({ panTo }) {
           );
         }}
       >
-        <img className={style.compassimg} src={compass} alt="compass"  />
+        <img src="/compass.svg" alt="compass" />
       </button>
     );
   }
