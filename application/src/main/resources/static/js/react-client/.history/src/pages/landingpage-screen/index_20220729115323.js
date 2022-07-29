@@ -42,23 +42,17 @@ const LandingpageScreen = () => {
                 <SwiperSlide>
                     <div> <img className={style.meal} src={meal1}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img  className={style.meal} src={meal2}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img className={style.meal} src={meal3}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img className={style.meal} src={meal4}></img></div>
                 </SwiperSlide>
                 ...
             </Swiper>
+            
 
 
-        </div>
 
-
-    );
-}
 
 export default LandingpageScreen;

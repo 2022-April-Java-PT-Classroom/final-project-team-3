@@ -10,6 +10,24 @@ import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import meal4 from '../../assets/foodslideshowimgs/meal4.jpg';
 import style from './style.module.scss';
 
+const data = [
+    {
+        id: 1,
+        url: `../../assets/foodslideshowimgs/meal1.jpg`
+    },
+    {
+        id: 2,
+        url: '../../assets/foodslideshowimgs/meal2.jpg'
+    },
+    {
+        id: 3,
+        url: '../../assets/foodslideshowimgs/meal3.jpg'
+    },
+    {
+        id: 4,
+        url: '../../assets/foodslideshowimgs/meal4.jpg'
+    }
+];
 const LandingpageScreen = () => {
  
     let currentSlide = 0;
@@ -42,18 +60,56 @@ const LandingpageScreen = () => {
                 <SwiperSlide>
                     <div> <img className={style.meal} src={meal1}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img  className={style.meal} src={meal2}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img className={style.meal} src={meal3}></img></div>
                 </SwiperSlide>
-                
                 <SwiperSlide><div> <img className={style.meal} src={meal4}></img></div>
                 </SwiperSlide>
                 ...
             </Swiper>
+            {/* <section className={style.slideshow}>
+                <div className="slide">
+                    <img className="imgslide" src={meal1} alt="meal1" />
+                        <div className="text">First Caption</div>
+                </div>
+                <div className="slide">
+                    <img className="imgslide" src={meal2} alt="meal2" />
+                        <div className="text">Second Caption</div>
 
+                </div>
+                <div className="slide">
+                    <img className="imgslide" src={meal3} alt="meal3" />
+                        <div className="text">Third Caption</div>
+                </div>
+                <div className="prev" onClick={moveSlide(-1)}>&#10094;</div>
+                <div className="next" onClick={moveSlide(1)}>&#10095;</div>
+                
+            </section>
+            
+
+            <section className={style.events}>
+                <div>
+                    
+                </div>
+            </section>
+
+            <section className={style.minislideshows}>
+                <div className={style.chef}>
+                    
+                </div>
+                <div className={style.twitter}>
+                    
+                </div>
+                <div className={style.ig}>
+                    
+                </div>
+            </section>
+            <section className={style.featuredarticle}>
+                <div>
+                    
+                </div>
+            </section> */}
 
         </div>
 
