@@ -21,12 +21,10 @@ const LandingpageScreen = () => {
     return (
         
         <div>
-            <div className={style.LandingpageScreen}>
-                <h1 className={style.greeting}>Welcome to <span className={style.com}>Community</span></h1>
-            </div>
-            
+                        
             <section className={style.callToAction}>
                 <div className="slideShow">
+                <h1 className={style.greeting}>Welcome to <span className={style.com}>Community</span></h1>
                     <img className={style.slideShowPic} src={meal3} />
                 </div>
             </section>
