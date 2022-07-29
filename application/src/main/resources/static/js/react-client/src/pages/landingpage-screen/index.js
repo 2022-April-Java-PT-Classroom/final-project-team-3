@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
+import articlePreview from '../../assets/landingpageimgs/ArticlePreview.png';
+import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
+import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
+import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
-
-// import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
-// import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
-// import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
-
 
 const LandingpageScreen = () => {
  
@@ -20,13 +19,49 @@ const LandingpageScreen = () => {
                                            
 
     return (
+        
         <div>
-            <div className={style.LandingpageScreen}>
-                <h1>Welcome to Community</h1>
-            </div>
+                        
+            <section className={style.callToAction}>
+                <div className="slideShow">
+                <h1 className={style.greeting}>Welcome to <span className={style.com}>Community</span></h1>
+                    <img className={style.slideShowPic} src={meal3} />
+                </div>
+            </section>
 
+            <section className={style.eventSection}>
+                <div>
+                    <a href="/events"><img className={style.eventImg} alt="Events" /></a>
+                </div>
+            </section>
             
-            {/* <section className={style.slideshow}>
+            <section className={style.chefOfTheMonth}>
+                
+            </section>
+            
+            <section className={style.Tweets}>
+                <div className="Twitter">
+                    
+                </div>
+            </section>
+            
+            <section className={style.IG}>
+                <div>
+                    
+                </div>
+            </section>
+
+            <section className={style.featuredArticle}>
+            <img className={style.slideShowPic} src={articlePreview} />
+            </section>
+
+        </div>
+
+
+    );
+}
+
+{/* <section className={style.slideshow}>
                 <div className="slide">
                     <img className="imgslide" src={meal1} alt="meal1" />
                         <div className="text">First Caption</div>
@@ -69,10 +104,5 @@ const LandingpageScreen = () => {
                 </div>
             </section> */}
 
-        </div>
-
-
-    );
-}
-
+            
 export default LandingpageScreen;

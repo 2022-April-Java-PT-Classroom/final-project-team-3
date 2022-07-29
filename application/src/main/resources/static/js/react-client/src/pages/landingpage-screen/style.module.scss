@@ -1,3 +1,19 @@
+
+.greeting {
+    font-size: 200px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 5px 5px 10px var(--black);
+    color: white;
+  }
+
+.com {
+    font-size: 300px;
+}
+
+
 .slide {
     position: absolute;
     display: flex;
@@ -8,6 +24,11 @@
 .imgslide {
     height: 200px;
     width: 200px;
+}
+
+.slideShowPic {
+    width: cover;
+    height: 1407px;
 }
 
 .text {
@@ -33,3 +54,4 @@
 .slide:nth-child(1) {
     display: flex;
 }
+
