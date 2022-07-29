@@ -1,3 +1,12 @@
+.greeting {
+    font-size: 60px;
+}
+
+.com {
+    font-size: 80px;
+}
+
+
 .slide {
     position: absolute;
     display: flex;
@@ -8,6 +17,11 @@
 .imgslide {
     height: 200px;
     width: 200px;
+}
+
+.slideShowPic {
+    width: cover;
+    height: 1407px;
 }
 
 .text {
