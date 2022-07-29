@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import articlePreview from '../../assets/landingpageimgs/ArticlePreview.png';
-import eventpic from '../../assets/landingpageimgs/eventpic.jpg';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
@@ -32,9 +31,7 @@ const LandingpageScreen = () => {
 
             <section className={style.eventSection}>
                 <div>
-                    <p className={style.eventP}> Click Below For Events</p>
-                    <a href="/events"><img className={style.eventImg}  src={eventpic} alt="Events" />
-                    </a>
+                    <a href="/events"><img className={style.eventImg}  alt="Events" /></a>
                 </div>
             </section>
             

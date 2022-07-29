@@ -32,8 +32,8 @@ const LandingpageScreen = () => {
 
             <section className={style.eventSection}>
                 <div>
-                    <p className={style.eventP}> Click Below For Events</p>
-                    <a href="/events"><img className={style.eventImg}  src={eventpic} alt="Events" />
+                    
+                    <a href="/events"><img className={style.eventImg}  scr={eventpic} alt="Events" />
                     </a>
                 </div>
             </section>
