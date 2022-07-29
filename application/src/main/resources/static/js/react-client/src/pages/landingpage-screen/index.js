@@ -24,7 +24,7 @@ const LandingpageScreen = () => {
                         
             <section className={style.callToAction}>
                 <div className="slideShow">
-                <h1 className={style.greeting}>Welcome to <span className={style.com}>Community</span></h1>
+                <h1 className={style.greeting}>Hungry? Think <span className={style.com}>Community</span></h1>
                     <img className={style.slideShowPic} src={meal3} />
                 </div>
             </section>
