@@ -78,7 +78,7 @@ const AboutCompany = () => {
         <h1 >Who we are</h1>
         </div>  
       <div className={style.accordion}>
-        <h1 className={style.value}>Our Value</h1>
+        <h1>Our Value</h1>
         {accordionData.map(({ title, content, image }) => (
           <Accordion title={title} content={content} image={image} />
         ))}
