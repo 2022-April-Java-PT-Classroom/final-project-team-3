@@ -27,7 +27,7 @@ const Header = () => {
                     <NavLink to={'/signup'}>Sign Up</NavLink>
                 </ul>
 
-        <div className={style.header}>
+        {/* <div className={style.header}>
             <ul className={style.navList}>
                 <img className={style.image} src={logo} alt='Community Logo' />
                 <NavLink to={'/'}>Home</NavLink>
@@ -42,18 +42,16 @@ const Header = () => {
                 <NavLink to={'/profile'}>Profile</NavLink>
                 <NavLink to={'/review'}>Review</NavLink>
                 <NavLink to={'/signup'}>Sign Up</NavLink>
-            </ul>
+            </ul> */}
             </div>
             <div className={style.navListAdmin}>
                 <span>ADMIN</span>
                 <NavLink to={'/admin/role'}>Role</NavLink>
                 <NavLink to={'/admin/user'}>User</NavLink>
                 <NavLink to={'/admin/picture'}>Picture</NavLink>
-                <NavLink to={'/admin/content'}>Content</NavLink>
-                        
+                <NavLink to={'/admin/content'}>Content</NavLink>                       
 
             </div>
-        </div>
         
         </div>
     )
