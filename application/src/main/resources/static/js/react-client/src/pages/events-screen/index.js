@@ -10,9 +10,12 @@ const [loading, setLoading] = useState(true);
 
 useEffect(() => {
     const fetchData = async () => {
-
-        const result = await Axios("https://newsapi.org/v2/everything?q=Apple&from=2022-07-24&sortBy=popularity&apiKey=0c749615e4f54f1892a566d56dbdca85");
-        setNews(result.data);
+        const result = await Axios('https://newsapi.org/v2/everything?' +
+        'q=Apple&' +
+        'sortBy=publishedAt&' +
+        'apiKey=0c749615e4f54f1892a566d56dbdca85');
+        setNews(result.data.articles);
+        console.log(result.data.articles);
     };
 
     if (news) {
@@ -29,18 +32,21 @@ useEffect(() => {
 return ( 
     loading ? <h3>Loading...</h3> :
     <div className={style.newsGrid}>
-        <section>
-            <div className={style.newsContainer}>
-            <h5>{news.author}</h5>
-            <h5>{news.title}</h5>   
-            <h5>{news.description}</h5>
-            <h5 href={news.url}> </h5>      
-            <h5 href={news.urlToImage}> </h5>
-            <h5>{news.publishedAt}</h5>
-            <h5>{news.content}</h5>
+       
+           {news.map(news1 =>
+                    <div className={style.sections}>
+                        
+                            <a href={news1.source.url}>{news1.source.name}</a>
+                            <h1>{news1.source.name}</h1>
+                            <h2>{news1.content}</h2>
+                            <h2>{news1.author}</h2>
+                            <h2>{news1.description}</h2>
+                    </div>
+                )} 
+           
+
+         
             </div>
-     </section>
-    </div>
     );
 }
 
