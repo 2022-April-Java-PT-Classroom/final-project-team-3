@@ -1,12 +1,13 @@
 import { Route, Switch } from 'react-router-dom';
 
-
-import Accordion from '../../pages/aboutcompany-screen/accordionValue';
 import AboutCompany from '../../pages/aboutcompany-screen/data';
 import AboutDevs from '../../pages/aboutdevs-screen';
-
-// import AboutScreen from '../../pages/aboutcompany-screen';
-
+import AboutScreen from '../../pages/aboutcompany-screen';
+import Accordion from '../../pages/aboutcompany-screen/accordionValue';
+import AdminContentScreen from '../../admin/pages/content-screen';
+import AdminPictureScreen from '../../admin/pages/picture-screen';
+import AdminRoleScreen from '../../admin/pages/role-screen';
+import AdminUserScreen from '../../admin/pages/user-screen';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
 import EventsScreen from '../../pages/events-screen';
@@ -25,13 +26,9 @@ const AppRouter = () => {
         <Switch>
             <Route exact path={'/'} component={LandingpageScreen} />
             <Route exact path={'/userhome'} component={UserHomeScreen} />
-
             <Route exact path={'/about-developers'} component={AboutDevs} />
             <Route exact path={'/about-company'} component={AboutCompany} />
             <Route exact path={'/about-company-value'} component={Accordion} />
-
-            {/* <Route exact path={'/about'} component={AboutScreen} /> */}
-
             <Route exact path={'/contact'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
@@ -41,7 +38,11 @@ const AppRouter = () => {
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/signup'} component={SignupScreen} />
-
+            <Route exact path={'/admin/role'} component={AdminRoleScreen} />
+            <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
+            <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
+            <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
+            
         </Switch>
     );
 }

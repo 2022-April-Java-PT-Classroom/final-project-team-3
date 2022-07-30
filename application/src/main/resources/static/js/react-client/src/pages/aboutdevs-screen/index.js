@@ -1,13 +1,14 @@
 import React from "react";
-import picGian from '../../assets/teampics/gian.jpg'
 import picFarida from '../../assets/teampics/farida.jpg'
-import picHakan from '../../assets/teampics/hakan.jpg'
-import picVictor from '../../assets/teampics/victor.jpg'
+import picGian from '../../assets/teampics/gian.jpg'
 import picHailey from '../../assets/teampics/hailey.jpg'
+import picHakan from '../../assets/teampics/hakan.jpg'
 import picLouis from '../../assets/teampics/louis.jpg'
+import picVictor from '../../assets/teampics/victor.jpg'
 import style from './style.module.scss'
 
-const AboutDevs = () => {
+const AboutDevs =() => {
+
     return (
         <div className={style.aboutDevs}>
             <div>
@@ -84,7 +85,7 @@ const AboutDevs = () => {
                         <p>Self-motivated Junior Software developer with experience in design and application development. A fast learner with strong time management and multi-taking skills. Proficient troubleshooting and problem-solving skills with an analytical mindset. Loyal, reliable, and ready to be challenged. Experienced in training and creating course curriculum for small, med-sized, and large business entities. Team player with exemplary managerial skills.</p><br></br>
                         
                             <a href="https://www.linkedin.com/in/haileyfate/"><h5 className={style.linked}>LinkedIn</h5></a>
-                        
+    
                 </div>
                 
                 
