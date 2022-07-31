@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articlePreview from '../../assets/landingpageimgs/ArticlePreview.png';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
@@ -41,6 +42,11 @@ const LandingpageScreen = () => {
             
             <section className={style.Tweets}>
                 <div className="Twitter">
+                <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="CommunityWcci"
+                    options={{height: 600, width: 400}}
+                    />
                     
                 </div>
             </section>
