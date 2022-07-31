@@ -28,7 +28,7 @@
 
 .slideShowPic {
     width: cover;
-    height: 1407px;
+    height: 1266px;
 }
 
 .text {
@@ -55,3 +55,33 @@
     display: flex;
 }
 
+.middle {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.chef {
+    width: 350px;
+
+}
+
+.eventSection {
+    float: left;
+    // border: solid #6d8021;
+    padding-left: 200px;
+    padding-right: 50px;
+}
+
+.chefOfTheMonth {
+    float: left;
+    // border: solid #6d8021;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.tweets {
+    float: left;
+    // border: solid #6d8021;
+    padding-left: 50px;
+    padding-right: 50px;
+}
