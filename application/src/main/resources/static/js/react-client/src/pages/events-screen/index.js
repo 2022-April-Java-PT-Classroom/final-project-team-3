@@ -35,12 +35,14 @@ return (
        
            {news.map(news1 =>
                     <div className={style.sections}>
-                        
-                            <a href={news1.source.url}>{news1.source.name}</a>
-                            <h1>{news1.source.name}</h1>
-                            <h2>{news1.content}</h2>
-                            <h2>{news1.author}</h2>
-                            <h2>{news1.description}</h2>
+                        <h1>{news1.source.name}</h1>
+                        <h1>{news1.title} </h1>
+                        <h3>Published At: {news1.publishedAt}</h3> 
+                        <h2>To read more click the image</h2>
+                            <a href={news1.url}> <img src={news1.urlToImage}></img></a>
+                            <h2>{news1.content} </h2>
+                            {/* <h2>{news1.author}</h2> */}
+                            {/* <h2>{news1.description}</h2> */}
                     </div>
                 )} 
            
