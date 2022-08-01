@@ -1,3 +1,14 @@
+
+// //  import "@reach/combobox/styles.css";
+
+// // import {
+// //     Combobox,
+// //     ComboboxInput,
+// //     ComboboxList,
+// //     ComboboxOption,
+// //     ComboboxPopover,
+// // } from "@reach/combobox";
+
 // import "@reach/combobox/styles.css";
 
 // import {
@@ -7,10 +18,23 @@
 //     ComboboxOption,
 //     ComboboxPopover,
 // } from "@reach/combobox";
+
 // import {
 //     GoogleMap,
 //     InfoWindow,
 //     Marker,
+
+//      useLoadScript,
+// } from "@react-google-maps/api";
+// // import usePlacesAutocomplete, {
+// //     getGeocode,
+// //     getLatLng,
+// // } from "use-places-autocomplete";
+
+// import React from "react";
+// import compass from '../../assets/logo/1f9ed.png';
+// // import { formatRelative } from "date-fns";
+
 //     useLoadScript,
 // } from "@react-google-maps/api";
 // import usePlacesAutocomplete, {
@@ -21,6 +45,7 @@
 // import React from "react";
 // import compass from '../../assets/logo/1f9ed.png';
 // import { formatRelative } from "date-fns";
+
 // import mapStyles from "../../pages/find-food-screen/style.module.scss"
 // import style from './style.module.scss';
 
@@ -127,7 +152,11 @@
 //                   </span>{" "}
 //                 Alert
 //               </h2>
+
+//               {/* <p>Spotted {formatRelative(selected.time, new Date())}</p> */}
+
 //               <p>Spotted {formatRelative(selected.time, new Date())}</p>
+
 //             </div>
 //           </InfoWindow>
 //         ) : null}
