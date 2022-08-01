@@ -4,10 +4,11 @@ import logo from '../../assets/logo/CommunityLogo.png';
 import style from './style.module.scss';
 
 const Header = () => {
-
+    const link = window.location.href;
+    if(link.search("/admin")<0)
     return (
         <div className={style.header}>
-            <ul className={style.navList}>
+            <div className={style.navList}>
                 <img className={style.image} src={logo} alt='Community Logo' />
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/userhome'}>UserHome</NavLink>
@@ -21,7 +22,12 @@ const Header = () => {
                 <NavLink to={'/profile'}>Profile</NavLink>
                 <NavLink to={'/review'}>Review</NavLink>
                 <NavLink to={'/signup'}>Sign Up</NavLink>
-            </ul>
+            </div>
+           
+        </div>
+    )
+    else return (
+        <div className={style.header}>
             <div className={style.navListAdmin}>
                 <span>ADMIN</span>
                 <NavLink to={'/admin/role'}>Role</NavLink>
@@ -31,6 +37,7 @@ const Header = () => {
                         
             </div>
         </div>
+
     )
 }
 

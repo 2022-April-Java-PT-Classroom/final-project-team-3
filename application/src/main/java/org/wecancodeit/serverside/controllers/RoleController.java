@@ -3,6 +3,7 @@ package org.wecancodeit.serverside.controllers;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.serverside.models.Content;
 import org.wecancodeit.serverside.models.Role;
 import org.wecancodeit.serverside.repositories.RoleRepository;
 
@@ -16,6 +17,12 @@ public class RoleController {
 
     @Resource
     private RoleRepository roleRepo;
+
+    @GetMapping("/api/role/{id}")
+    public Role getOneRole(@PathVariable Long id)  throws JSONException{
+        Optional<Role> findOneRole = roleRepo.findById(id);
+        return  findOneRole.get();
+    }
 
     @GetMapping("/api/role")
     public Collection<Role> getRole(){
