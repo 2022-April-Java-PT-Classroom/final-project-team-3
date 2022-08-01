@@ -29,26 +29,29 @@ useEffect(() => {
     
 }, [news]);
 
+
 return ( 
     loading ? <h3>Loading...</h3> :
     <div className={style.newsGrid}>
        
            {news.map(news1 =>
+          
                     <div className={style.sections}>
+                      
                         <h1>{news1.source.name}</h1>
-                        <h1>{news1.title} </h1>
-                        <h3>Published At: {news1.publishedAt}</h3> 
-                        <h2>To read more click the image</h2>
-                            <a href={news1.url}> <img src={news1.urlToImage}></img></a>
-                            <h2>{news1.content} </h2>
-                            {/* <h2>{news1.author}</h2> */}
-                            {/* <h2>{news1.description}</h2> */}
-                    </div>
-                )} 
+                        <h2>{news1.title} </h2>
+                        <h5>Published At: {news1.publishedAt}</h5> 
+                            <a href={news1.url}> <img src={news1.urlToImage} ></img></a>
+                              <div className={style.container}>
+                                <parseFloat>{news1.content} <a href={news1.url}>more...</a></parseFloat>
+                              </div>
+                            
+                        </div>
+                  
            
-
+                )} 
          
-            </div>
+   </div>
     );
 }
 
