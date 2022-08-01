@@ -1,5 +1,5 @@
 import React from 'react';
-import SignInOutContainer from '../../containers';
+import SignInOutContainer from '../../cont';
 function App() {
   return (
     <div className="App">
