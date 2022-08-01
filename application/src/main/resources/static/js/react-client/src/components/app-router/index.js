@@ -32,7 +32,7 @@ const AppRouter = () => {
 
             {/* <Route exact path={'/about'} component={AboutScreen} /> */}
 
-            <Route exact path={'/contact'} component={ContactScreen} />
+            <Route exact path={'/contactus'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
             <Route exact path={'/faq'} component={FaqScreen}/>
