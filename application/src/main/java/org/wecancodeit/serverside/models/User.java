@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package org.wecancodeit.serverside.models;
 
 import javax.persistence.*;
@@ -6,8 +6,7 @@ import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.logging.ConsoleHandler;
+
 
 @Entity
 public class User {
@@ -103,16 +102,3 @@ public class User {
 
 
 }
-=======
-//package org.wecancodeit.serverside.models;
-//
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
-//
-//@Entity
-//public class User {
-//    @Id
-//    @GeneratedValue
-//}
->>>>>>> main
