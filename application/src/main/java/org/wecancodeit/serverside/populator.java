@@ -1,13 +1,19 @@
 package org.wecancodeit.serverside;
 
+<<<<<<< HEAD
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.serverside.models.*;
-import org.wecancodeit.serverside.repositories.*;
+import org.wecancodeit.serverside.models.Content;
+import org.wecancodeit.serverside.models.Picture;
+import org.wecancodeit.serverside.models.Role;
+import org.wecancodeit.serverside.models.User;
+import org.wecancodeit.serverside.repositories.ContentRepository;
+import org.wecancodeit.serverside.repositories.PictureRepository;
+import org.wecancodeit.serverside.repositories.RoleRepository;
+import org.wecancodeit.serverside.repositories.UserRepository;
 
 import javax.annotation.Resource;
-import java.time.Instant;
 
 @Component
 public class populator implements CommandLineRunner {
@@ -17,8 +23,6 @@ public class populator implements CommandLineRunner {
 
     @Resource
     public UserRepository userStorage;
-    @Resource
-    private ArticleRepository articleRepository;
 
     @Resource
     public PictureRepository pictureStorage;
@@ -84,11 +88,34 @@ public class populator implements CommandLineRunner {
         cont3.addPicture(pic2);
         contentStorage.save(cont3);
 
+    }
+}
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.wecancodeit.serverside.models.Article;
+import org.wecancodeit.serverside.repositories.ArticleRepository;
+
+import javax.annotation.Resource;
+import java.time.Instant;
+import java.util.Date;
+
+
+@Component
+public class Populator implements CommandLineRunner {
+    @Resource
+    private ArticleRepository articleRepository;
+
+    @Override
+    public void run(String... args) throws Exception{
         Article test = new Article("Harley Millington","Food Shortages and how we can help","Ever since covid we have been trying and succeeding at helping people who are struggling to find food in there local area."
                 , Instant.now());
         articleRepository.save(test);
         Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger.",Instant.now());
         articleRepository.save(test1);
-
     }
+
+
 }
+>>>>>>> main
