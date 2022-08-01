@@ -64,7 +64,7 @@ public class ContentController {
     }
 
     @PutMapping ("/api/content/{id}/update-content")
-    public Collection<Content> selectContent(@PathVariable Long id, @RequestBody String body) throws JSONException {
+    public Collection<Content> UpdateOneContent(@PathVariable Long id, @RequestBody String body) throws JSONException {
         JSONObject newContent = new JSONObject(body);
         String contentName = newContent.getString("contentName");
         String title = newContent.getString("title");

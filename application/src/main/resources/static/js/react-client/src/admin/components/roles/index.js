@@ -11,9 +11,16 @@ const Roles = ({roles}) =>{
         description : ""
      });
 
+     const xroleName = document.querySelector("#roleName"),
+      xdescription = document.querySelector("#description"),
+      xup = document.querySelector("#up"),
+      xroleId = document.querySelector("#roleId"),
+      xroleSubmit = document.querySelector("#roleSubmit");
+
     
     const handleReset =() => {
-        document.querySelector("#roleName").value = "";
+        
+        document.querySelector("#roleName").value = ""; 
         document.querySelector("#description").value = "";
         document.querySelector("#up").value = "0";
         document.querySelector("#roleId").value = "0";
@@ -24,7 +31,7 @@ const Roles = ({roles}) =>{
         document.querySelector("#description").value = description;
         document.querySelector("#up").value = "up";
         document.querySelector("#roleId").value = roleId;
-        document.querySelector("#roleSubmit").innerText = "Update Role";
+        xroleSubmit.innerText = "Update Role";
     }
 
 
@@ -42,7 +49,7 @@ const Roles = ({roles}) =>{
         
 
        // alert(up + " / " + roleId);
-        if(up=="0" && roleId=="0"){
+        if(document.querySelector("#up").value=="0" && document.querySelector("#roleId").value=="0"){
             Axios.post('http://localhost:8080/api/role/add-role', roleData).then((response) => {
                 console.log(response.status);
                 console.log('DATA', response.data);
@@ -51,7 +58,7 @@ const Roles = ({roles}) =>{
 
             window.location.reload();
         } 
-        if(up=="up" && roleId>=0){
+        if(document.querySelector("#up").value =="up" && document.querySelector("#roleId").value >=0){
            //const performRequest =
             Axios.put(`http://localhost:8080/api/role/${roleId}/update-role`, roleData).then((response) => {
                 console.log('Update successful');
