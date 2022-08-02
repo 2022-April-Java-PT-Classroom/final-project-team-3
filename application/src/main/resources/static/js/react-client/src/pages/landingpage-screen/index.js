@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-import articlePreview from '../../assets/landingpageimgs/ArticlePreview.png';
+import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/cof.jpg';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
@@ -21,7 +21,7 @@ const LandingpageScreen = () => {
                                            
 
     return (
-    <div>    
+    <div className={style.allbody}>    
 
         <div>      
             <section className={style.callToAction}>
@@ -63,7 +63,7 @@ const LandingpageScreen = () => {
             </div>
             
             <div className={style.featuredArticle}>
-            <img className={style.slideShowPic} src={articlePreview} />
+            <img className={style.articlesPic} src={articles} />
             </div>
 
     </div>

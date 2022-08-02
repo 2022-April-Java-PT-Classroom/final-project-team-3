@@ -1,4 +1,8 @@
 
+.allbody {
+    margin-bottom: 0;
+}
+
 .greeting {
     font-size: 150px;
     position: absolute;
@@ -84,4 +88,10 @@
     // border: solid #6d8021;
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.articlesPic {
+    width: 1250px;
+    height: 650px;
+    margin-bottom: 0;
 }
