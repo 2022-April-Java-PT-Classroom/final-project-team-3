@@ -10,7 +10,6 @@ import AdminRoleScreen from '../../admin/pages/role-screen';
 import AdminUserScreen from '../../admin/pages/user-screen';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
-import ErrorPage from '../../pages/error-page';
 import EventsScreen from '../../pages/events-screen';
 import FaqScreen from '../../pages/faq-screen'
 import FindFoodScreen from '../../pages/find-food-screen';
@@ -43,7 +42,7 @@ const AppRouter = () => {
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
             <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
-            <Route exact path={'*'} component={ErrorPage} /> 
+            
             
         </Switch>
     );
