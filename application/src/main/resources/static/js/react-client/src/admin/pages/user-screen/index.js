@@ -35,6 +35,10 @@ const AdminUserScreen = () => {
         xup.value = "0";
         xuserId.value = "";
         xuserSubmit.innerText = "Add User";
+
+        for (const o of xroleId.options) {
+            o.selected = false;
+        }
     }
     const handlePreUpdate = (userId, firstName, lastName, email, 
         phone, avatar, description, password, roles) => {
