@@ -1,13 +1,19 @@
 package org.wecancodeit.serverside;
 
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.serverside.models.*;
+import org.wecancodeit.serverside.models.Content;
+import org.wecancodeit.serverside.models.Picture;
+import org.wecancodeit.serverside.models.Role;
+import org.wecancodeit.serverside.models.User;
+import org.wecancodeit.serverside.models.Article;
 import org.wecancodeit.serverside.repositories.*;
 
-import javax.annotation.Resource;
 import java.time.Instant;
+import java.util.Date;
+
+
+import javax.annotation.Resource;
 
 @Component
 public class populator implements CommandLineRunner {
@@ -17,14 +23,15 @@ public class populator implements CommandLineRunner {
 
     @Resource
     public UserRepository userStorage;
-    @Resource
-    private ArticleRepository articleRepository;
 
     @Resource
     public PictureRepository pictureStorage;
 
     @Resource
     public ContentRepository contentStorage;
+
+    @Resource
+    private ArticleRepository articleRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -41,19 +48,19 @@ public class populator implements CommandLineRunner {
         Role role6 = new Role("Volunteer","");
         roleStorage.save(role6);
 
-        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","000 000 0000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
+        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
         user1.addRole(role1);
         user1.addRole(role3);
         user1.addRole(role5);
         userStorage.save(user1);
 
-        User user2 = new User("Victor","N","email@mail.com", "000 000 0000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc2","5678");
+        User user2 = new User("Victor","N","email@mail.com", "000 0000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc2","5678");
         user2.addRole(role1);
         user2.addRole(role2);
         user2.addRole(role5);
           userStorage.save(user2);
 
-        User user3 = new User("Paul","Franklin","paul@mail.com", "000 000 0000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc3","1111");
+        User user3 = new User("Paul","Franklin","paul@mail.com", "0000000000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc3","1111");
         user3.addRole(role1);
         user3.addRole(role4);
         userStorage.save(user3);
@@ -84,6 +91,9 @@ public class populator implements CommandLineRunner {
         cont3.addPicture(pic2);
         contentStorage.save(cont3);
 
+        /////////////////////
+
+
         Article test = new Article("Harley Millington","Food Shortages and how we can help","Ever since covid we have been trying and succeeding at helping people who are struggling to find food in there local area."
                 , Instant.now());
         articleRepository.save(test);
@@ -92,3 +102,4 @@ public class populator implements CommandLineRunner {
 
     }
 }
+
