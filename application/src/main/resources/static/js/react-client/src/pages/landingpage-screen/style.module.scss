@@ -31,8 +31,9 @@
 }
 
 .slideShowPic {
-    width: cover;
-    height: 1266px;
+    width: cover !important;
+    height: 1266px !important;
+    border: none !important;
 }
 
 .text {

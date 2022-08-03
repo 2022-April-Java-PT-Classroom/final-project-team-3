@@ -25,7 +25,7 @@
     }
 
     & a:hover {
-        color: #c30;
+        font-weight: 800;
     }
 
 
@@ -36,13 +36,14 @@
     height: 100px;
     position: relative;
     margin-top: 0;
+    border: none !important;
 }
 
 .DropdownButton {
 
   color: white;
 
-  background-color: blue;
+  background-color: grey;
   border-radius: 5px;
 
   padding: 5px;
@@ -99,7 +100,7 @@
     }
 
     & a:hover {
-        color: #c30;
+       font-weight: 800;
     }
 
 
