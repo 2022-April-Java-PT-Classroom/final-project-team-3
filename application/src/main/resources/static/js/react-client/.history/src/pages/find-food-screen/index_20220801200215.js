@@ -113,6 +113,7 @@ export default function App() {
           />
         ))}
         
+<<<<<<< HEAD
 {selected ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}
@@ -135,6 +136,34 @@ export default function App() {
     </div>
   );
 }
+=======
+// {selected ? (
+//           <InfoWindow
+//             position={{ lat: selected.lat, lng: selected.lng }}
+//             onCloseClick={() => {
+//               setSelected(null);
+//             }}
+//           >
+//             <div>
+//               <h2>
+//                 <span role="img" aria-label="chef">
+//                   🧑‍🍳
+//                   </span>{" "}
+//                 Alert
+//               </h2>
+
+//               {/* <p>Spotted {formatRelative(selected.time, new Date())}</p> */}
+
+//               <p>Spotted {formatRelative(selected.time, new Date())}</p>
+
+//             </div>
+//           </InfoWindow>
+//         ) : null}
+//       </GoogleMap>
+//     </div>
+//   );
+// }
+>>>>>>> e4c9a7751cacccf2b2b67b6adaab3286a72f092f
 
 function Locate({ panTo }) {
     return (
