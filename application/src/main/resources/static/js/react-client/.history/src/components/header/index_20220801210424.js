@@ -34,7 +34,6 @@ const Header = () => {
 
             </div>
             </div>
-        </div>
             <div className={style.navListAdmin}>
                 <span>ADMIN</span>
                 <NavLink to={'/admin/role'}>Role</NavLink>

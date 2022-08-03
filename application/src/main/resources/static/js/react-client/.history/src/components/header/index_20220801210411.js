@@ -33,7 +33,6 @@ const Header = () => {
                 </ul>
 
             </div>
-            </div>
         </div>
             <div className={style.navListAdmin}>
                 <span>ADMIN</span>

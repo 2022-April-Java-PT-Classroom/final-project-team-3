@@ -32,9 +32,9 @@ const Header = () => {
                     <NavLink to={'/signup'}>Sign Up</NavLink>
                 </ul>
 
+
             </div>
-            </div>
-        </div>
+
             <div className={style.navListAdmin}>
                 <span>ADMIN</span>
                 <NavLink to={'/admin/role'}>Role</NavLink>
