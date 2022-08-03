@@ -9,7 +9,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 
 const SignInOutContainer=()=>{
-const [value,setValue]=useState(0)
+const [value, setValue]=useState(0)
 const handleChange = (event, newValue) => {
     setValue(newValue);
   };

@@ -31,6 +31,12 @@ public class UserController {
         return   findUsers;
     }
 
+    @GetMapping("/api/user/email/{email}")
+    public User getOneUserByEmail(@PathVariable String email)  throws JSONException{
+        Optional<User> findOneUser = userRepo.findByEmail(email);
+        return  findOneUser.get();
+    }
+
     @GetMapping("/api/user/{id}")
     public User getOneUser(@PathVariable Long id)  throws JSONException{
         Optional<User> findOneUser = userRepo.findById(id);
@@ -38,31 +44,7 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
-    public Collection<User> getAllUsers(@RequestBody String body) throws JSONException{
-        JSONObject newUser = new JSONObject(body);
-        String firstName = newUser.getString("firstName");
-        String lastName = newUser.getString("lastName");
-        String email = newUser.getString("email");
-        String phone = newUser.getString("phone");
-        String avatar = newUser.getString("avatar");
-        String description = newUser.getString("description");
-        String password = newUser.getString("password");
-
-        Optional<User> userToAddOpt = userRepo.findByEmail(email);
-        //add user if not already in the database
-        if (userToAddOpt.isEmpty()) {
-
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
-            String rolesId = newUser.getString("roleId");
-
-            //ArrayList<Role> RoleList = new ArrayList<>();
-            String[] roleS = rolesId.split(",");
-            for (String roleIdString : roleS) {
-                Long roleId = Long.parseLong(roleIdString);
-                userToAdd.addRole(roleRepo.findById(roleId).get());
-            }
-            userRepo.save(userToAdd);
-        }
+    public Collection<User> getAllUsers(){
         return(Collection<User>) userRepo.findAll();
     }
 
@@ -166,7 +148,7 @@ public class UserController {
     }
 
     @PostMapping("/api/user/login")
-    public String login(@RequestBody String body) throws JSONException{
+    public User login(@RequestBody String body) throws JSONException{
         JSONObject newUser = new JSONObject(body);
         String email = newUser.getString("email");
         String password = newUser.getString("password");
@@ -180,7 +162,7 @@ public class UserController {
                 userToCheck.get().getStatus() != 0 ) {
             isLogin = true;
         }
-        return isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
+        return userToCheck.get(); //email +' '+ password; //isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
     }
 
     @PostMapping("/api/user/status/{id}")
@@ -191,6 +173,12 @@ public class UserController {
         findOneUser.get().setStatus(status);
         return  findOneUser.get();
     }
+
+
+
+
+
+
 
 
 }
