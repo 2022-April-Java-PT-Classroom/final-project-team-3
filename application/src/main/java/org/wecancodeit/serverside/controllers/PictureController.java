@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.models.Picture;
+import org.wecancodeit.serverside.models.Role;
 import org.wecancodeit.serverside.repositories.PictureRepository;
 
 import javax.annotation.Resource;
@@ -17,8 +18,14 @@ public class PictureController {
     @Resource
     private PictureRepository pictureRepo;
 
+    @GetMapping("/api/picture/{id}")
+    public Picture getOnePicture(@PathVariable Long id)  throws JSONException{
+        Optional<Picture> findOnePicture = pictureRepo.findById(id);
+        return  findOnePicture.get();
+    }
+    
     @GetMapping("/api/picture")
-    public Collection<Picture> getPicture(){
+    public Collection<Picture> getAllPictures(){
         return (Collection<Picture>) pictureRepo.findAll();
     }
 
@@ -44,7 +51,7 @@ public class PictureController {
     }
 
     @PutMapping ("/api/picture/{id}/update-picture")
-    public Collection<Picture> selectPicture(@PathVariable Long id, @RequestBody String body) throws JSONException {
+    public Collection<Picture> UpdateOnePicture(@PathVariable Long id, @RequestBody String body) throws JSONException {
         JSONObject newPicture = new JSONObject(body);
         String pictureName = newPicture.getString("pictureName");
         String pictureUrl = newPicture.getString("pictureUrl");
@@ -62,7 +69,7 @@ public class PictureController {
     }
 
     @DeleteMapping("/api/picture/{id}/delete-picture")
-    public Collection<Picture> deletePicture(@PathVariable Long id) throws JSONException {
+    public Collection<Picture> deleteOnePicture(@PathVariable Long id) throws JSONException {
         Optional<Picture> pictureToRemoveOpt = pictureRepo.findById(id);
         if(pictureToRemoveOpt.isPresent()){
             pictureRepo.delete(pictureToRemoveOpt.get());

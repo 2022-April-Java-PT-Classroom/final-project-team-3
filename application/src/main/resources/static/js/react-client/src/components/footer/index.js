@@ -6,10 +6,6 @@ const Footer = () => {
         <div className={style.footer_wrapper}>
             <div className={style.footer}>
                 <small className={style.small}> &copy; wcci 2022</small>
-                <ul className={style.socialList}>
-                    <li>GitHub</li>
-                    <li>LinkedIn</li>
-                </ul>
             </div>
         </div>
     )
