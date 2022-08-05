@@ -71,7 +71,7 @@
 }
 
 .eventSection {
-    float: left;
+    // float: left;
     // border: solid #6d8021;
     padding-left: 200px;
     padding-right: 50px;
@@ -92,6 +92,12 @@
 }
 
 .articlesPic {
+    width: 1250px;
+    height: 650px;
+    margin-bottom: 0;
+}
+
+.event {
     width: 1250px;
     height: 650px;
     margin-bottom: 0;

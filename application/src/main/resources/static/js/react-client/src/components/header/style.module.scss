@@ -6,6 +6,7 @@
 
 .navList {
 
+    position: sticky;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -34,7 +35,7 @@
 .image{
     width:100px;
     height: 100px;
-    position: relative;
+    // position: relative;
     margin-top: 0;
     border: none !important;
 }

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/cof.jpg';
+import event from '../../assets/landingpageimgs/FoodPresentation.jpg';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
@@ -31,12 +32,20 @@ const LandingpageScreen = () => {
                 </div>
             </section>
         </div>
+
+        <div>
+            <section>
+                <div className="Reviews">
+                    
+                </div>
+            </section>
+        </div>
         
         <div className={style.middle}>    
                 <div className={style.eventSection}>
                     <div>
-                        <h3>Events</h3>
-                        <a href="/events"><img className={style.chef} src={cof} alt="Chef of the Month" /></a>
+                        {/* <h3>Events</h3> */}
+                        <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
                     </div>
                 </div>
                     

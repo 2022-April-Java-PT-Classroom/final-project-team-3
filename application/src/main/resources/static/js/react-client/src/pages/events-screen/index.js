@@ -31,7 +31,7 @@ useEffect(() => {
 
 
 return ( 
-    loading ? <h3>Loading...</h3> :
+    loading ? <h3>Loading Events...</h3> :
     <div className={style.newsGrid}>
        
            {news.map(news1 =>
