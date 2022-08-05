@@ -3,7 +3,7 @@ import React from 'react';
 import mission from '../../assets/aboutimages/smile.jpg';
 import mission2 from '../../assets/aboutimages/comunity2.jpg';
 import mission3 from '../../assets/aboutimages/comunity3.jpg';
-import style from './style.module.scss'
+import style from './style.module.scss';
 import topImage from '../../assets/aboutimages/image1.jpg';
 import topImage2 from '../../assets/aboutimages/image2.jpg';
 import topImage3 from '../../assets/aboutimages/donate.jpg';
@@ -41,7 +41,7 @@ const AboutCompany = () => {
 
   const accordionData1 = [
     {
-      title: 'Community',
+      title: 'COMMUNITY',
       content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
       laborum cupiditate possimus labore, hic temporibus velit dicta earum
       suscipit commodi eum enim atque at? Et perspiciatis dolore iure
@@ -49,7 +49,7 @@ const AboutCompany = () => {
       image: <img className={style.bgtopimage} src={mission2} alt='food'></img>
     },
     {
-      title: 'Put smile on faces',
+      title: 'PUT SMILE ON FACES',
       content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
       reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
       quaerat iure quos dolorum accusantium ducimus in illum vero commodi
@@ -60,7 +60,7 @@ const AboutCompany = () => {
       
     },
     {
-      title: 'Share',
+      title: 'SHARE',
       content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas?`,

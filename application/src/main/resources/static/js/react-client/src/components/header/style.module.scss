@@ -3,6 +3,11 @@
     height: 100px;
 }
 
+.header{
+    background-color: #6d8021;
+    align-items: center;
+    position: relative;
+}
 
 .navList {
 
@@ -25,7 +30,7 @@
     }
 
     & a:hover {
-        color: #c30;
+        background-color: rgb(193, 238, 130);
     }
 
 
