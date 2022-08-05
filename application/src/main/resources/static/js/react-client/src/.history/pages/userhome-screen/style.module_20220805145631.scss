@@ -41,15 +41,6 @@
             object-fit: cover;
             border-radius: 50%;
         }
-        .userProfileIcon{
-            position: absolute;
-            height: 60%;
-            width: 60%;
-            border-radius: 50%;
-            transform: translateX(50%);
-            right: 50%;
-            bottom: 2rem;
-        }
     }
     .userNam{
         text-align: center;
@@ -61,18 +52,21 @@
     }
     .bottomPortion{
         display: flex;
+        align-items: center;
         justify-content: center;
         flex-direction: row;
+        height: 100vh;
         width: 100vw;
         margin-top: 5rem;
-        background: white;
     }
     .rightSide{
-        flex: 0.60;
+        flex: 0.70;
+        background: #a9ae97;
         height: 100%;
     }
     .leftSide{
-        flex: 0.40;
+        flex: 0.30;
+        background: #888a7e;
         height: 100%;
     }
 }

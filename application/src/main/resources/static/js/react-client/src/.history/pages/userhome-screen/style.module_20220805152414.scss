@@ -41,15 +41,6 @@
             object-fit: cover;
             border-radius: 50%;
         }
-        .userProfileIcon{
-            position: absolute;
-            height: 60%;
-            width: 60%;
-            border-radius: 50%;
-            transform: translateX(50%);
-            right: 50%;
-            bottom: 2rem;
-        }
     }
     .userNam{
         text-align: center;
@@ -68,11 +59,11 @@
         background: white;
     }
     .rightSide{
-        flex: 0.60;
+        flex: 0.70;
         height: 100%;
     }
     .leftSide{
-        flex: 0.40;
+        flex: 0.30;
         height: 100%;
     }
 }

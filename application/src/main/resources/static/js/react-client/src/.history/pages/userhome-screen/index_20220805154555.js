@@ -12,8 +12,7 @@ function UserScreen() {
         <div className={style.userProfileBgImage}>
             {/* <img className={style.prfBgImg} src={prfBg} alt='Background Image' srcSet=''/> */}
         </div>
-        <div className={style.userProfileImage}>
-          <Avatar className={style.userProfileIcon} src=''></Avatar>
+        <div className={style.userProfileImage}><Avatar></Avatar>
         {/* <img className={style.prfImg} src='' alt='' srcSet=''/> */}
         </div>
         <div className={style.userNam}>

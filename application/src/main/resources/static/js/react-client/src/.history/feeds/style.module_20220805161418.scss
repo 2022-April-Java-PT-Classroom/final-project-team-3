@@ -1,0 +1,30 @@
+.mainFeedsContainer{
+    height: 100%;
+    width: 100%;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 1rem 1rem 2rem 1rem lightgray;
+    border-radius: 0.5rem;
+
+    .feedInputContainer{
+        display: flex;
+        align-items: center;
+        .inputContainer{
+            background: white;
+            border-radius: ;
+            width: 100%;
+            .postDesc{
+                width: 100%;
+                background: transparent;
+                border: none;
+                height: 2rem;
+                line-height: 1.0rem;
+                padding: 0.2rem;
+                &:focus{
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+}
