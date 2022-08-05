@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/cof.jpg';
+import communityVideo from '../../assets/landingpageimgs/CommunityVideo.mp4';
 import event from '../../assets/landingpageimgs/FoodPresentation.jpg';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
@@ -32,6 +33,11 @@ const LandingpageScreen = () => {
                 </div>
             </section>
         </div>
+        <div>
+            <section>
+                <video src={communityVideo} width="1500" height="800" controls="controls" autoPlay="true" className={style.video} />
+            </section>
+        </div>
 
         <div>
             <section>
@@ -41,13 +47,14 @@ const LandingpageScreen = () => {
             </section>
         </div>
         
-        <div className={style.middle}>    
-                <div className={style.eventSection}>
-                    <div>
-                        {/* <h3>Events</h3> */}
-                        <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
-                    </div>
-                </div>
+        <div className={style.middle}>
+
+                <div className={style.featuredArticle}>
+                    <img className={style.articlesPic} src={articles} />
+                </div>    
+                
+                
+                
                     
                 <div className={style.chefOfTheMonth}>
                     <h3>Chef of the Month </h3>
@@ -64,6 +71,12 @@ const LandingpageScreen = () => {
                     </div>
                 </div>
             </div>    
+            <div className={style.eventSection}>
+                    <div>
+                        {/* <h3>Events</h3> */}
+                        <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
+                    </div>
+                </div>
 
             <div className={style.IG}>
                 <div>
@@ -71,9 +84,7 @@ const LandingpageScreen = () => {
                 </div>
             </div>
             
-            <div className={style.featuredArticle}>
-            <img className={style.articlesPic} src={articles} />
-            </div>
+            
 
     </div>
 

@@ -4,9 +4,9 @@
 }
 
 .greeting {
-    font-size: 150px;
+    font-size: 140px;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 5px 5px 10px var(--black);
@@ -69,18 +69,21 @@
     width: 350px;
 
 }
-
-.eventSection {
-    // float: left;
-    // border: solid #6d8021;
-    padding-left: 200px;
-    padding-right: 50px;
+.articlesPic {
+    width: 1250px;
+    height: 650px;
+    padding-bottom: 50px;
 }
+
+.video {
+    margin-top: -5px;
+}
+
 
 .chefOfTheMonth {
     float: left;
     // border: solid #6d8021;
-    padding-left: 50px;
+    padding-left: 550px;
     padding-right: 50px;
 }
 
@@ -91,14 +94,17 @@
     padding-right: 50px;
 }
 
-.articlesPic {
-    width: 1250px;
-    height: 650px;
+.eventSection {
+    // float: left;
+    // border: solid #6d8021;
+    padding-left: 200px;
+    padding-right: 50px;
     margin-bottom: 0;
+    
 }
 
 .event {
     width: 1250px;
     height: 650px;
-    margin-bottom: 0;
+    margin-bottom: -05px;
 }
