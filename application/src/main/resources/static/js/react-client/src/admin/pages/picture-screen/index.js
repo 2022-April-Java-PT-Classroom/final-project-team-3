@@ -147,7 +147,7 @@ const AdminPictureScreen = () =>{
                         {pictures.map(picture =>(
                             <tr key={picture.id}>
                                 <td>{picture.pictureName}</td>
-                                <td ><img src={picture.pictureUrl} width="50" title={picture.pictureUrl} /></td>
+                                <td style={{width:"120px"}}><img src={picture.pictureUrl}  title={picture.pictureUrl} className={style.img}  /></td>
                                 <td>{picture.title}</td>
                                 <td>{picture.subtitle}</td>
                                 <td className={style.fixLenght}>{picture.description}</td>

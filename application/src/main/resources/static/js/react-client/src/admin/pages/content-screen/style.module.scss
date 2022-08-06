@@ -59,3 +59,20 @@ td{
     overflow-x: scroll;
     margin:10px;
 }
+.img{
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    margin: 0 0 4px 0;
+    padding:0 0 4px 0;
+    
+    border:#ccc 3px solid;
+    cursor: pointer;
+}
+
+.img:hover{
+    width: 400px; top:50%;
+    
+    
+}
+.pictures div{ display:inline;}

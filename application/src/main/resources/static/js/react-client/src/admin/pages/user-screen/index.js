@@ -125,6 +125,25 @@ const AdminUserScreen = () => {
         }
     }
 
+    const handleApprove = (userId, firstName, lastName, status) => {
+        if(status == 0) status =1; else status=0;
+        if(window.confirm("Do you approve for " + firstName + " " + lastName + " to assign the status: " + status +"?")){
+            Axios.post(`http://localhost:8080/api/user/status/${userId}`).then((response) => {
+                console.log('Set status successful');
+                console.log('DATA', response.data);
+                setUserState(response.data);
+                document.querySelector("#resultStatus").innerHTML = "The status was changed " + response.data;
+                
+                document.querySelector(`#${userId}`).innerHTML = "status[" + status+"]";
+
+            }).catch(function (err) {
+                console.log("error status " + err.message);
+                //console.log("Incorrect email or password ");
+              });
+            window.location.reload();
+        }
+    }
+
     const [loadingUser, setLoadingUser] = useState(true),
     [users, setUsers] = useState(null);
 
@@ -173,6 +192,7 @@ const AdminUserScreen = () => {
         <div>
             
             <div className={style.user}>
+                <h3 id="resultStatus"></h3>
                 <form onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} >reset</span>
                     <input type="text" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
@@ -204,8 +224,9 @@ const AdminUserScreen = () => {
                         <tr>
                             <th>First Name</th><th>Last Name</th>
                             <th>Email</th><th>Phone</th>
-                            <th>avatar</th><th>Description</th>
-                            <th>Password</th><th>Role</th><th></th><th></th>
+                            <th>avatar</th>
+                            {/* <th>Description</th> */}
+                            <th>Password</th><th>Role</th><th></th><th></th><th></th>
                         </tr>
                         {users.map(user =>(
                             <tr key={user.id}>
@@ -213,14 +234,15 @@ const AdminUserScreen = () => {
                                 <td>{user.lastName}</td>
                                 <td>{user.email}</td>
                                 <td>{user.phone}</td>
-                                <td ><img src={user.avatar} width="50" title={user.avatar} /></td>
-                                <td className={style.fixLenght}>{user.description}</td>
+                                <td style={{width:"120px"}} ><img src={user.avatar} title={user.avatar} className={style.img}  /></td>
+                                {/* <td className={style.fixLenght}>{user.description}</td> */}
                                 <td className={style.fixLenght}>{user.password}</td>
                                 <td>
                                 {user.roles.map(role =>(
                                     <li key={role.id}>{role.roleName}</li>
                                  ))}
                                 </td>
+                                <td><button onClick={() => handleApprove(user.id, user.firstName, user.lastName, user.status)} id={user.id}>Status[{user.status}]</button></td>
                                 <td><button onClick={() => handlePreUpdate(user.id, user.firstName, 
                                 user.lastName, user.email, user.phone, user.avatar, user.description, user.password, user.roles)}>up</button></td>
                                 <td><button onClick={() => handleDelete(user.id, user.firstName, user.lastName)}>x</button></td>

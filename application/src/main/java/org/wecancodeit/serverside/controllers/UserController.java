@@ -9,9 +9,7 @@ import org.wecancodeit.serverside.repositories.RoleRepository;
 import org.wecancodeit.serverside.repositories.UserRepository;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -27,8 +25,13 @@ public class UserController {
     @GetMapping("/api/user/phone/{phone}")
     public Collection<User> getUserByPhone(@PathVariable String phone)  throws JSONException{
         Collection<User> findUsers = userRepo.findAllByPhone(phone.replace("%20", " "));
-
         return   findUsers;
+    }
+
+    @GetMapping("/api/user/email/{email}")
+    public User getOneUserByEmail(@PathVariable String email)  throws JSONException{
+        Optional<User> findOneUser = userRepo.findByEmail(email);
+        return  findOneUser.get();
     }
 
     @GetMapping("/api/user/{id}")
@@ -38,31 +41,7 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
-    public Collection<User> getAllUsers(@RequestBody String body) throws JSONException{
-        JSONObject newUser = new JSONObject(body);
-        String firstName = newUser.getString("firstName");
-        String lastName = newUser.getString("lastName");
-        String email = newUser.getString("email");
-        String phone = newUser.getString("phone");
-        String avatar = newUser.getString("avatar");
-        String description = newUser.getString("description");
-        String password = newUser.getString("password");
-
-        Optional<User> userToAddOpt = userRepo.findByEmail(email);
-        //add user if not already in the database
-        if (userToAddOpt.isEmpty()) {
-
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
-            String rolesId = newUser.getString("roleId");
-
-            //ArrayList<Role> RoleList = new ArrayList<>();
-            String[] roleS = rolesId.split(",");
-            for (String roleIdString : roleS) {
-                Long roleId = Long.parseLong(roleIdString);
-                userToAdd.addRole(roleRepo.findById(roleId).get());
-            }
-            userRepo.save(userToAdd);
-        }
+    public Collection<User> getAllUsers() {
         return(Collection<User>) userRepo.findAll();
     }
 
@@ -166,30 +145,41 @@ public class UserController {
     }
 
     @PostMapping("/api/user/login")
-    public String login(@RequestBody String body) throws JSONException{
+    public User login(@RequestBody String body) throws JSONException{
         JSONObject newUser = new JSONObject(body);
         String email = newUser.getString("email");
         String password = newUser.getString("password");
 
         Optional<User> userToCheck = userRepo.findByEmail(email);
+        User userToCheck1 = new User();
+        userToCheck1.setUserAll(userToCheck.get().getFirstName(),userToCheck.get().getLastName(), email,
+                userToCheck.get().getPhone(),userToCheck.get().getAvatar(),
+                userToCheck.get().getDescription(),"");
+        userToCheck1.setUserId(userToCheck.get().getId());
+        userToCheck1.setRoles(userToCheck.get().getRoles());
 
         //add user if not already in the database
         boolean isLogin = false;
-        if (userToCheck.get().getEmail() == email &&
-                userToCheck.get().getPassword() == password &&
-                userToCheck.get().getStatus() != 0 ) {
+        JSONObject userObj = new JSONObject();
+        if (userToCheck.get().getEmail().equals(email) && userToCheck.get().getPassword().equals(password) &&
+                userToCheck.get().getStatus() > 0 ) {
             isLogin = true;
         }
-        return isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
+
+        return isLogin==true?  userToCheck1: null; //"deCode:"+email+":deCodeXYX" : "none";
+
     }
 
     @PostMapping("/api/user/status/{id}")
-    public User setStatus(@PathVariable Long id) throws JSONException{
+    public String setStatus(@PathVariable Long id){
 
         Optional<User> findOneUser = userRepo.findById(id);
         int status = (findOneUser.get().getStatus() == 1) ? 0 : 1;
-        findOneUser.get().setStatus(status);
-        return  findOneUser.get();
+        if (findOneUser.isPresent()) {
+            findOneUser.get().setStatus(status);
+            userRepo.save(findOneUser.get());
+        }
+        return  (findOneUser.get().getStatus()>-1) ? "Successfully "+ findOneUser.get().getStatus() : "Error";
     }
 
 

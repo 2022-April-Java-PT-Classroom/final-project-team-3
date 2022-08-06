@@ -8,8 +8,7 @@ import org.wecancodeit.serverside.models.Role;
 import org.wecancodeit.serverside.repositories.RoleRepository;
 
 import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -27,6 +26,25 @@ public class RoleController {
     @GetMapping("/api/role")
     public Collection<Role> getRole(){
         return (Collection<Role>) roleRepo.findAll();
+    }
+
+    @GetMapping("/api/role/no-admin")
+    public Collection<Role> getRoleExcludeAdmin(){
+//        Map<Long, Role> newRole = new HashMap<>();
+//        for(Role role : roleRepo.findAll()){
+//            if(role.getId()!=5)
+//            newRole.put(role.getId(), role);
+//        }
+//        return newRole.values();
+//
+        Collection<Role> newRole = new ArrayList<>();
+
+        for(Role role : roleRepo.findAll()){
+            if(role.getId()!=5) {
+                newRole.add(role);
+            }
+        }
+        return newRole;
     }
 
     @PostMapping("/api/role/add-role")

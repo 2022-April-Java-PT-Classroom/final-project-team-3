@@ -35,9 +35,9 @@ const AppRouter = () => {
             <Route exact path={'/faq'} component={FaqScreen}/>
             <Route exact path={'/findfood'} component={FindFoodScreen} />
             <Route exact path={'/login'} component={LoginScreen} />
+            <Route exact path={'/signup'} component={SignupScreen} />
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
-            <Route exact path={'/signup'} component={SignupScreen} />
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 

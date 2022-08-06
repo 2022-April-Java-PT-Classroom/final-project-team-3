@@ -39,6 +39,8 @@ public class User {
     private String zipCode;
     private String zipFor;
 
+    private Long userId;
+
 
 
 
@@ -65,6 +67,10 @@ public class User {
 
     public String getPhone() {
         return phone;
+    }
+
+    public Long getUserId() {
+        return userId;
     }
 
     public String getFirstName() {
@@ -148,6 +154,18 @@ public class User {
 //        return role.get(Id);
 //    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
+
     public void setUserAll(String firstName, String lastName, String email, String phone, String avatar, String description, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -159,7 +177,7 @@ public class User {
         this.roles = new ArrayList<>(Arrays.asList());
     }
 
-    public void setUserAllPublic(String firstName, String middleName, String lastName, String email, String phone, String avatar, String description, Collection<Role> roles, int status, String country, String county, String city, String address1, String address2, String zipCode, String zipFor) {
+    public void setUserAllPublic(String firstName, String middleName, String lastName, String email, String phone, String avatar, String description, Collection<Role> roles, int status, String country, String county, String city, String address1, String address2, String zipCode, String zipFor, Long userId) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -176,5 +194,6 @@ public class User {
         this.address2 = address2;
         this.zipCode = zipCode;
         this.zipFor = zipFor;
+        this.userId = userId;
     }
 }
