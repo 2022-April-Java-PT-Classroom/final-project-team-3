@@ -9,9 +9,7 @@ import org.wecancodeit.serverside.repositories.RoleRepository;
 import org.wecancodeit.serverside.repositories.UserRepository;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -27,7 +25,6 @@ public class UserController {
     @GetMapping("/api/user/phone/{phone}")
     public Collection<User> getUserByPhone(@PathVariable String phone)  throws JSONException{
         Collection<User> findUsers = userRepo.findAllByPhone(phone.replace("%20", " "));
-
         return   findUsers;
     }
 
@@ -44,7 +41,11 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
+<<<<<<< HEAD
+    public Collection<User> getAllUsers() {
+=======
     public Collection<User> getAllUsers(){
+>>>>>>> main
         return(Collection<User>) userRepo.findAll();
     }
 
@@ -154,24 +155,39 @@ public class UserController {
         String password = newUser.getString("password");
 
         Optional<User> userToCheck = userRepo.findByEmail(email);
+        User userToCheck1 = new User();
+        userToCheck1.setUserAll(userToCheck.get().getFirstName(),userToCheck.get().getLastName(), email,
+                userToCheck.get().getPhone(),userToCheck.get().getAvatar(),
+                userToCheck.get().getDescription(),"");
+        userToCheck1.setUserId(userToCheck.get().getId());
+        userToCheck1.setRoles(userToCheck.get().getRoles());
 
         //add user if not already in the database
         boolean isLogin = false;
-        if (userToCheck.get().getEmail() == email &&
-                userToCheck.get().getPassword() == password &&
-                userToCheck.get().getStatus() != 0 ) {
+        JSONObject userObj = new JSONObject();
+        if (userToCheck.get().getEmail().equals(email) && userToCheck.get().getPassword().equals(password) &&
+                userToCheck.get().getStatus() > 0 ) {
             isLogin = true;
         }
+<<<<<<< HEAD
+
+        return isLogin==true?  userToCheck1: null; //"deCode:"+email+":deCodeXYX" : "none";
+
+=======
         return userToCheck.get(); //email +' '+ password; //isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
+>>>>>>> main
     }
 
     @PostMapping("/api/user/status/{id}")
-    public User setStatus(@PathVariable Long id) throws JSONException{
+    public String setStatus(@PathVariable Long id){
 
         Optional<User> findOneUser = userRepo.findById(id);
         int status = (findOneUser.get().getStatus() == 1) ? 0 : 1;
-        findOneUser.get().setStatus(status);
-        return  findOneUser.get();
+        if (findOneUser.isPresent()) {
+            findOneUser.get().setStatus(status);
+            userRepo.save(findOneUser.get());
+        }
+        return  (findOneUser.get().getStatus()>-1) ? "Successfully "+ findOneUser.get().getStatus() : "Error";
     }
 
 

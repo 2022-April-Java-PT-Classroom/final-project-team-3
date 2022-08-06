@@ -1,0 +1,67 @@
+.logout{
+    margin: 50px;
+    display:none;
+    cursor: pointer;
+}
+
+form {
+    display: flex ;
+    flex-direction: column;
+    width: 300px;
+
+    & input, textarea, select {
+        // background-color: lightgreen;
+        border: 2px solid #333;
+        border-radius: 8px;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    & button {
+        border-radius: 4px; 
+        cursor: pointer;
+        font-weight: 100;
+        font-size: 18px;
+        font-family: Impact;
+        
+    }
+    & button:hover{
+        border:2px dashed #c31;
+        color:rgb(20, 0, 204);
+    }
+
+    & span {
+        cursor: pointer;
+        text-align: right;
+        color: green;
+        margin-right:10px;
+        font-weight: 100;
+        font-size: 12px;
+        font-family: Impact;
+    }
+}
+
+td{ 
+    
+    background: #ccc;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+
+    & button {
+    border-radius: 4px; 
+    cursor: pointer;
+    
+    }
+    
+    & button:hover{
+    border:2px dashed #c31;
+    color:rgb(20, 0, 204);
+
+    }
+}
+.fixLenght{
+    max-width:200px;
+    overflow-x: scroll;
+    margin:10px;
+}

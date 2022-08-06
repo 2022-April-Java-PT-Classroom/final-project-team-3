@@ -11,6 +11,17 @@ import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
 
 const LandingpageScreen = () => {
+
+    
+
+    // if (/^[a-zA-Z]+$/.test("をネイティブサポート")) //if the English language 
+    //     {
+    //     alert("english");
+    //     } 
+    //     else //if the not English language
+    //     {
+    //     alert("Not English");
+    // }
  
     let currentSlide = 0;
     function moveSlide(direction) {
@@ -19,6 +30,8 @@ const LandingpageScreen = () => {
         const slides = document.querySelectorAll(".slide");
         slides.forEach(slide => slide.style.display = "none");
         slides[currentSlide].style.display = "flex";
+
+       
     }
                                            
 
