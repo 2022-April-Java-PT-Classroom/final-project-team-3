@@ -1,11 +1,17 @@
 import React, {useState} from 'react';
 
-import AddPhotoIcon from '@mui/icons-material/AddAPhoto';
 import {Avatar} from '@mui/material';
 import {Button} from '@mui/material';
 import {IconButton}from '@mui/material';
 import Post from '../post';
 import style from './style.module.scss';
+
+// import AddPhotoIcon from '@mui/icons-material/AddAPhoto';
+
+
+
+
+
 
 function Feeds() {
 const [UserPostDescrip, setUserPostDescrip ]= useState("");
@@ -33,7 +39,7 @@ const handleButtonClick=(e)=>{
             <label for="imageFile">
               <input type="file" id="imageFile" accept="image/*" hidden='true'/>
             <IconButton id='addAPhotoIc' component="span">
-            <AddPhotoIcon/>
+            {/* <AddPhotoIcon /> */}
             </IconButton>
             </label>
             <h5 className={style.actionButtonText}>Upload Photo</h5>

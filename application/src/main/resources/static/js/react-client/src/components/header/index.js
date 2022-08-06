@@ -14,7 +14,8 @@ const Header = () => {
                 <img className={style.image} src={logo} alt='Community Logo' />
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/userhome'}>UserHome</NavLink>
-                <NavLink to={'/about'}>About</NavLink>
+                <NavLink to={'/about-developers'}>Team</NavLink>
+                <NavLink to={'/about-company'}>Who We Are</NavLink>
                 <NavLink to={'/contact'}>Contact</NavLink>
                 <NavLink to={'/article'}>Article</NavLink>
                 <NavLink to={'/events'}>Events</NavLink>
