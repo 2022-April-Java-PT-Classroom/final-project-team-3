@@ -203,22 +203,26 @@ const AdminContentScreen = () => {
                     <h3>Contents</h3>
                     <table>
                         <tr>
-                            <th>contentName</th><th>title</th>
+                            <th>Name</th><th>title</th>
                             <th>subtitle</th><th>description</th>
                             <th>commentary</th><th>content</th>
                             <th>picture</th><th></th><th></th>
                         </tr>
                         {contents.map(content =>(
                             <tr key={content.id}>
+                                <td>{content.contentName}</td>
                                 <td>{content.title}</td>
                                 <td>{content.subtitle}</td>
                                 <td className={style.fixLenght}>{content.description}</td>
                                 <td className={style.fixLenght}>{content.commentary}</td>
                                 <td className={style.fixLenght}>{content. content}</td>
                                 
-                                <td>
+                                <td style={{width:"120px"}}>
                                 {content.pictures.map(picture =>(
-                                    <li key={picture.id}>{picture.pictureName} <img src={picture.pictureUrl} width="30" /></li>
+                                     <li key={picture.id}>{picture.pictureName} <img src={picture.pictureUrl} className={style.img} /></li>
+                                    // <div key={picture.id} className={style.pictures}>
+                                    //     <div >{picture.pictureName}</div><div ><img src={picture.pictureUrl} className={style.img} /></div>
+                                    // </div>
                                  ))}
                                 </td>
                                 <td><button onClick={() => handlePreUpdate(content.id, content.contentName, content.title, content.subtitle, content.description, content.commentary, content.content, content.pictures)}>up</button></td>

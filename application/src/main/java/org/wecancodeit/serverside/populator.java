@@ -52,6 +52,15 @@ public class populator implements CommandLineRunner {
         Role role6 = new Role("Volunteer","");
         roleStorage.save(role6);
 
+<<<<<<< HEAD
+        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
+        user1.setStatus(1);
+        user1.addRole(role1);
+        user1.addRole(role3);
+        user1.addRole(role5);
+        userStorage.save(user1);
+=======
+>>>>>>> main
 
 //        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
 //        user1.addRole(role1);
