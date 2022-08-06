@@ -2,7 +2,8 @@ package org.wecancodeit.serverside;
 
 
 
-import org.apache.catalina.User;
+
+import org.wecancodeit.serverside.models.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.serverside.models.Article;
@@ -52,32 +53,31 @@ public class populator implements CommandLineRunner {
         Role role6 = new Role("Volunteer","");
         roleStorage.save(role6);
 
-<<<<<<< HEAD
+
         User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
         user1.setStatus(1);
         user1.addRole(role1);
         user1.addRole(role3);
         user1.addRole(role5);
         userStorage.save(user1);
-=======
->>>>>>> main
 
-//        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
-//        user1.addRole(role1);
-//        user1.addRole(role3);
-//        user1.addRole(role5);
-//        userStorage.save(user1);
-//
-//        User user2 = new User("Victor","N","email@mail.com", "000 0000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc2","5678");
-//        user2.addRole(role1);
-//        user2.addRole(role2);
-//        user2.addRole(role5);
-//          userStorage.save(user2);
-//
-//        User user3 = new User("Paul","Franklin","paul@mail.com", "0000000000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc3","1111");
-//        user3.addRole(role1);
-//        user3.addRole(role4);
-//        userStorage.save(user3);
+
+        User user11 = new User("hakan","C","h@h.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc11","1234");
+        user11.setStatus(1);
+        user11.addRole(role1);
+        user11.addRole(role5);
+        userStorage.save(user11);
+
+        User user2 = new User("Victor","N","email@mail.com", "000 0000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc2","5678");
+        user2.addRole(role1);
+        user2.addRole(role2);
+        user2.addRole(role5);
+          userStorage.save(user2);
+
+        User user3 = new User("Paul","Franklin","paul@mail.com", "0000000000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc3","1111");
+        user3.addRole(role1);
+        user3.addRole(role4);
+        userStorage.save(user3);
 
 
         Picture pic1 = new Picture("pic1","https://i.pinimg.com/originals/4b/ef/9b/4bef9b82f301c0c53a6f2cee05452d8e.jpg",

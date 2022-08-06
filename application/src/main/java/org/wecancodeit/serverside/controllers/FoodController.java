@@ -5,7 +5,6 @@ import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.models.Food;
 import org.wecancodeit.serverside.models.FoodType;
-import org.wecancodeit.serverside.models.User;
 import org.wecancodeit.serverside.repositories.FoodRepository;
 import org.wecancodeit.serverside.repositories.FoodTypeRepository;
 

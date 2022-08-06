@@ -3,7 +3,6 @@ package org.wecancodeit.serverside.controllers;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.serverside.models.Role;
 import org.wecancodeit.serverside.models.User;
 import org.wecancodeit.serverside.repositories.RoleRepository;
 import org.wecancodeit.serverside.repositories.UserRepository;
@@ -41,11 +40,8 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
-<<<<<<< HEAD
-    public Collection<User> getAllUsers() {
-=======
+
     public Collection<User> getAllUsers(){
->>>>>>> main
         return(Collection<User>) userRepo.findAll();
     }
 
@@ -169,13 +165,10 @@ public class UserController {
                 userToCheck.get().getStatus() > 0 ) {
             isLogin = true;
         }
-<<<<<<< HEAD
 
         return isLogin==true?  userToCheck1: null; //"deCode:"+email+":deCodeXYX" : "none";
 
-=======
-        return userToCheck.get(); //email +' '+ password; //isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
->>>>>>> main
+
     }
 
     @PostMapping("/api/user/status/{id}")
