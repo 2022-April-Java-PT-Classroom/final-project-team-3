@@ -1,10 +1,9 @@
-
 package org.wecancodeit.serverside.models;
 
 import javax.persistence.*;
-import java.io.Console;
-import java.util.*;
-import java.util.logging.ConsoleHandler;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
 public class User {
@@ -41,19 +40,17 @@ public class User {
 
     private Long userId;
 
+    public User() {
+    }
 
-
-
-    public User(){}
-
-    public User(String firstName, String lastName, String email, String phone, String avatar, String description, String password) {
+    public User(String firstName, String lastName, String email, String phone, String avatar, String password, String description) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.avatar = avatar;
-        this.description = description;
         this.password = password;
+        this.description = description;
         this.roles = new ArrayList<>(Arrays.asList());
     }
 

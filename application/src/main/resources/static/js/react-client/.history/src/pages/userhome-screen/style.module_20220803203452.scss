@@ -1,0 +1,67 @@
+
+.MainProfileDiv{
+    height: 100vh;
+    width: 100vw;
+    background: #6D8021;
+    overflow-x: hidden;
+    .profileContainer{
+        width: 90%;
+        height: 90vh;
+        background: white;
+        margin: auto;
+    }
+    .topPortion{
+        height: 25%;
+        width: 100%;
+        position: relative;
+    }
+    .userProfileBgImage{
+        height: 80%;
+        width: 100%;
+        background: #6D8021;
+        overflow: hide;
+        .prfBgImg{
+            height: 50vh;
+            width: 75vw;
+            margin-top: -12rem;
+        }
+    }
+    .userProfileImage{
+        position: absolute;
+        height: 60%;
+        width: 15%;
+        border-radius: 50%;
+        transform: translateX(50%);
+        right: 50%;
+        background-color:  #e9ebe1;
+        bottom: 2rem;
+        .prfImg{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    .userNam{
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: -4.5rem;
+        font-size: 2rem;
+        color: black;
+    }
+    .bottomPortion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 100vh;
+        width: 100vw;
+    }
+    .rightSide{
+        
+    }
+}
+
+
+
