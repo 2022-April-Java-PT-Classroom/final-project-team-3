@@ -1,0 +1,40 @@
+
+.MainProfileDiv{
+    height: 100vh;
+    width: 100vw;
+    background: #6D8021;
+    overflow-x: hidden;
+    .profileContainer{
+        width: 90%;
+        height: 90vh;
+        background: white;
+        margin: auto;
+    }
+    .topPortion{
+        height: 25%;
+        width: 100%;
+        position: relative;
+    }
+    .userProfileBgImage{
+        height: 80%;
+        width: 100%;
+        background: #6D8021;
+        overflow: hide;
+        .prfBgImg{
+            height: 5rem;
+            width: 30rem;
+            margi
+        }
+    }
+    .userProfileImage{
+        position: absolute;
+        height: 60%;
+        width: 15%;
+        border-radius: 50%;
+        transform: translateX(50%);
+        right: 50%;
+        background-color:  #e9ebe1;
+        bottom: 2rem;
+    }
+}
+

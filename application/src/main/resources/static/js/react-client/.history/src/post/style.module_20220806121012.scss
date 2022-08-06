@@ -1,0 +1,55 @@
+.mainPostContainer{
+    height: 100%;
+    width: 95%;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1rem 0.5rem lightgray;
+    border-radius: 0.5rem;
+    .headPosition{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        .userInfoPortion{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 1rem;
+            .userInfoDetail{
+                margin-left: 1rem;
+                .userName{
+                    font-size: 1rem;
+                    font-weight: bold;
+                    text-align: left;
+                }
+                .postCreationDate{
+                    font-size: 0.8rem;
+                }
+            }
+
+        }
+        .postDescripPortion{
+            font-size: 0.9rem;
+        }
+    }
+    .bodyPosition{
+        height: 100%;
+        width: 100%;
+    }
+    // .hrPost{
+    //     background-color: lightgray;
+    //     height: 1rem;
+    //     border: none;
+    //     width: 98%;
+    //     margin: auto;
+    //     margin-top: 0.5rem;
+    // }
+    .footerPortion{
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem;
+        .comment{
+            
+        }
+    }
+}

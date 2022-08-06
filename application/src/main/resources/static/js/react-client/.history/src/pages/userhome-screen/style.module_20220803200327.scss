@@ -1,0 +1,34 @@
+$main-color:#6D8021;
+$secondry-color:#dae4b5;
+.MainProfileDiv{
+    height: 100vh;
+    width: 100vw;
+    background: light gray;
+    overflow-x: hidden;
+    .profileContainer{
+        width: 90%;
+        height: 90vh;
+        background: #a6b474;
+        margin: auto;
+    }
+    .topPortion{
+        height: 25%;
+        width: 100%;
+        position: relative;
+    }
+    .UserProfileBgImage{
+        height: 80%;
+        width: 100%;
+        background: #6D8021;
+    }
+    .userProfileImage{
+        position: absolute;
+        height: %;
+        width: 35%;
+        border-radius: 50%;
+        transform: translateX(50%);
+        right: 50%;
+        background-color:  #6D8021;
+    }
+}
+
