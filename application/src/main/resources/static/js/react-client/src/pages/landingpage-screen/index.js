@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
-import cof from '../../assets/landingpageimgs/cof.jpg';
+import cof from '../../assets/landingpageimgs/chefOfTheMonth.png';
+import communityVideo from '../../assets/landingpageimgs/CommunityVideo.mp4';
+import event from '../../assets/landingpageimgs/FoodPresentation.jpg';
 import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
 import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
@@ -10,16 +12,6 @@ import style from './style.module.scss';
 
 const LandingpageScreen = () => {
 
-    
-
-    // if (/^[a-zA-Z]+$/.test("をネイティブサポート")) //if the English language 
-    //     {
-    //     alert("english");
-    //     } 
-    //     else //if the not English language
-    //     {
-    //     alert("Not English");
-    // }
  
     let currentSlide = 0;
     function moveSlide(direction) {
@@ -44,17 +36,25 @@ const LandingpageScreen = () => {
                 </div>
             </section>
         </div>
-        
-        <div className={style.middle}>    
-                <div className={style.eventSection}>
-                    <div>
-                        <h3>Events</h3>
-                        <a href="/events"><img className={style.chef} src={cof} alt="Chef of the Month" /></a>
-                    </div>
+        <div>
+            <section>
+                <video src={communityVideo} width="1500" height="800" controls="controls" autoPlay="true" className={style.video} />
+            </section>
+        </div>
+
+        <div>
+            <section>
+                <div className="Reviews">
+                    
                 </div>
+            </section>
+        </div>
+        
+        <div className={style.middle}>             
+                
                     
                 <div className={style.chefOfTheMonth}>
-                    <h3>Chef of the Month </h3>
+                    {/* <h3>Chef of the Month </h3> */}
                     <img className={style.chef} src={cof} alt="Chef of the Month" />
                 </div>
                     
@@ -68,6 +68,17 @@ const LandingpageScreen = () => {
                     </div>
                 </div>
             </div>    
+            
+            <div className={style.featuredArticle}>
+                    <img className={style.articlesPic} src={articles} />
+                </div>    
+                
+            <div className={style.eventSection}>
+                    <div>
+                        {/* <h3>Events</h3> */}
+                        <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
+                    </div>
+                </div>
 
             <div className={style.IG}>
                 <div>
@@ -75,9 +86,7 @@ const LandingpageScreen = () => {
                 </div>
             </div>
             
-            <div className={style.featuredArticle}>
-            <img className={style.articlesPic} src={articles} />
-            </div>
+            
 
     </div>
 
