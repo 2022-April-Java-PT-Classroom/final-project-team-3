@@ -66,11 +66,11 @@ const SignUp = () => {
             password: xpassword.value,
             roleId: xroleIds
         }; 
-        
+       
         
         //alert(xroleIds);
         //if(xup.value=="0" && xuserId.value=="0"){  
-            Axios.post('http://localhost:8080/api/user/signup', userData).then((response) => {
+            Axios.post('http://localhost:8080/api/user/signup', userData).then((response) => { 
                 console.log(response.status);
                 console.log('DATA', response.data);
                 setUserState(response.data);
