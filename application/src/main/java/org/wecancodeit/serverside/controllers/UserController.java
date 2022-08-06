@@ -41,7 +41,11 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
+<<<<<<< HEAD
     public Collection<User> getAllUsers() {
+=======
+    public Collection<User> getAllUsers(){
+>>>>>>> main
         return(Collection<User>) userRepo.findAll();
     }
 
@@ -165,9 +169,13 @@ public class UserController {
                 userToCheck.get().getStatus() > 0 ) {
             isLogin = true;
         }
+<<<<<<< HEAD
 
         return isLogin==true?  userToCheck1: null; //"deCode:"+email+":deCodeXYX" : "none";
 
+=======
+        return userToCheck.get(); //email +' '+ password; //isLogin==true? "deCode:"+email+":deCodeXYX" : "none";
+>>>>>>> main
     }
 
     @PostMapping("/api/user/status/{id}")
@@ -181,6 +189,12 @@ public class UserController {
         }
         return  (findOneUser.get().getStatus()>-1) ? "Successfully "+ findOneUser.get().getStatus() : "Error";
     }
+
+
+
+
+
+
 
 
 }

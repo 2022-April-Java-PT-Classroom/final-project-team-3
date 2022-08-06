@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.io.Console;
 import java.util.*;
 import java.util.logging.ConsoleHandler;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
 
 @Entity
 public class User {

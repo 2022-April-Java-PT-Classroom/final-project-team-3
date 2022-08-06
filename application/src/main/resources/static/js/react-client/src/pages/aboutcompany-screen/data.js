@@ -1,15 +1,14 @@
-import React from 'react';
 import Accordion from './accordionValue';
+import React from 'react';
+import mission from '../../assets/aboutimages/smile.jpg';
+import mission2 from '../../assets/aboutimages/comunity2.jpg';
+import mission3 from '../../assets/aboutimages/comunity3.jpg';
+import style from './style.module.scss'
 import topImage from '../../assets/aboutimages/image1.jpg';
 import topImage2 from '../../assets/aboutimages/image2.jpg';
 import topImage3 from '../../assets/aboutimages/donate.jpg';
 import topImage4 from '../../assets/aboutimages/freefood.jpg';
 import topImage5 from '../../assets/aboutimages/volunteer.jpg';
-import mission from '../../assets/aboutimages/smile.jpg';
-import mission2 from '../../assets/aboutimages/comunity2.jpg';
-import mission3 from '../../assets/aboutimages/comunity3.jpg';
-import style from './style.module.scss'
-
 
 const AboutCompany = () => {
   const accordionData = [
