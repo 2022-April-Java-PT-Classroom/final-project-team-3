@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import "@reach/combobox/styles.css";
 
 import {
@@ -212,4 +210,3 @@ function Search({ panTo }) {
         </div>
       );
     }
->>>>>>> main

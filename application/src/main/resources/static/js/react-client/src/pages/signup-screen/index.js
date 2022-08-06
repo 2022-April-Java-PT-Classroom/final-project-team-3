@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Axios from 'axios'; 
-import style from './style.module.scss';
 
+import Axios from 'axios';
+import style from './style.module.scss';
 
 const SignUp = () => {
     
@@ -46,7 +46,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        var z =""; var i=0;
+        var z =""; var i=0; alert(1);
         for (const o of xroleId.options) {
         if (o.selected == true) 
         {
