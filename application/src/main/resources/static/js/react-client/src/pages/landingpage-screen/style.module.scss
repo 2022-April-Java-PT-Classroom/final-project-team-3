@@ -3,6 +3,10 @@
     margin-bottom: 0;
 }
 
+.callToAction {
+    padding-top: 20px;
+}
+
 .greeting {
     font-size: 140px;
     position: absolute;
@@ -93,6 +97,11 @@
     // border: solid #6d8021;
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.featuredArticle {
+    padding-right: 50px;
+    margin-bottom: -50px;
 }
 
 .eventSection {

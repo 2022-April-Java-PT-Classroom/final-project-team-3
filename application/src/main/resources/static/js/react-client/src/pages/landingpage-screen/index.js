@@ -50,13 +50,7 @@ const LandingpageScreen = () => {
             </section>
         </div>
         
-        <div className={style.middle}>
-
-                <div className={style.featuredArticle}>
-                    <img className={style.articlesPic} src={articles} />
-                </div>    
-                
-                
+        <div className={style.middle}>             
                 
                     
                 <div className={style.chefOfTheMonth}>
@@ -74,6 +68,11 @@ const LandingpageScreen = () => {
                     </div>
                 </div>
             </div>    
+            
+            <div className={style.featuredArticle}>
+                    <img className={style.articlesPic} src={articles} />
+                </div>    
+                
             <div className={style.eventSection}>
                     <div>
                         {/* <h3>Events</h3> */}
