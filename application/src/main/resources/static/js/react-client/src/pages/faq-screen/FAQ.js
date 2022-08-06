@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import style from './style.module.scss';
 
 const FAQ = ({faq, index, toggleFaq}) => {
@@ -18,4 +18,4 @@ const FAQ = ({faq, index, toggleFaq}) => {
   )
 }
 
-export default FAQ;
+export default FAQ

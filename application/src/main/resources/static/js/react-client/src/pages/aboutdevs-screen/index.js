@@ -1,11 +1,11 @@
 import React from "react";
-import picFarida from '../../assets/teampics/farida.jpg';
-import picGian from '../../assets/teampics/gian.jpg';
-import picHailey from '../../assets/teampics/hailey.jpg';
-import picHakan from '../../assets/teampics/hakan.jpg';
-import picLouis from '../../assets/teampics/louis.jpg';
-import picVictor from '../../assets/teampics/victor.jpg';
-import style from './style.module.scss';
+import picFarida from '../../assets/teampics/farida.jpg'
+import picGian from '../../assets/teampics/gian.jpg'
+import picHailey from '../../assets/teampics/hailey.jpg'
+import picHakan from '../../assets/teampics/hakan.jpg'
+import picLouis from '../../assets/teampics/louis.jpg'
+import picVictor from '../../assets/teampics/victor.jpg'
+import style from './style.module.scss'
 
 const AboutDevs =() => {
 
