@@ -9,11 +9,11 @@ const FaqPage = () => {
         {
             question: 'How does the Community help people in need?',
             answer: 'We at the Community help people in need by helping find food in your local area.',
-            open: false
+            open: true
         },
         {
-            question: 'How does the Community help people in need?',
-            answer: 'We at the Community help people in need by helping find food in your local area.',
+            question: 'How can i find food in my area?',
+            answer: 'To find food in your area navagate to the find food section and type your location there you will see on the map were food is available locally.',
             open: false
 
         },
