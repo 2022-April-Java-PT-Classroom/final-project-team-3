@@ -18,47 +18,23 @@
 }
 
 
-// .slide {
-//     position: absolute;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+.slideShowPic {
+    width: cover !important;
+    height: 1266px !important;
+    border: none !important;
+}
 
-// .imgslide {
-//     height: 200px;
-//     width: 200px;
-// }
+.instructionchef {
+    width: 1920px !important;
+    height: 1266px !important;
+    border: none !important;
+}
 
-// .slideShowPic {
-//     width: cover !important;
-//     height: 1266px !important;
-//     border: none !important;
-// }
-
-// .text {
-//     position: absolute;
-//     color: rgb(0, 0, 0);
-// }
-
-// .prev, .next {
-//     color: black;
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-// }
-
-// .next {
-//     right: 0;
-// }
-
-// .slide {
-//     display: none;
-// }
-
-// .slide:nth-child(1) {
-//     display: flex;
-// }
+.instructionguest {
+    width: 1920px !important;
+    height: 1266px !important;
+    border: none !important;
+}
 
 .middle {
     width: 100%;
@@ -115,3 +91,39 @@
     height: 650px;
     margin-bottom: -05px;
 }
+
+// .slide {
+//     position: absolute;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .imgslide {
+//     height: 200px;
+//     width: 200px;
+// }
+
+// .text {
+//     position: absolute;
+//     color: rgb(0, 0, 0);
+// }
+
+// .prev, .next {
+//     color: black;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .next {
+//     right: 0;
+// }
+
+// .slide {
+//     display: none;
+// }
+
+// .slide:nth-child(1) {
+//     display: flex;
+// }
