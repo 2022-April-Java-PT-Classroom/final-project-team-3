@@ -1,4 +1,3 @@
-import { Label } from '@material-ui/icons';
 import React from 'react';
 import emailicon from '../../assets/footerimgs/EmailIcon.png';
 import helpicon from '../../assets/footerimgs/HelpIcon.png';
@@ -24,8 +23,8 @@ const Footer = () => {
     }
 
     return (
-        <div className={style.footer_wrapper}>
-            <div className={style.footer}>
+        <div className={style.footer}>
+            <div className={style.firstContainter}>
                 <ul className={style.contacticons}>
                     <li><a href="mailto:communitywcci@gmail.com?body="><img className={style.contacticons} src={emailicon} alt="Email Icon" />Email us</a></li>
                     <br></br>
@@ -35,8 +34,14 @@ const Footer = () => {
                 </ul>
             </div>
             
-            <div>
+            <div className={style.secondContainer}>
             <small className={style.small}> &copy; wcci 2022</small>
+            </div>
+            
+            <div className={style.thirdContainer}>
+                <div>
+                    <p>third</p>
+                </div>
             </div>
         </div>
     )
