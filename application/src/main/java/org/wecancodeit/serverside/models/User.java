@@ -163,7 +163,7 @@ public class User {
         this.roles = roles;
     }
 
-    public void setUserAll(String firstName, String lastName, String email, String phone, String avatar, String description, String password) {
+    public void setUserAll(String firstName, String lastName, String email, String phone, String avatar, String password, String description) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
