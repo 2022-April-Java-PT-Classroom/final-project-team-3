@@ -59,7 +59,7 @@ public class UserController {
         Optional<User> userSelectedOpt = userRepo.findById(id);
 
         if (userSelectedOpt.isPresent()) {
-            userSelectedOpt.get().setUserAll(firstName, lastName, email, phone, avatar, description, password);
+            userSelectedOpt.get().setUserAll(firstName, lastName, email, phone, avatar, password, description);
 
             String rolesId = newUser.getString("roleId");
             String[] roleS = rolesId.split(",");
@@ -98,7 +98,7 @@ public class UserController {
         //add user if not already in the database
         if (userToAddOpt.isEmpty()) {
 
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
+            User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
             String rolesId = newUser.getString("roleId");
 
             //ArrayList<Role> RoleList = new ArrayList<>();
@@ -130,7 +130,7 @@ public class UserController {
         //add user if not already in the database
         if (userToAddOpt.isEmpty()) {
 
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
+            User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
             String rolesId = newUser.getString("roleId");
 
             //ArrayList<Role> RoleList = new ArrayList<>();
