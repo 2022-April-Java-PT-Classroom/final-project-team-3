@@ -8,10 +8,21 @@
 
 .firstContainer {
     float: left;
+ 
+
+    & a {
+        color: black;
+        
+    }
+}
+.link {
+    padding-right: 20px;
+    color: black;
 }
 
 .secondContainter {
     float: left;
+    padding-top: 20px;
 }
 
 .thirdContainter {
@@ -26,6 +37,5 @@
 }
 
 .small {
-    // padding-top: 20px;
-    
+    padding-top: 20px;
 }

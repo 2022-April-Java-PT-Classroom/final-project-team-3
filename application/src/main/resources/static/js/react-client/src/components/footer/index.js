@@ -25,24 +25,17 @@ const Footer = () => {
     return (
         <div className={style.footer}>
             <div className={style.firstContainter}>
-                <ul className={style.contacticons}>
-                    <li><a href="mailto:communitywcci@gmail.com?body="><img className={style.contacticons} src={emailicon} alt="Email Icon" />Email us</a></li>
-                    <br></br>
-                    <li><a href="mailto:communitywcci@gmail.com?body="><img className={style.contacticons} src={helpicon} alt="Help Icon" />Contact Us</a></li>
-                    <br></br>
-                    <li><a href="mailto:communitywcci@gmail.com?body="><img className={style.contacticons} src={twittericon} alt="Twitter Icon" />Twitter</a></li>
-                </ul>
+                    <a href="mailto:communitywcci@gmail.com?body=" className={style.link}><img className={style.contacticons} src={emailicon} alt="Email Icon" />Email us</a>
+                    
+                    <a href='{#contact}' className={style.link}><img className={style.contacticons} src={helpicon} alt="Help Icon" />Contact Us</a>
+                    
+                    <a href="https://twitter.com/CommunityWcci" className={style.link}><img className={style.contacticons} src={twittericon} alt="Twitter Icon" />Twitter</a>
             </div>
             
             <div className={style.secondContainer}>
             <small className={style.small}> &copy; wcci 2022</small>
             </div>
             
-            <div className={style.thirdContainer}>
-                <div>
-                    <p>third</p>
-                </div>
-            </div>
         </div>
     )
 }
