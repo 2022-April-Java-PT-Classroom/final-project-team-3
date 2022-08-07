@@ -198,7 +198,7 @@ useEffect(() => {
                 </form>
 
                 <div> 
-            {/* { loadingFood ? <h3>Loading ...</h3> :
+            { loadingFood ? <h3>Loading ...</h3> :
                 <>
                     <h3>All your posted food</h3>
                     <table>
@@ -226,7 +226,7 @@ useEffect(() => {
                     </table>
                     
                 </>   
-             } */}
+             }
             </div>
         
 

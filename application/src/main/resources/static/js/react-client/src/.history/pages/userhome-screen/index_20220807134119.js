@@ -18,7 +18,7 @@ function UserScreen() {
           <Avatar className={style.userProfileIcon} src=''></Avatar>
         {/* <img className={style.prfImg} src='' alt='' srcSet=''/> */}
         </div>
-        <div className={style.userNam} id="userNameHP">
+        <div className={style.userNam}>
             Username
         </div>
       </div>

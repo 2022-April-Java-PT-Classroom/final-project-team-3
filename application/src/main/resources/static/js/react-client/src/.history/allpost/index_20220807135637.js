@@ -172,33 +172,9 @@ useEffect(() => {
   return (
     <div className={style.mainPostContainer}>
       <h3 id="resultPostFood"></h3>
-      <form onSubmit={handleSubmit}> 
-                    <span id = "reset" onClick={() => handleReset()} >reset</span>
-                    <input type="text" id ="foodName" name = "foodName"  placeholder="Enter food name (required)" required/>
-                    <textarea type="text" id ="foodDescription" name = "foodDescripion"  placeholder="Enter food description (required)" required/>
-                    <input type="number" id ="cookingTime" name = "cookingTime"  placeholder="Enter your estimate cooking time (required)" required/>
-                    <input type="number" id ="estimatedCost" name = "estimatedCost"  placeholder="Enter your estimate cost "/>
-                    <input type="date" id ="postedDate" name = "postedDate"  placeholder="Enter the date (required)" required/>
-                    <input type="number" id ="expirationTime" name = "expirationTime"  placeholder="Enter experation time (in hour) (required )" required/>
-                    <input type="text" id ="picture" name = "picture"  placeholder="Enter picture url" />
-                    
-                    <input type="hidden" id ="chiefId" name = "chiefId"  value={chiefId} />
-                  
-                    { loadingFoodType ? <h3>Loading ...</h3> :
-                        <select id="foodTypeId" name="foodTypeId" required>
-                            <option  disabled>Please Select (required)</option>
-                        {foodTypes.map(foodType =>(
-                            <option key={foodType.id} value={foodType.id}>{foodType.name}</option>
-                        ))}
-                        </select>
-                    }
-                    <input type="hidden" id ="up" name = "up"  value="0" />
-                    <input type="hidden" id ="foodId" name = "foodId"  value="0" />
-                    <button type = "submit" id = "foodSubmit">Post food</button>
-                </form>
-
+      
                 <div> 
-            {/* { loadingFood ? <h3>Loading ...</h3> :
+            { loadingFood ? <h3>Loading ...</h3> :
                 <>
                     <h3>All your posted food</h3>
                     <table>
@@ -226,7 +202,7 @@ useEffect(() => {
                     </table>
                     
                 </>   
-             } */}
+             }
             </div>
         
 

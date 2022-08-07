@@ -4,7 +4,7 @@ import React from 'react';
 import UserInfo from '../../userinfo';
 import prfBg from '../../assets/profile-screen/prfBackground.jpg';
 import style from './style.module.scss';
-
+import Feeds from '../../feeds';
 function UserScreen() {
   return (
 
@@ -18,7 +18,7 @@ function UserScreen() {
           <Avatar className={style.userProfileIcon} src=''></Avatar>
         {/* <img className={style.prfImg} src='' alt='' srcSet=''/> */}
         </div>
-        <div className={style.userNam} id="userNameHP">
+        <div className={style.userNam}>
             Username
         </div>
       </div>

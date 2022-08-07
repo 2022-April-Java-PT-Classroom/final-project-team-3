@@ -172,7 +172,7 @@ useEffect(() => {
   return (
     <div className={style.mainPostContainer}>
       <h3 id="resultPostFood"></h3>
-      <form onSubmit={handleSubmit}> 
+      {/* <form onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} >reset</span>
                     <input type="text" id ="foodName" name = "foodName"  placeholder="Enter food name (required)" required/>
                     <textarea type="text" id ="foodDescription" name = "foodDescripion"  placeholder="Enter food description (required)" required/>
@@ -195,10 +195,10 @@ useEffect(() => {
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="foodId" name = "foodId"  value="0" />
                     <button type = "submit" id = "foodSubmit">Post food</button>
-                </form>
+                </form> */}
 
                 <div> 
-            {/* { loadingFood ? <h3>Loading ...</h3> :
+            { loadingFood ? <h3>Loading ...</h3> :
                 <>
                     <h3>All your posted food</h3>
                     <table>
@@ -226,7 +226,7 @@ useEffect(() => {
                     </table>
                     
                 </>   
-             } */}
+             }
             </div>
         
 

@@ -15,7 +15,7 @@ const Footer = () => {
             xaccount.style.fontSize = "12px";
             xaccount.style.fontWeight = "600";
             xaccount.textContent = "Hi, "+resObj.firstName; 
-            document.querySelector("#userNameHP").textContent = resObj.firstName;
+            docunemt.qu
             
         }
         const timer = setTimeout(() =>{lance();},20);

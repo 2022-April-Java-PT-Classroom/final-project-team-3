@@ -221,14 +221,31 @@ useEffect(() => {
                           <td><button onClick={() => handleDelete(food.id, food.foodName)}>x</button></td>
                         </tr>
                         ))
-                        }
+                        } 
+                        */}
                       </tbody>
                     </table>
                     
                 </>   
-             } */}
+             }
             </div>
-        
+        <div className={style.headPosition}>
+            <div className={style.userInfoPortion}>
+                <div className={style.userAvatar}><Avatar src=""></Avatar></div>
+                <div className={style.userInfoDetail}>
+                    <div className={style.userName}>User Name</div>
+                    <div className={style.postCreationDate}> # days ago</div>
+                </div>
+            </div>
+            <div className={style.postDescripPortion}></div>
+        </div>
+        <div className={style.bodyPosition}>
+          {/* <img src='' alt=''></img> */}
+        </div>
+        <hr className={style.hrPost}/>
+        <div className={style.footerPosition}>
+          <div className={style.comment}>Comments</div>
+        </div>
 
     </div>
   );

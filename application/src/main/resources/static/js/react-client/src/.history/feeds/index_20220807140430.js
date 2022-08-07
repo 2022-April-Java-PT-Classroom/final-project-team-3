@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import AllPost from '../allpost';
+import All from '../../allpost';
 import {Avatar} from '@mui/material';
 import {Button} from '@mui/material';
 import {IconButton}from '@mui/material';
@@ -50,7 +50,7 @@ const handleButtonClick=(e)=>{
        </div> 
        <div className={style.bottomContainer}>
         <h3 className={style.usersPost}>User Posts</h3>
-        <AllPost/>
+        
         <div className={style.headPosition}>
             <div className={style.userInfoPortion}>
                 <div className={style.userAvatar}><Avatar src=""></Avatar></div>

@@ -172,7 +172,7 @@ useEffect(() => {
   return (
     <div className={style.mainPostContainer}>
       <h3 id="resultPostFood"></h3>
-      <form onSubmit={handleSubmit}> 
+      {/* <form onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} >reset</span>
                     <input type="text" id ="foodName" name = "foodName"  placeholder="Enter food name (required)" required/>
                     <textarea type="text" id ="foodDescription" name = "foodDescripion"  placeholder="Enter food description (required)" required/>
@@ -195,7 +195,7 @@ useEffect(() => {
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="foodId" name = "foodId"  value="0" />
                     <button type = "submit" id = "foodSubmit">Post food</button>
-                </form>
+                </form> */}
 
                 <div> 
             {/* { loadingFood ? <h3>Loading ...</h3> :
@@ -228,7 +228,23 @@ useEffect(() => {
                 </>   
              } */}
             </div>
-        
+        <div className={style.headPosition}>
+            <div className={style.userInfoPortion}>
+                <div className={style.userAvatar}><Avatar src=""></Avatar></div>
+                <div className={style.userInfoDetail}>
+                    <div className={style.userName}>User Name</div>
+                    <div className={style.postCreationDate}> # days ago</div>
+                </div>
+            </div>
+            <div className={style.postDescripPortion}></div>
+        </div>
+        <div className={style.bodyPosition}>
+          {/* <img src='' alt=''></img> */}
+        </div>
+        <hr className={style.hrPost}/>
+        <div className={style.footerPosition}>
+          <div className={style.comment}>Comments</div>
+        </div>
 
     </div>
   );
