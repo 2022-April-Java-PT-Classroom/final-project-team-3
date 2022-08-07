@@ -46,8 +46,9 @@ public class FoodController {
         String postedDate = newFood.getString("postedDate");
         int expirationTime = newFood.getInt("expirationTime");
         Long chiefId = newFood.getLong("chiefId");
+        String picture = newFood.getString("picture");
 
-        Food foodToAdd = new Food(chiefId, foodType.get(), foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime);
+        Food foodToAdd = new Food(chiefId, foodType.get(), foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime, picture);
         foodRepo.save(foodToAdd);
 
         return (Collection<Food>) foodRepo.findAll();
@@ -66,13 +67,39 @@ public class FoodController {
         String postedDate = newFood.getString("postedDate");
         int expirationTime = newFood.getInt("expirationTime");
         Long chiefId = newFood.getLong("chiefId");
+        String picture = newFood.getString("picture");
 
         //Optional<Food> foodSelectedOpt = foodRepo.findById(id);
 
-        Food foodToAdd= new Food(chiefId, foodType.get(), foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime);
+        Food foodToAdd= new Food(chiefId, foodType.get(), foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime, picture);
         foodRepo.save(foodToAdd);
 
         return foodToAdd!=null ? "Successfully" : "Error";
+    }
+
+    @PutMapping ("/api/food/{id}/update-food")
+    public String UpdateFood(@PathVariable Long id, @RequestBody String body) throws JSONException {
+        JSONObject newFood = new JSONObject(body);
+        Long  foodTypeId = newFood.getLong("foodTypeId");
+        Optional<FoodType> foodType = foodTypeRepo.findById(foodTypeId);
+
+        String foodName = newFood.getString("foodName");
+        String foodDescription = newFood.getString("foodDescription");
+        int cookingTime = newFood.getInt("cookingTime");
+        double estimatedCost = newFood.getDouble("estimatedCost");
+        String postedDate = newFood.getString("postedDate");
+        int expirationTime = newFood.getInt("expirationTime");
+        Long chiefId = newFood.getLong("chiefId");
+        String picture = newFood.getString("picture");
+
+        Optional<Food> foodSelectedOpt = foodRepo.findById(id);
+
+        if (foodSelectedOpt.isPresent()) {
+            foodSelectedOpt.get().setFoodChief(chiefId, foodType.get(), foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime, picture);
+            foodRepo.save(foodSelectedOpt.get());
+        }
+
+        return foodSelectedOpt!=null ? "Successfully" : "Error";
     }
 
     //guestId, orderedDate

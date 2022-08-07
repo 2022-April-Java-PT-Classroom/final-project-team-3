@@ -3,13 +3,9 @@ package org.wecancodeit.serverside;
 
 
 
-import org.wecancodeit.serverside.models.User;
+import org.wecancodeit.serverside.models.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.serverside.models.Article;
-import org.wecancodeit.serverside.models.Content;
-import org.wecancodeit.serverside.models.Picture;
-import org.wecancodeit.serverside.models.Role;
 import org.wecancodeit.serverside.models.Article;
 import org.wecancodeit.serverside.repositories.*;
 
@@ -38,13 +34,16 @@ public class populator implements CommandLineRunner {
     @Resource
     private ArticleRepository articleRepository;
 
+    @Resource
+    private FoodTypeRepository foodTypeStorage;
+
     @Override
     public void run(String... args) throws Exception {
         Role role1 = new Role("User","rien");
         roleStorage.save(role1);
         Role role2 = new Role("Donor","");
         roleStorage.save(role2);
-        Role role3 = new Role("Chief","");
+        Role role3 = new Role("Chef","");
         roleStorage.save(role3);
         Role role4 = new Role("Guest","");
         roleStorage.save(role4);
@@ -54,7 +53,7 @@ public class populator implements CommandLineRunner {
         roleStorage.save(role6);
 
 
-        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc1","1234");
+        User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1234","desc1");
         user1.setStatus(1);
         user1.addRole(role1);
         user1.addRole(role3);
@@ -62,19 +61,19 @@ public class populator implements CommandLineRunner {
         userStorage.save(user1);
 
 
-        User user11 = new User("hakan","C","h@h.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc11","1234");
+        User user11 = new User("hakan","C","h@h.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1234","Desc11");
         user11.setStatus(1);
         user11.addRole(role1);
         user11.addRole(role5);
         userStorage.save(user11);
 
-        User user2 = new User("Victor","N","email@mail.com", "000 0000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc2","5678");
+        User user2 = new User("Victor","N","email@mail.com", "000 0000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","5678","Desc2");
         user2.addRole(role1);
         user2.addRole(role2);
         user2.addRole(role5);
           userStorage.save(user2);
 
-        User user3 = new User("Paul","Franklin","paul@mail.com", "0000000000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","Desc3","1111");
+        User user3 = new User("Paul","Franklin","paul@mail.com", "0000000000", "https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1111","Desc3");
         user3.addRole(role1);
         user3.addRole(role4);
         userStorage.save(user3);
@@ -91,6 +90,10 @@ public class populator implements CommandLineRunner {
         Picture pic3 = new Picture("pic3","https://th.bing.com/th/id/R.c0d7a88313d98441e635dd76cb26101c?rik=gWgqfD2orYholg&pid=ImgRaw&r=0",
                 "photo3","","","");
         pictureStorage.save(pic3);
+
+        Picture louis = new Picture("louis","http://localhost:3000/static/media/louis.084b7ff8e9d53f50a112.jpg",
+                "photo3","https://www.linkedin.com/in/louis-tchamda-9589bb74/","","");
+        pictureStorage.save(louis);
 
         Content cont1 = new Content("Content Name1","title1","subtitle1","description","commentary","content");
         cont1.addPicture(pic1);
@@ -112,6 +115,15 @@ public class populator implements CommandLineRunner {
         articleRepository.save(test);
         Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger.",Instant.now());
         articleRepository.save(test1);
+
+        FoodType foodType1 = new FoodType("Breakfast", "");
+        foodTypeStorage.save(foodType1);
+        FoodType foodType2 = new FoodType("Lunch", "");
+        foodTypeStorage.save(foodType2);
+        FoodType foodType3 = new FoodType("Dinner", "");
+        foodTypeStorage.save(foodType3);
+        FoodType foodType4 = new FoodType("Snacks", "");
+        foodTypeStorage.save(foodType4);
 
     }
 }

@@ -38,12 +38,14 @@ public class Food {
    private double estimatedDeliveryCost;
    private String deliveredDate;
 
+   private String picture;
+
    private int foodState;// 0=fooPostedByChief, 1=foodOrderedByGuest, 2=foodTookByDeliveryman, 3=foodReceivedGuest
    private String commentary;
 
    public Food(){}
 
-   public Food(Long chiefId, FoodType foodType, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime) {
+   public Food(Long chiefId, FoodType foodType, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime, String picture) {
       this.foodType = foodType;
       this.foodName = foodName;
       this.foodDescription = foodDescription;
@@ -52,6 +54,7 @@ public class Food {
       this.postedDate = postedDate;
       this.expirationTime = expirationTime;
       this.chiefId = chiefId;
+      this.picture = picture;
    }
 
    public void setId() {
@@ -130,7 +133,15 @@ public class Food {
       return commentary;
    }
 
-   public void setFoodChief(Long chiefId, FoodType foodType, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime) {
+   public FoodType getFoodType() {
+      return foodType;
+   }
+
+   public String getPicture() {
+      return picture;
+   }
+
+   public void setFoodChief(Long chiefId, FoodType foodType, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime, String picture) {
       this.foodType = foodType;
       this.foodName = foodName;
       this.foodDescription = foodDescription;
@@ -139,6 +150,7 @@ public class Food {
       this.postedDate = postedDate;
       this.expirationTime = expirationTime;
       this.chiefId = chiefId;
+      this.picture = picture;
    }
 
    public void setFoodGuest(Long guestId, String orderedDate) {
