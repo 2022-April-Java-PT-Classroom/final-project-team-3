@@ -45,7 +45,6 @@ export default function App() {
       googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
       libraries,
     });
-    // AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E
     
     const [markers, setMarkers]  = React.useState([]);
     
@@ -192,7 +191,7 @@ function Search({ panTo }) {
       };
 
       return (
-        <div className={style.search}>
+        <div className={style.sear}>
           <Combobox onSelect={handleSelect}>
             <ComboboxInput
               value={value}

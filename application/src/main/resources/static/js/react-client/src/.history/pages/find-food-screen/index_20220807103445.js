@@ -26,9 +26,8 @@ import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
-    width: "100vw",
+    width: "50vw",
     height: "50vh",
-    
 };
 const center = {
     lat:37.090240,
@@ -45,7 +44,6 @@ export default function App() {
       googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
       libraries,
     });
-    // AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E
     
     const [markers, setMarkers]  = React.useState([]);
     
@@ -140,8 +138,8 @@ export default function App() {
 
 function Locate({ panTo }) {
     return (
-      <button 
-        className={style.compassBtn}
+      <button
+        className="locate"
         onClick={() => {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -192,7 +190,7 @@ function Search({ panTo }) {
       };
 
       return (
-        <div className={style.search}>
+        <div className="search">
           <Combobox onSelect={handleSelect}>
             <ComboboxInput
               value={value}
