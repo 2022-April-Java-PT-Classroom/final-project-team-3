@@ -8,6 +8,7 @@ const Header = () => {
   
     const link = window.location.href;
     if(link.search("/admin")<0)
+    
     return (
         <div className={style.header}>
             <div className={style.navList}>

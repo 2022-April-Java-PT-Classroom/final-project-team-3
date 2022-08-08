@@ -27,7 +27,7 @@ const Footer = () => {
             <div className={style.firstContainter}>
                     <a href="mailto:communitywcci@gmail.com?body=" className={style.link}><img className={style.contacticons} src={emailicon} alt="Email Icon" />Email us</a>
                     
-                    <a href='{#contact}' className={style.link}><img className={style.contacticons} src={helpicon} alt="Help Icon" />Contact Us</a>
+                    <a href='/contact' className={style.link}><img className={style.contacticons} src={helpicon} alt="Help Icon" />Contact Us</a>
                     
                     <a href="https://twitter.com/CommunityWcci" className={style.link}><img className={style.contacticons} src={twittericon} alt="Twitter Icon" />Twitter</a>
             </div>
