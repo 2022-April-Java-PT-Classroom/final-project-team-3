@@ -5,8 +5,8 @@ import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/chefOfTheMonth.png';
 import communityVideo from '../../assets/landingpageimgs/CommunityVideo.mp4';
 import event from '../../assets/landingpageimgs/FoodPresentation.jpg';
-import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
-import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
+import instructionchef from '../../assets/landingpageimgs/instructionchef.png';
+import instructionguest from '../../assets/landingpageimgs/instructionguest.png';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
 
@@ -44,6 +44,13 @@ const LandingpageScreen = () => {
 
         <div>
             <section>
+                <img className={style.instructionchef} src={instructionchef} alt="Step by Step guide on how to sign up as a chef" />
+                <img className={style.instructionguest} src={instructionguest} alt="Step by Step guide on how to sign up as a guest" />
+            </section>
+        </div>
+
+        <div>
+            <section>
                 <div className="Reviews">
                     
                 </div>
@@ -54,7 +61,6 @@ const LandingpageScreen = () => {
                 
                     
                 <div className={style.chefOfTheMonth}>
-                    {/* <h3>Chef of the Month </h3> */}
                     <img className={style.chef} src={cof} alt="Chef of the Month" />
                 </div>
                     
