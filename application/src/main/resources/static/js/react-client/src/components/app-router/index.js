@@ -13,6 +13,7 @@ import ContactScreen from '../../pages/contact-screen';
 import ErrorPage from '../../pages/error-page';
 import EventsScreen from '../../pages/events-screen';
 import FaqScreen from '../../pages/faq-screen';
+import Feed from  '../../feeds';
 import FindFoodScreen from '../../pages/find-food-screen';
 import LandingpageScreen from '../../pages/landingpage-screen';
 import LoginScreen from '../../pages/login-screen';
@@ -44,6 +45,9 @@ const AppRouter = () => {
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
             <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
             <Route exact path={'*'} component={ErrorPage} /> 
+            <Route path={'/feed'} component={UserHomeScreen} />
+            <Route path={'/user'} component={UserHomeScreen} />
+            <Route path={'/add-food'} component={UserHomeScreen} />
             
         </Switch>
     );

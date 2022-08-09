@@ -17,10 +17,10 @@ import java.util.Optional;
 public class FoodController {
    
     @Resource
-    private FoodRepository foodRepo;
+    public FoodRepository foodRepo;
 
     @Resource
-    private FoodTypeRepository foodTypeRepo;
+    public FoodTypeRepository foodTypeRepo;
 
     @GetMapping("/api/food/{id}")
     public Food getOneFood(@PathVariable Long id)  throws JSONException {
