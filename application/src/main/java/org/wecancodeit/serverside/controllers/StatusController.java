@@ -20,12 +20,12 @@ public class StatusController {
     private StatusRepository statusRepository;
 
 
-    @GetMapping("/status-post")
+    @GetMapping("/posts")
     public Collection<Status> getStatus(){
         return (Collection<Status>) statusRepository.findAll();
 
     }
-    @PostMapping("/api/status-post/new-post")
+    @PostMapping("/api/posts/new-post")
     public Collection<Status> addStatus(@RequestBody String body) throws JSONException {
         JSONObject newStatus = new JSONObject(body);
         String userPoster = newStatus.getString("userPoster");

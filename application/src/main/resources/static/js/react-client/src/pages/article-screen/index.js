@@ -3,6 +3,7 @@ import React,{useEffect, useState} from "react";
 import ArticleForm from "./ArticleForm";
 import Axios from "axios";
 import ImageComponent from "../../components/imageDisplay/imageComponent";
+import StatusPost from "../Post-status";
 import style from './style.module.scss';
 
 const Article = () => {

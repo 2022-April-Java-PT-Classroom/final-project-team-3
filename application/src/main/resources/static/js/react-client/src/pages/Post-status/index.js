@@ -2,8 +2,9 @@ import React,{useEffect, useState} from "react";
 
 import Axios from "axios";
 import ImageComponent from "../../components/imageDisplay/imageComponent";
+import StatusForm from "./StatusForm";
 
-const Status = () => {
+const StatusPost = () => {
 
         const [loadingStatus, setStatus] = useState(true),
         [posts, setPosts] = useState(null);
@@ -37,7 +38,7 @@ const Status = () => {
             </div>
             {loadingStatus ? <h3></h3> :
                 <>
-                    
+                    <StatusForm/>
                     
                     
                     <div >
@@ -45,10 +46,10 @@ const Status = () => {
                         <div >
                             
                             <div key={status.id}>
-                            <p >Article Title: {status.userPoster}</p>
                             <p><ImageComponent url={status.foodImages}/></p>
-                             <p >Status: {status.status}</p> 
-                            <p >Date Created: <br /> {status.date}</p>
+                            {/* <p >UserName: {status.userPoster}</p> */}
+                            <p >Status: {status.status}</p> 
+                            
                                
                             </div>    
                             
@@ -62,4 +63,4 @@ const Status = () => {
     );
 }
 
-export default Status;
+export default StatusPost;

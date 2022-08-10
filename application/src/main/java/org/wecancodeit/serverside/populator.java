@@ -121,7 +121,7 @@ public class populator implements CommandLineRunner {
         articleRepository.save(test1);
 
 
-        Status t1 = new Status("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-1640777.jpg&fm=jpg","Jose","Test test dsd");
+        Status t1 = new Status("http://nextrestaurants.com/wp-content/uploads/2019/10/Restaurant-Instagram-Photography.png","Jose","Current Meal!!");
         statusRepository.save(t1);
 
         FoodType foodType1 = new FoodType("Breakfast", "");
