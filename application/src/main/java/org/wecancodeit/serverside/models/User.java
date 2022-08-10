@@ -167,6 +167,10 @@ public class User {
         this.address1 = address1;
     }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public void setUserAll(String firstName, String lastName, String email, String phone, String avatar, String password, String description) {
         this.firstName = firstName;
         this.lastName = lastName;

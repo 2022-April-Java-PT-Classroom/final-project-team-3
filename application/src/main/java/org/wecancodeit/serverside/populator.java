@@ -58,6 +58,8 @@ public class populator implements CommandLineRunner {
 
         User user1 = new User("Louis","Tchamda","louis2tch@gmail.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1234","desc1");
         user1.setStatus(1);
+        user1.setAddress1("12590 Frost Rd, Mantua, OH 44255-9388");
+        user1.setCity("Mantua");
         user1.addRole(role1);
         user1.addRole(role3);
         user1.addRole(role5);
@@ -66,6 +68,8 @@ public class populator implements CommandLineRunner {
 
         User user11 = new User("hakan","C","h@h.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1234","Desc11");
         user11.setStatus(1);
+        user11.setAddress1("1939 Green Rd # 510 Cleveland");
+        user11.setCity("Cleveland");
         user11.addRole(role1);
         user11.addRole(role3);
         user11.addRole(role5);

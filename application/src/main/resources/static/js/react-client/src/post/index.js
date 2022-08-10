@@ -6,11 +6,15 @@ import style from './style.module.scss';
 import StringScreen from '../components/string-screen';
 
 function Post() {
-
+  
   var chiefId = 0; 
   if(localStorage.getItem("token")!=""){
   const resObj = JSON.parse(localStorage.getItem("token"));
   chiefId= resObj.userId; console.log(chiefId);  
+
+  setTimeout(()=>{document.querySelector("#userHomeName").textContent = resObj.firstName;
+  document.querySelector("#userHomeName").style.color = "#6D8021";},20);
+  
   }
   //Long chiefId, Long foodTypeId, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime
   
@@ -170,6 +174,13 @@ useEffect(() => {
         return () => clearTimeout(timer);
 
     },[foodTypes]);
+
+    const fetchData1 = async () =>{ 
+      const result =  await Axios(`http://localhost:8080/api/user/${chiefId}`);  
+      document.querySelector("#city").textContent = result.data.city == "null" ? "" : result.data.city;
+      document.querySelector("#address").textContent = result.data.address1 == "null" ? "" : result.data.address1;
+    }
+    setTimeout(fetchData1,20);
     
     let roless = localStorage.getItem("roleId"); //alert(roless);
     let roleA = roless.split(","); 
@@ -199,7 +210,9 @@ useEffect(() => {
        
         const fetchData = async () =>{ 
           const result =  await Axios(`http://localhost:8080/api/user/${guestId}`);  
-          //alert(result.data.address1); 
+          document.querySelector("#city").textContent = "ville"+result.data.city;
+          document.querySelector("#address").textContent = "ville"+result.data.address1;
+          //alert(result.data.address1);  alerte
           if(window.confirm(`Can you deliver thisfood[${foodName}] within 1 hour to this address: ${result.data.address1} ?`)){ 
             Axios.put(`http://localhost:8080/api/food/${foodId}/delivery-food-deliveryman`, deliveryData).then((response) => {
                 console.log('Update successful');

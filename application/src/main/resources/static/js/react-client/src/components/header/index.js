@@ -6,7 +6,7 @@ import style from './style.module.scss';
 
 const Header = () => {
     var chiefId = 0;
- 
+   //localStorage.setItem("token","");
     if(localStorage.getItem("token")!=""){
   
      const resObj = JSON.parse(localStorage.getItem("token")); 
@@ -43,7 +43,7 @@ const Header = () => {
                 <NavLink to={'/findfood'}>Find Food</NavLink>
                 <NavLink to={'/profile'}>Profile</NavLink>
                 <NavLink to={'/review'}>Review</NavLink>
-                <NavLink to={'/login'} id="account">Login</NavLink>
+                <NavLink to={'/login'} id="login">Login</NavLink>
                 {/* <NavLink to={'/signup'}>Sign Up</NavLink> */}
             </div>
         </div>
@@ -57,7 +57,7 @@ const Header = () => {
                 <NavLink to={'/admin/user'}>User</NavLink>
                 <NavLink to={'/admin/picture'}>Picture</NavLink>
                 <NavLink to={'/admin/content'}>Content</NavLink>
-                <NavLink  id="account" to={'/login'}>Login</NavLink>
+                <a  id="login" href={'/login'} style={{color:"#c30", fontWeight:"600"}}>Login</a>
             </div>
         </div>
     ); 
