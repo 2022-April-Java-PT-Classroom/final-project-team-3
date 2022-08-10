@@ -21,6 +21,7 @@ import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
+import AllPost from '../all-posts';
 
 const AppRouter = () => {
     return (
@@ -43,6 +44,7 @@ const AppRouter = () => {
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
             <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
+            <Route exact path={'/all-post'} component={AllPost} /> 
             <Route exact path={'*'} component={ErrorPage} /> 
             
         </Switch>

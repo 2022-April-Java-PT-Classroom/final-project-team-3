@@ -68,8 +68,8 @@ const AdminUserScreen = () => {
     }
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (e) => { 
+        e.preventDefault();   console.log("activate admin add user");
         var z =""; var i=0;
         for (const o of xroleId.options) {
         if (o.selected == true) 

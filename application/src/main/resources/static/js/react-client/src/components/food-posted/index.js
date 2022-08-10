@@ -5,7 +5,7 @@ import style from './style.module.scss';
 
 //import { useState } from 'react';
 
-const Login = () => {
+const FoodPosted = () => {
 
      const [loading, setLoading] = useState(true);
     //
@@ -27,73 +27,8 @@ const Login = () => {
     } else 
     setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20);
 
-    const handleLogout = ()=>{
-        //localStorage.removeItem("token"); alert(1);
-        localStorage.setItem("token","");
-        document.querySelector("#logout").style.display = "none";
-        //document.querySelector("#formLogin").style.display = "block";
-        document.querySelector("#formLogin").style.display = "flex";
-        document.querySelector("#account").textContent = "Login";
-        document.querySelector("#account").style.fontSize = "";
-        document.querySelector("#account").style.fontWeight = "";
-        localStorage.setItem("roleId","");
-        document.querySelector("#operatingFood").style.display = "none";
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const xemail = document.querySelector("#email") ,
-        xpassword = document.querySelector("#password") ,
-        xaccount = document.querySelector("#account") ;
-        const userData = {
-            
-            email: xemail.value,
-            password: xpassword.value,
+  
     
-        }; 
-        
-            
-            Axios.post('http://localhost:8080/api/user/login', userData).then((response) => {
-                console.log("Status",response.status);
-                console.log('DATA', response.data);
-                //setUserState(response.data);
-               if(response.data.email){
-                    const tokenObj = {
-                        firstName: response.data.firstName,
-                        lastName: response.data.lastName,
-                        email: response.data.email,
-                        userId: response.data.userId,
-                        roles: response.data.roles
-                    }; 
-                localStorage.setItem("token", JSON.stringify(tokenObj)); 
-                
-                const resObj = JSON.parse(localStorage.getItem("token"));
-                
-                xaccount.style.fontSize = "12px";
-                xaccount.style.fontWeight = "600";
-                xaccount.textContent = "Hi, "+resObj.firstName; 
-                
-                let role ="";
-                for(let i=0; i < response.data.roles.length; i++){if(i>0)role +=","; role +=response.data.roles[i].id; }
-                localStorage.setItem("roleId", role); 
-
-                xemail.value = "";
-                xpassword.value = ""; 
-
-                document.querySelector("#formLogin").style.display = "none";
-                document.querySelector("#logout").style.display = "block";
-               document.querySelector("#operatingFood").style.display = "block";
-
-                console.log(JSON.parse(resObj));
-                //window.location.replace("/");
-            }
-            }).catch(function (err) {
-                console.log("Incorrect email or password " + err.message);
-                //console.log("Incorrect email or password ");
-              }); 
-   
-    }
 ///////////////////////////////////////////////////////
 
     const [loadingFood, setLoadingFood] = useState(true),
@@ -167,21 +102,21 @@ useEffect(() => {
         deliveredDate: ""
       };  
      
-      const fetchData = async () =>{ 
+      const fetchData = async () =>{ alert(guestId);
         const result =  await Axios(`http://localhost:8080/api/user/${guestId}`);  
         //alert(result.data.address1); 
         if(window.confirm(`Can you deliver thisfood[${foodName}] within 1 hour to this address: ${result.data.address1} ?`)){ 
           Axios.put(`http://localhost:8080/api/food/${foodId}/delivery-food-deliveryman`, deliveryData).then((response) => {
               console.log('Update successful');
               console.log('DATA', response.data);
-              setTimeout(window.location.reload(),1000);
+              //setFoodsState(response.data);
               
           });
         } 
     }
       
-    setTimeout(fetchData,1000);
-    //setTimeout(window.location.reload(),1000);//
+    setTimeout(fetchData,100);
+    setTimeout(window.location.reload(),1000);//
     }
     
   const handleDeliveryDone =(foodId, foodName) =>{
@@ -207,17 +142,7 @@ useEffect(() => {
    
     return (
         <div style={{margin:"40px auto", maxWidth:"792px"}}>
-            { //loading ? <h3>Loading ...</h3> :
-            <>
-                <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
-                <form onSubmit={handleSubmit} id="formLogin">
-                    <input type="email" id="email" name ="email"  placeholder='Enter your email' required/>
-                    <input type="password" name="password" id="password" placeholder="Enter password"required/>
-                
-                <button type="submit"> Submit</button> <div>Don't have a account, please <a href="/signup">signup</a></div>   
-                </form>
-            </>   
-            }
+           
 
             <div id="operatingFood"> 
             { loadingFood ? <h3>Loading ...</h3> :
@@ -267,4 +192,4 @@ useEffect(() => {
    
 }
 
-export default Login;
+export default FoodPosted;

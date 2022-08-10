@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-
-import Axios from 'axios';
+import Axios from 'axios'; 
 import style from './style.module.scss';
+
 
 const SignUp = () => {
     
@@ -45,16 +45,16 @@ const SignUp = () => {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        var z =""; var i=0; alert(1);
+        e.preventDefault();  console.log("activate user signup");      
+        var z =""; var i=0;
         for (const o of xroleId.options) {
         if (o.selected == true) 
         {
             if(i>0) z+=",";
           z +=o.value;
           i++;
-        }
-      }
+        } 
+      }  
       const xroleIds = z;
         const userData = {
             firstName: xfirstName.value,
@@ -66,12 +66,13 @@ const SignUp = () => {
             password: xpassword.value,
             roleId: xroleIds
         }; 
-       
+
+         alert("Activate user signup?");
         
         //alert(xroleIds);
         //if(xup.value=="0" && xuserId.value=="0"){  
-            Axios.post('http://localhost:8080/api/user/signup', userData).then((response) => { 
-                console.log(response.status);
+            Axios.post('http://localhost:8080/api/user/signup', userData).then((response) => {
+                console.log(response.status); 
                 console.log('DATA', response.data);
                 setUserState(response.data);
                 handleReset();

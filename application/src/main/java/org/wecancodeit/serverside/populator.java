@@ -37,6 +37,9 @@ public class populator implements CommandLineRunner {
     @Resource
     private FoodTypeRepository foodTypeStorage;
 
+    @Resource
+    private FoodRepository foodStorage;
+
     @Override
     public void run(String... args) throws Exception {
         Role role1 = new Role("User","rien");
@@ -64,6 +67,7 @@ public class populator implements CommandLineRunner {
         User user11 = new User("hakan","C","h@h.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","1234","Desc11");
         user11.setStatus(1);
         user11.addRole(role1);
+        user11.addRole(role3);
         user11.addRole(role5);
         userStorage.save(user11);
 
@@ -124,6 +128,24 @@ public class populator implements CommandLineRunner {
         foodTypeStorage.save(foodType3);
         FoodType foodType4 = new FoodType("Snacks", "");
         foodTypeStorage.save(foodType4);
+
+        //Long chiefId, FoodType foodType, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime, String picture
+        Food food1 = new Food(1L,foodType1,"Omelet","GENTLY PUSH cooked portions from edges toward the center with inverted turner so that uncooked eggs can reach the hot pan surface. CONTINUE cooking, tilting pan and gently moving cooked portions as needed.",
+                1,5,"2022-08-09",5,"https://www.cuisineactuelle.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcac.2F2018.2F09.2F25.2F20f3a609-4d35-4dfa-ace5-32e1c62a8636.2Ejpeg/650x324/quality/80/crop-from/center/omelette-au-four.jpeg");
+        foodStorage.save(food1);
+
+        Food food2 = new Food(2L,foodType2,"Refreshing Lentil Salad","GTransfer the lentils to a mixing bowl and stir in the garlic, seeded tomatoes, red onion, green bell pepper, and chile pepper. Add the juice of 1 lemon plus 1 teaspoon of the zest. Mix in the shredded carrot, olives, and cilantro.",
+                1,7,"2022-08-10",4,"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F691198.jpg");
+        foodStorage.save(food2);
+        Food food3 = new Food(1L,foodType2,"Cold Szechuan Noodles","This cold noodle salad is the perfect lunch on a hot summer's day. If you make it the day before, the flavors get even better in the fridge overnight.",
+                2,14,"2022-08-14",3,"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2015%2F02%2F2392135-Cold-Szechuan-Noodles-and-Shredded-Vegetables-Photo-by-LilSnoo-resized.jpg");
+        foodStorage.save(food3);
+        Food food4 = new Food(2L,foodType2," Greek Orzo Salad","Shake things up a little with different pasta shapes like Orzo and Shells. Add some salami, dressing and veggies and you've a hearty meal.",
+                1,8,"2022-08-10",4,"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2015%2F03%2F676733-Greek-Orzo-Salad-Photo-by-Dianne-resized.jpg");
+        foodStorage.save(food4);
+        Food food5 = new Food(1L,foodType3,"Egg Roll Bowls","If you're a fan of crispy savory egg rolls, then you might consider this unwrapped version your dream healthy dinnerr. Without the need to wrap or fry, this veggie-packed meal comes together in well under an hour.",
+                2,17,"2022-08-13",7,"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190319-egg-roll-bowls-258-1554235672.jpg");
+        foodStorage.save(food5);
 
     }
 }
