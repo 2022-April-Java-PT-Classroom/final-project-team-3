@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 
 import ArticleForm from "./ArticleForm";
 import Axios from "axios";
+import ImageComponent from "../../components/imageDisplay/imageComponent";
 import style from './style.module.scss';
 
 const Article = () => {
@@ -47,6 +48,7 @@ const Article = () => {
                             
                             <div key={article.id}>
                             <p >Article Title: {article.articleTitle}</p>
+                            <p><ImageComponent url={article.articleImage}/></p>
                              <p >Content: {article.articleBody}</p> 
                              <p >Published by: {article.authorName}</p>  
                             <p >Date Created: <br /> {article.date}</p>
