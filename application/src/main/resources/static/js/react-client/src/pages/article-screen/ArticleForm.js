@@ -11,7 +11,6 @@ const ArticleForm = ({articleForm }) => {
         authorName: "",
         articleTitle: "",
         articleBody: "",
-        articleImage: ""
         
        
     });
@@ -31,7 +30,6 @@ const ArticleForm = ({articleForm }) => {
             authorName: formInfo.authorName,
             articleTitle: formInfo.articleTitle,
             articleBody: formInfo.articleBody,
-            articleImage: formInfo.articleImage
             
             
         };
@@ -50,7 +48,6 @@ const ArticleForm = ({articleForm }) => {
     <form onSubmit={handleSubmit}>
                     <input type="text" name="authorName" value={Article.authorName} onChange={handleChange} placeholder='Enter The Author Name' />
                     <input type="text" name="articleTitle" value={Article.articleTitle} onChange={handleChange} placeholder='Enter The Title' />
-                    <input type="url" name="articleImage" value={Article.articleImage} onChange={handleChange} placeholder='Enter The Url Image' />
                     <textarea name="articleBody" value={Article.articleBody} onChange={handleChange} placeholder='Enter Description' />
                     <button type="submit">Submit</button>
                 </form>
