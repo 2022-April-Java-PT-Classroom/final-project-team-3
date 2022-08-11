@@ -79,7 +79,7 @@ const handleReset =() => {
     Axios.post('http://localhost:8080/api/user/signup-new', userData).then((response) => {
                 console.log(response.status); 
                 console.log('DATA', response.data);
-                setTimeout(localStorage.setItem("oneGuestId", response.data.id),1000);
+                setTimeout(localStorage.setItem("oneGuestId", response.data.id),5);
                 console.log(response.data);
                
                 //setUserState(response.data);
@@ -87,14 +87,14 @@ const handleReset =() => {
                // document.querySelector("#resultPostFood").innerHTML = "Thank you! Your food " + response.data + " Send";
       });
       
-      if(userId == 0 && localStorage.getItem("oneGuestId")!="") userId = localStorage.getItem("oneGuestId");  
+      if(userId == 0 && localStorage.getItem("oneGuestId")!="") setTimeout(()=>{userId = localStorage.getItem("oneGuestId");},10);  
 
       const foodData ={
         guestId: userId, 
         orderedDate: orderedDate
       }
       
-      localStorage.setItem("oneGuestId",""); 
+      setTimeout(localStorage.setItem("oneGuestId",""),20); 
 
       Axios.put(`http://localhost:8080/api/food/${food.id}/order-food-guest`, foodData).then((response) => {
                 console.log(response.status); 

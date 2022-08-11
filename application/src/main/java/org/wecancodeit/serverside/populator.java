@@ -86,6 +86,13 @@ public class populator implements CommandLineRunner {
         user3.addRole(role4);
         userStorage.save(user3);
 
+        User user0 = new User("fName 0","lName0","0@0.com","0000000000","https://www.radcom.co/Content/media/image/2019/09/13047_orig.jpg","0000","desc 0");
+        user0.setStatus(1);
+        user0.setAddress1("alternative Address");
+        user0.setCity("alternative city");
+        user0.addRole(role1);
+        userStorage.save(user0);
+
 
         Picture pic1 = new Picture("pic1","https://i.pinimg.com/originals/4b/ef/9b/4bef9b82f301c0c53a6f2cee05452d8e.jpg",
                 "photo1","","","");

@@ -18,10 +18,10 @@ const FoodPosted = () => {
             const lance = async () => { 
             document.querySelector("#formLogin").style.display = "none"; 
             document.querySelector("#logout").style.display = "block";
-            const  xaccount = document.querySelector("#account") ; 
-            xaccount.style.fontSize = "12px";
-            xaccount.style.fontWeight = "600";
-            xaccount.textContent = "Hi, "+resObj.firstName; 
+            const  xlogin = document.querySelector("#login") ; 
+            xlogin.style.fontSize = "12px";
+            xlogin.style.fontWeight = "600";
+            xlogin.textContent = "Hi, "+resObj.firstName; 
         }
         const timer = setTimeout(() =>{lance();},20);
     } else 

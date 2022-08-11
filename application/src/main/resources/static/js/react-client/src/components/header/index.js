@@ -5,8 +5,8 @@ import logo from '../../assets/logo/CommunityLogo.png';
 import style from './style.module.scss';
 
 const Header = () => {
-    var chiefId = 0;
-   //localStorage.setItem("token","");
+    var chiefId = 0; 
+   //localStorage.removeItem("token"); localStorage.setItem("token","");
     if(localStorage.getItem("token")!=""){
   
      const resObj = JSON.parse(localStorage.getItem("token")); 

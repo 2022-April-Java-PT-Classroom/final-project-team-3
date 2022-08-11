@@ -3,7 +3,7 @@ import style from './style.module.scss';
 
 const SetToken = ()=> {
   var chiefId = 0;
- 
+  if(!localStorage.getItem("token")) localStorage.setItem("token","");
   if(localStorage.getItem("token")!=""){
 
    const resObj = JSON.parse(localStorage.getItem("token")); 

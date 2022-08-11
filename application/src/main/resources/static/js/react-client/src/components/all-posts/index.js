@@ -76,35 +76,7 @@ const [loadingRole, setLoadingRole] = useState(true),
   //Long chiefId, Long foodTypeId, String foodName, String foodDescription, int cookingTime, double estimatedCost, String postedDate, int expirationTime
   
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    
-  //   if(xup.value=="0" && xfoodId.value=="0"){  
-  //       Axios.post('http://localhost:8080/api/food/post-food-chief', userData).then((response) => { 
-  //           console.log(response.status);
-  //           console.log('DATA', response.data);
-  //          // setFoodsState(response.data);
-  //           handleReset();
-  //           document.querySelector("#resultPostFood").innerHTML = "Thank you! Your food " + response.data + " Send";
-  //       });
-
-  //       window.location.reload();
-  //   } 
-
-  //   if(xup.value=="up" && xfoodId.value>=0){
-  //     Axios.put(`http://localhost:8080/api/food/${xfoodId.value}/update-food`, userData).then((response) => {
-  //         console.log('Update successful');
-  //         console.log('DATA', response.data);
-
-  //         //setFoodsState(response.data);
-  //     });
-  //     window.location.reload();
-  // }
-
-    
-};
-
+  
 
 
 const handleOrder = (foodId) => {
