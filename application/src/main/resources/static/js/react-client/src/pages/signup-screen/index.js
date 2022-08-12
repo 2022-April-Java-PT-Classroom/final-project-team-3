@@ -6,9 +6,24 @@ import style from './style.module.scss';
 const SignUp = () => {
     
     const [userState, setUserState] = useState({
-        userName :"",
-        description : ""
+        firstName :"",
+        lastName : "",
+        email : "",
+        password: "",
+        phone : "",
+        avatar : "",
+        description : "",
+        address : ""
     });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setUserState({
+            ...userState,
+            [e.target.name]: value
+        });
+    };
+
     const xup = document.querySelector("#up"),
         xuserId = document.querySelector("#userId"),
         xfirstName = document.querySelector("#firstName"),
@@ -19,6 +34,7 @@ const SignUp = () => {
         xdescription = document.querySelector("#description") ,
         xpassword = document.querySelector("#password") ,
         xroleId = document.querySelector("#roleId") ,
+        xaddress = document.querySelector("#address") ,
         xuserSubmit =  document.querySelector("#userSubmit") ;
 
         
@@ -31,6 +47,7 @@ const SignUp = () => {
         xphone.value = "";
         xavatar.value = "";
         xdescription.value = "";
+        xaddress.value = "";
         xpassword.value = "";
        
         xup.value = "0";
@@ -63,6 +80,7 @@ const SignUp = () => {
             phone:  xphone.value,
             avatar: xavatar.value,
             description : xdescription.value,
+            address : xaddress.value,
             password: xpassword.value,
             roleId: xroleIds
         }; 
@@ -116,13 +134,14 @@ const SignUp = () => {
                 <h3 id="resultSignup"></h3>
                 <form onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} title="reset">reset</span>
-                    <input type="text" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
-                    <input type="text" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
-                    <input type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
+                    <input type="text" id ="firstName" name = "firstName"  placeholder="Enter your first name (required)" required/>
+                    <input type="text" id ="lastName" name = "lastName"  placeholder="Enter your last name (required)" required/>
+                    <input type="phone" id ="phone" name = "phone"  placeholder="Enter your phone number (required)" required/>
                     <input type="email" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
-                    <input type="password" id ="password" name = "password"  placeholder="Enter password (required)" required/>
+                    <input type="password" id ="password" name = "password"  placeholder="Enter your password (required)" required/>
+                    <textarea id = "address" name = "address"  placeholder="Enter your address" />
                     <textarea id = "description" name = "description"  placeholder="Enter the description" />
-                    <input type="text" id ="avatar" name = "avatar"  placeholder="Enter avatar URL" />
+                    <input type="text" id ="avatar" name = "avatar"  placeholder="Enter your avatar URL" />
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="userId" name = "userId"  value="0" />
                     { loadingRole ? <h3>Loading ...</h3> :

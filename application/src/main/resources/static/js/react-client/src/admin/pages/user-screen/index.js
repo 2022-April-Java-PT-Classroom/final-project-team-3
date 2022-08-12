@@ -19,6 +19,7 @@ const AdminUserScreen = () => {
         xdescription = document.querySelector("#description") ,
         xpassword = document.querySelector("#password") ,
         xroleId = document.querySelector("#roleId") ,
+        xaddress = document.querySelector("#address") ,
         xuserSubmit =  document.querySelector("#userSubmit") ;
 
         
@@ -30,6 +31,7 @@ const AdminUserScreen = () => {
         xphone.value = "";
         xavatar.value = "";
         xdescription.value = "";
+        xaddress.value = "";
         xpassword.value = "";
        
         xup.value = "0";
@@ -41,13 +43,14 @@ const AdminUserScreen = () => {
         }
     }
     const handlePreUpdate = (userId, firstName, lastName, email, 
-        phone, avatar, description, password, roles) => {
+        phone, avatar, address, description, password, roles) => {
 
         xfirstName.value = firstName;
         xlastName.value = lastName;
         xemail.value = email;
         xphone.value = phone;
         xavatar.value = avatar;
+        xaddress.value = address;
         xdescription.value = description;
         xpassword.value = password;
 
@@ -86,6 +89,7 @@ const AdminUserScreen = () => {
             email: xemail.value,
             phone:  xphone.value,
             avatar: xavatar.value,
+            address: xaddress.value,
             description : xdescription.value,
             password: xpassword.value,
             roleId: xroleIds
@@ -200,6 +204,7 @@ const AdminUserScreen = () => {
                     <input type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
                     <input type="email" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
                     <input type="password" id ="password" name = "password"  placeholder="Enter password (required)" required/>
+                    <textarea id = "address" name = "address"  placeholder="Enter your address" />
                     <textarea id = "description" name = "description"  placeholder="Enter the description" />
                     <input type="text" id ="avatar" name = "avatar"  placeholder="Enter avatar URL" />
                     <input type="hidden" id ="up" name = "up"  value="0" />
@@ -244,7 +249,7 @@ const AdminUserScreen = () => {
                                 </td>
                                 <td><button onClick={() => handleApprove(user.id, user.firstName, user.lastName, user.status)} id={user.id}>Status[{user.status}]</button></td>
                                 <td><button onClick={() => handlePreUpdate(user.id, user.firstName, 
-                                user.lastName, user.email, user.phone, user.avatar, user.description, user.password, user.roles)}>up</button></td>
+                                user.lastName, user.email, user.phone, user.avatar, user.address1, user.description, user.password, user.roles)}>up</button></td>
                                 <td><button onClick={() => handleDelete(user.id, user.firstName, user.lastName)}>x</button></td>
                             </tr>
                         ))}

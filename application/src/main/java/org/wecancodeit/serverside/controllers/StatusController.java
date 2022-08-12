@@ -35,8 +35,6 @@ public class StatusController {
         Status postsToAdd = new Status(foodImages,userPoster,status);
         statusRepository.save(postsToAdd);
 
-
-
         return (Collection<Status>) statusRepository.findAll();
     }
 

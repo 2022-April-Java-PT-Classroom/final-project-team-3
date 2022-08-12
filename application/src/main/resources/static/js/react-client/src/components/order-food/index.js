@@ -18,19 +18,22 @@ const OrderFood = ({food}) => {
   }
 
   const [userState, setUserState] = useState({
-    userName :"",
-    description : ""
-});
-let xup = document.querySelector("#up"),
-    xuserId = document.querySelector("#userId"),
-    xfirstName = document.querySelector("#firstName"),
-    xlastName = document.querySelector("#lastName") ,
-    xemail = document.querySelector("#email") ,
-    xaddress = document.querySelector("#address"), 
-    xphone = document.querySelector("#phone") ,
-   xuserSubmit =  document.querySelector("#userSubmit") ;
-
+    firstName :"",
+    lastName : "",
+    email : "",
+    phone : "",
+    address : ""
     
+});
+ 
+const handleChange = (e) => {
+  const value = e.target.value;
+  setUserState({
+      ...userState,
+      [e.target.name]: value
+  });
+};
+
 
 const handleReset =() => {
  // const lance = async () => {
@@ -63,54 +66,66 @@ const handleReset =() => {
     e.preventDefault();  
     let userData=null; 
     if(userId ==0){
-     userData = {  
-      firstName: document.querySelector("#firstName").value, 
-      lastName: document.querySelector("#lastName").value,
-      email: document.querySelector("#email").value,
-      phone:  document.querySelector("#phone").value,
+    
+    userData = {  
+      firstName: userState.firstName, 
+      lastName: userState.lastName,
+      email: userState.email,
+      phone:  userState.phone,
       avatar: "",
       description : "",
       password: "0000",
       roleId: "1",
-      address: document.querySelector("#address").value
-  }; 
-} 
-    if(userId==0) 
+      address: userState.address
+    }; 
+  } 
+  localStorage.setItem("oneGuestId","");
+    if(userId==0) {
     Axios.post('http://localhost:8080/api/user/signup-new', userData).then((response) => {
                 console.log(response.status); 
                 console.log('DATA', response.data);
-                setTimeout(localStorage.setItem("oneGuestId", response.data.id),5);
+                setTimeout(()=>{localStorage.setItem("oneGuestId", response.data.id);},10); 
+                //setTimeout(()=>{ alert("ici1 = "+localStorage.getItem("oneGuestId"));},0); 
                 console.log(response.data);
                
-                //setUserState(response.data);
-                //handleReset();
-               // document.querySelector("#resultPostFood").innerHTML = "Thank you! Your food " + response.data + " Send";
-      });
-      
-      if(userId == 0 && localStorage.getItem("oneGuestId")!="") setTimeout(()=>{userId = localStorage.getItem("oneGuestId");},10);  
-
-      const foodData ={
-        guestId: userId, 
-        orderedDate: orderedDate
-      }
-      
-      setTimeout(localStorage.setItem("oneGuestId",""),20); 
-
-      Axios.put(`http://localhost:8080/api/food/${food.id}/order-food-guest`, foodData).then((response) => {
-                console.log(response.status); 
-                console.log('DATA', response.data); 
-                console.log(response.data);
-                //setUserState(response.data);
-                //handleReset();
-                refresh = true;
-                document.querySelector("#foodView").style.display = "block";
-                document.querySelector("#userForm").style.display = "none";
-                document.querySelector("#resultOrder").innerHTML = "Thank you! Your food order " + response.data + " was Sent";
-                //setTimeout(window.location.reload(), 5000);
+      }).catch((err) => {
+         console.log("Erreur:" + err);
       });
 
-         
+      //setTimeout(alert("ici2 = "+localStorage.getItem("oneGuestId")),2000);
+      setTimeout(()=>{userId = localStorage.getItem("oneGuestId"); /*alert("ici3 = "+userId);*/},1000);
+
+      setTimeout(insertFood,2000);
+      
+    } else {
+
+     insertFood();
+
+    }    
         //window.location.reload();
+
+   function insertFood(){
+
+    const foodData ={
+      guestId: userId, 
+      orderedDate: orderedDate
+    }
+    
+     //setTimeout(alert(localStorage.getItem("oneGuestId")),25);
+
+    Axios.put(`http://localhost:8080/api/food/${food.id}/order-food-guest`, foodData).then((response) => {
+              console.log(response.status); 
+              console.log('DATA', response.data); 
+              console.log(response.data);
+              //setUserState(response.data);
+              //handleReset();
+              refresh = true;
+              document.querySelector("#foodView").style.display = "block";
+              document.querySelector("#userForm").style.display = "none";
+              document.querySelector("#resultOrder").innerHTML = "Thank you! Your food order " + response.data + " was Sent";
+              //setTimeout(window.location.reload(), 5000);
+    });
+   }
 
 
     
@@ -171,26 +186,26 @@ const togglePopupRefresh = () => {
             <form onSubmit={handleSubmit}> 
             {userId!=0?<>
             <div style={{width:"110px"}}>Hi! {resObj.firstName} {resObj.lastName}</div>
-            <input type="hidden" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
-              <input type="hidden" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
-              <input type="hidden" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
-              <input type="hidden" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
-              <input type="hidden" id ="address" name = "address"  placeholder="Enter your address (required)" required/>
+            <input onChange={handleChange} type="hidden" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
+              <input onChange={handleChange} type="hidden" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
+              <input onChange={handleChange} type="hidden" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
+              <input onChange={handleChange} type="hidden" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
+              <input onChange={handleChange} type="hidden" id ="address" name = "address"  placeholder="Enter your address (required)" required/>
             
             </>:
               <>
-              <span id = "reset" onClick={() => handleReset()} >reset</span>
-              <input type="text" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
-              <input type="text" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
-              <input type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
-              <input type="email" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
-              <textarea id ="address" name = "address"  placeholder="Enter your address (required)" required/>
+              <span onChange={handleChange} id = "reset" onClick={() => handleReset()} >reset</span>
+              <input onChange={handleChange} type="text" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
+              <input onChange={handleChange} type="text" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
+              <input onChange={handleChange} type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
+              <input onChange={handleChange} type="email" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
+              <textarea onChange={handleChange} id ="address" name = "address"  placeholder="Enter your address (required)" required/>
               
               </>
               }  
-              <input type="hidden" id ="up" name = "up"  value="0" />
-              <input type="hidden" id ="userId" name = "userId"  value="0" />
-              <input type="hidden" id ="roleId" name = "roleId"  value="1" />
+              <input onChange={handleChange} type="hidden" id ="up" name = "up"  value="0" />
+              <input onChange={handleChange} type="hidden" id ="userId" name = "userId"  value="0" />
+              <input onChange={handleChange} type="hidden" id ="roleId" name = "roleId"  value="1" />
               <div style={{width:"110px"}}>{food.foodName}<img src={food.picture} width="100" /></div>
               <button type = "submit" id = "userSubmit" className={style.submitfood}>Order the food</button>
             </form>

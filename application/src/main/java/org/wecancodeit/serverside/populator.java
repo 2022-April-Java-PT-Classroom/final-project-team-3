@@ -39,9 +39,9 @@ public class populator implements CommandLineRunner {
     private FoodTypeRepository foodTypeStorage;
 
     @Resource
-
     private FoodRepository foodStorage;
 
+    @Resource
     private StatusRepository statusRepository;
 
 
@@ -131,9 +131,10 @@ public class populator implements CommandLineRunner {
 
 
         Article test = new Article("Harley Millington","Food Shortages and how we can help","Ever since covid we have been trying and succeeding at helping people who are struggling to find food in there local area."
-                , LocalDate.now(),"https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=");
+                , LocalDate.now(),"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F691198.jpg");
         articleRepository.save(test);
-        Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger.",LocalDate.now(),"https://www.unitedway.org/i/blog/10.15.19_5_Surprising_Facts_about_Hunger_in_America_Blog-reupload.jpg/@zx_1000@zy_500");
+        Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger."
+                ,LocalDate.now(),"https://www.unitedway.org/i/blog/10.15.19_5_Surprising_Facts_about_Hunger_in_America_Blog-reupload.jpg");
         articleRepository.save(test1);
 
 

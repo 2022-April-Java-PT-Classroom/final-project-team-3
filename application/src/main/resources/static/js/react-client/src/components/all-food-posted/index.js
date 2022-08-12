@@ -14,7 +14,7 @@ const AllFoodPosted = () => {
       chiefId = resObj.userId; 
 
   } 
-  setTimeout(() =>{if(document.querySelector("#operatingFood"))document.querySelector("#operatingFood").style.display = "none";},20);
+  setTimeout(() =>{(document.querySelector("#operatingFood") && chiefId>0)?document.querySelector("#operatingFood").style.display = "block":document.querySelector("#operatingFood").style.display = "none";},20);
 
 
   const [loadingFood, setLoadingFood] = useState(true),
@@ -95,13 +95,13 @@ const AllFoodPosted = () => {
             Axios.put(`http://localhost:8080/api/food/${foodId}/delivery-food-deliveryman`, deliveryData).then((response) => {
                 console.log('Update successful');
                 console.log('DATA', response.data);
-                setTimeout(window.location.reload(),1000);
+                setTimeout(window.location.reload(),100);
                 
             });
           } 
       }
         
-      setTimeout(fetchData,1000);
+      setTimeout(fetchData,100);
       //setTimeout(window.location.reload(),1000);//
       }
       

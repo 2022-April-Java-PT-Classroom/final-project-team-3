@@ -18,7 +18,8 @@ public class Article {
 
     private String articleTitle;
 
-    @Column(columnDefinition = "varchar(1080)")
+    //@Column(columnDefinition = "varchar(1080)")
+    @Lob
     private String articleBody;
 
     private LocalDate date;
