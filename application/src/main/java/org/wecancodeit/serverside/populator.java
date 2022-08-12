@@ -10,6 +10,7 @@ import org.wecancodeit.serverside.models.Article;
 import org.wecancodeit.serverside.repositories.*;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import org.wecancodeit.serverside.repositories.*;
 
@@ -38,7 +39,11 @@ public class populator implements CommandLineRunner {
     private FoodTypeRepository foodTypeStorage;
 
     @Resource
+
     private FoodRepository foodStorage;
+
+    private StatusRepository statusRepository;
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -126,10 +131,14 @@ public class populator implements CommandLineRunner {
 
 
         Article test = new Article("Harley Millington","Food Shortages and how we can help","Ever since covid we have been trying and succeeding at helping people who are struggling to find food in there local area."
-                , Instant.now());
+                , LocalDate.now(),"https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=");
         articleRepository.save(test);
-        Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger.",Instant.now());
+        Article test1 = new Article("Edgar Wilson","Who faces hunger in the United States?","Hunger can affect people from all walks of life. Millions of people in America are just one job loss, missed paycheck, or medical emergency away from hunger.",LocalDate.now(),"https://www.unitedway.org/i/blog/10.15.19_5_Surprising_Facts_about_Hunger_in_America_Blog-reupload.jpg/@zx_1000@zy_500");
         articleRepository.save(test1);
+
+
+        Status t1 = new Status("http://nextrestaurants.com/wp-content/uploads/2019/10/Restaurant-Instagram-Photography.png","Jose","Current Meal!!");
+        statusRepository.save(t1);
 
         FoodType foodType1 = new FoodType("Breakfast", "");
         foodTypeStorage.save(foodType1);

@@ -1,9 +1,11 @@
 import {Avatar} from '@mui/material';
 import Feeds from '../../feeds';
 import React from 'react';
+import StatusPost from "../Post-status";
 import UserInfo from '../../userinfo';
 import prfBg from '../../assets/profile-screen/prfBackground.jpg';
 import style from './style.module.scss';
+
 function UserScreen() {
   let display = true; 
   if(localStorage.getItem("token")==""){
@@ -11,7 +13,7 @@ function UserScreen() {
   
   return (
    
-    <div className={style.MainProfileDiv}>
+   <div className={style.MainProfileDiv}>
       { display==false?<></>:
         <div className={style.profileContainer}>
         <div className={style.topPortion}>
