@@ -6,7 +6,7 @@ import style from './style.module.scss';
 //import { useState } from 'react';
 
 const AllFoodPosted = () => { 
-
+ 
   //localStorage.removeItem("token"); localStorage.setItem("token","");
   var chiefId = 0; 
   if(localStorage.getItem("token")!=""){   
@@ -14,14 +14,14 @@ const AllFoodPosted = () => {
       chiefId = resObj.userId; 
 
   } 
-  setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20);
+  setTimeout(() =>{if(document.querySelector("#operatingFood"))document.querySelector("#operatingFood").style.display = "none";},20);
 
 
   const [loadingFood, setLoadingFood] = useState(true),
   [foods, setFoods] = useState(null);
- 
-  useEffect(() => {  alert(1); 
-      const fetchData = async () =>{
+  
+  useEffect(() => {   
+      const fetchData = async () =>{ 
           const result = await Axios(`http://localhost:8080/api/food/`);  
           setFoods(result.data);
           console.log(result.data);
@@ -34,7 +34,7 @@ const AllFoodPosted = () => {
   
       const timer = setTimeout(() => {
           !foods && fetchData(); 
-      }, 1000);
+      }, 100);
   
       return () => clearTimeout(timer);
   
@@ -61,15 +61,15 @@ const AllFoodPosted = () => {
           return () => clearTimeout(timer);
   
       },[foodTypes]);
-      
-      let roless = sessionStorage.getItem("roleId"); //alert(roless);
+      if(localStorage.getItem("roleId")){
+      let roless = localStorage.getItem("roleId"); //alert(roless);
       let roleA = roless.split(","); 
       let roleAId = 0, showForm = "none"; 
       for(let i=0; i< roleA.length; i++)if(roleA[i]==3){ 
         roleAId = roleA[i]; 
         showForm = "block";
       }
-  
+    }
     let separator = "-";
     let newDate = new Date()
     let date = newDate.getDate();

@@ -37,17 +37,17 @@ const SignUp = () => {
         xuserId.value = "0";
         xuserSubmit.innerText = "Add User"; 
 
-        // for (const o of xroleId.options) {
-        //     o.selected = false; //alert("Clean");
-        // }
+        for (const o of document.querySelector("#roleId").options) {
+            o.selected = false; //alert("Clean");
+        }
     }
 
 
 
     const handleSubmit = (e) => {
-        e.preventDefault();  console.log("activate user signup");      
+        e.preventDefault();  //console.log("activate user signup");      
         var z =""; var i=0;
-        for (const o of xroleId.options) {
+        for (const o of document.querySelector("#roleId").options) {
         if (o.selected == true) 
         {
             if(i>0) z+=",";
@@ -67,7 +67,7 @@ const SignUp = () => {
             roleId: xroleIds
         }; 
 
-         alert("Activate user signup?");
+         //alert("Activate user signup?");
         
         //alert(xroleIds);
         //if(xup.value=="0" && xuserId.value=="0"){  
@@ -115,7 +115,7 @@ const SignUp = () => {
             <div className={style.user}>
                 <h3 id="resultSignup"></h3>
                 <form onSubmit={handleSubmit}> 
-                    <span id = "reset" onClick={() => handleReset()} >reset</span>
+                    <span id = "reset" onClick={() => handleReset()} title="reset">reset</span>
                     <input type="text" id ="firstName" name = "firstName"  placeholder="Enter first name (required)" required/>
                     <input type="text" id ="lastName" name = "lastName"  placeholder="Enter last name (required)" required/>
                     <input type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>

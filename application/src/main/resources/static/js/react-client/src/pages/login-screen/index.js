@@ -12,6 +12,7 @@ const Login = () => {
     //
      var chiefId = 0; 
      
+    // if(!localStorage.getItem("token")) localStorage.setItem("token","");
     if(localStorage.getItem("token")!=""){
  
         const resObj = JSON.parse(localStorage.getItem("token")); 
@@ -27,7 +28,7 @@ const Login = () => {
         }
         const timer = setTimeout(() =>{lance();},20);
     } else 
-    setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20);
+    setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20); //document.querySelector("#operatingFood").setAttribute("style","display:none");
 
     const handleLogout = ()=>{
         //localStorage.removeItem("token"); alert(1);
@@ -117,7 +118,7 @@ const Login = () => {
             </>   
             }
 
-            {/* <AllFoodPosted /> */}
+            <AllFoodPosted />
 
         </div>
      
