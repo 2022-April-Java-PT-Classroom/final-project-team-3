@@ -10,6 +10,7 @@ import instructionchef from '../../assets/landingpageimgs/instructionchef.png';
 import instructionguest from '../../assets/landingpageimgs/instructionguest.png';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
+import AllPost from "../../components/all-posts";
 
 const LandingpageScreen = () => {
 
@@ -98,7 +99,7 @@ const LandingpageScreen = () => {
                 </div>
             </div>
             
-            
+            <AllPost/>
 
     </div>
 

@@ -57,6 +57,11 @@
         }
 }
 
+.fixLenght{
+    max-width:200px;
+    overflow-x: scroll;
+    margin:10px;
+}
 
 
 .img{
@@ -71,7 +76,7 @@
 }
 
 .img:hover{
-   // width: 100px; top:0;
+    width: 100px; top:0;
     
     
 }
@@ -129,85 +134,3 @@
     box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
   }
   }
-
-  form {
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    width: 100%;
-
-    & input, textarea, span, select {
-        // background-color: lightgreen;
-        border: 2px solid #333;
-        border-radius: 8px;
-        margin: 10px;
-        padding: 10px;
-        width:300px;
-    }
-
-    & span {
-        border:0;
-    }
-
-    & button {
-        border-radius: 8px; 
-        cursor: pointer;
-        width:300px;
-        margin: 10px;
-        padding: 10px;
-        cursor: pointer;
-        font-family: impact;
-        background:#6D8021;
-        border:0;
-        color:#fff;
-        box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.32);
-        
-    }
-    & button:hover{
-        border:2px dashed #c31;
-        color:rgb(254, 170, 2);
-        box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.22);
-    }
-
-    & span {
-        cursor: pointer;
-        text-align: right;
-        color: green;
-        margin-right:10px;
-        font-weight: 100;
-        font-size: 12px;
-        font-family: Impact;
-    }
-}
-
-table {
-    margin: 20px auto;
-    td{ 
-        
-        background: #ccc;
-        margin: 10px;
-        padding: 5px;
-        border-radius: 10px;
-
-        & button {
-        border-radius: 4px; 
-        cursor: pointer;
-        min-width: 30px;
-        min-height: 30px;
-        
-        }
-        
-        & button:hover{
-        border:2px dashed #c31;
-        color:rgb(20, 0, 204);
-
-        }
-        .fixLenght{
-            max-width:200px;
-            overflow: scroll;
-            margin:10px;
-            height: 70px;
-        }
-    }
-}
-

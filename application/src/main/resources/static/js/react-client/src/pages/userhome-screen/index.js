@@ -7,11 +7,14 @@ import prfBg from '../../assets/profile-screen/prfBackground.jpg';
 import style from './style.module.scss';
 
 function UserScreen() {
+  let display = true; 
+  if(localStorage.getItem("token")==""){
+  window.location.replace("/login"); display = false; }
+  
   return (
-
-    
-    <div className={style.MainProfileDiv}>
-      <StatusPost/>
+   
+   <div className={style.MainProfileDiv}>
+      { display==false?<></>:
         <div className={style.profileContainer}>
         <div className={style.topPortion}>
         <div className={style.userProfileBgImage}>
@@ -21,7 +24,7 @@ function UserScreen() {
           <Avatar className={style.userProfileIcon} src=''></Avatar>
         {/* <img className={style.prfImg} src='' alt='' srcSet=''/> */}
         </div>
-        <div className={style.userNam}>
+        <div className={style.userNam} id="userHomeName">
             Username
         </div>
       </div>
@@ -34,8 +37,10 @@ function UserScreen() {
         </div>
       </div>
         </div>
+   } 
     </div>
   );
+  
 }
 
 export default UserScreen;

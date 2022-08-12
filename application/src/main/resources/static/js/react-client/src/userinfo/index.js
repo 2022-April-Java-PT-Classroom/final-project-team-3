@@ -8,10 +8,10 @@ function UserInfo() {
       <hr className={style.hrInfo}/>
         <div className={style.infoContainer}>
           <div className={style.city}>
-            <h6>City: </h6>
+            <h6>City: </h6><h6 id="city"></h6>
           </div>
           <div className={style.from}>
-            <h6>From: </h6>
+            <h6>From: </h6> <h6 id="address"></h6>
           </div>
         </div>
       </div>
