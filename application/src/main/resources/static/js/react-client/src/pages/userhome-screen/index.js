@@ -1,13 +1,17 @@
 import {Avatar} from '@mui/material';
 import Feeds from '../../feeds';
 import React from 'react';
+import StatusPost from "../Post-status";
 import UserInfo from '../../userinfo';
 import prfBg from '../../assets/profile-screen/prfBackground.jpg';
 import style from './style.module.scss';
+
 function UserScreen() {
   return (
 
+    
     <div className={style.MainProfileDiv}>
+      <StatusPost/>
         <div className={style.profileContainer}>
         <div className={style.topPortion}>
         <div className={style.userProfileBgImage}>

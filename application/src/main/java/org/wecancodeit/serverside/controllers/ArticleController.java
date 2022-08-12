@@ -13,6 +13,7 @@ import org.wecancodeit.serverside.repositories.ArticleRepository;
 
 import javax.annotation.Resource;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Collection;
 
 
@@ -29,15 +30,14 @@ public class ArticleController {
         return (Collection<Article>) articleRepository.findAll();
 
     }
-    @PostMapping("/api/article/add-articles")
+    @PostMapping("/api/article/new-articles")
     public Collection<Article> addArticles(@RequestBody String body) throws JSONException{
         JSONObject newArticles = new JSONObject(body);
         String authorName = newArticles.getString("authorName");
         String articleTitle = newArticles.getString("articleTitle");
         String articleBody = newArticles.getString("articleBody");
-        String date = newArticles.getString("date");
-
-        Article articlesToAdd = new Article(authorName,articleTitle,articleBody,Instant.now());
+        String articleImage = newArticles.getString("articleImage");
+        Article articlesToAdd = new Article(authorName,articleTitle,articleBody, LocalDate.now(),articleImage);
         articleRepository.save(articlesToAdd);
 
 

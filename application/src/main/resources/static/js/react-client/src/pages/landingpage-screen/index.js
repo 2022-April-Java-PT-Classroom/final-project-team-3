@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/chefOfTheMonth.png';
@@ -74,6 +75,8 @@ const LandingpageScreen = () => {
                     </div>
                 </div>
             </div>    
+           
+
             
             <div className={style.featuredArticle}>
                     <img className={style.articlesPic} src={articles} />
@@ -85,7 +88,10 @@ const LandingpageScreen = () => {
                         <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
                     </div>
                 </div>
-
+                
+            {/* You can move this to change location just added it to test. */}
+            
+                {/* You can move this to change location just added it to test. */}
             <div className={style.IG}>
                 <div>
                     
