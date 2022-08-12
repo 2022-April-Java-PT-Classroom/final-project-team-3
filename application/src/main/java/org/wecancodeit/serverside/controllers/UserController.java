@@ -57,11 +57,14 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password= newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userSelectedOpt = userRepo.findById(id);
 
         if (userSelectedOpt.isPresent()) {
             userSelectedOpt.get().setUserAll(firstName, lastName, email, phone, avatar, password, description);
+
+            userSelectedOpt.get().setAddress1(address1);
 
             String rolesId = newUser.getString("roleId");
             String[] roleS = rolesId.split(",");
@@ -95,14 +98,17 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password = newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userToAddOpt = userRepo.findByEmail(email);
         //add user if not already in the database
         if (userToAddOpt.isEmpty()) {
 
             User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
-            String rolesId = newUser.getString("roleId");
 
+            userToAdd.setAddress1(address1);
+
+            String rolesId = newUser.getString("roleId");
             //ArrayList<Role> RoleList = new ArrayList<>();
             String[] roleS = rolesId.split(",");
             for (String roleIdString : roleS) {
@@ -127,6 +133,7 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password = newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userToAddOpt = userRepo.findByEmail(email);
         //add user if not already in the database
@@ -134,10 +141,8 @@ public class UserController {
 
             User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
 
-//            if(newUser.getString("address")!="") {
-//                String address1 = newUser.getString("address");
-//                userToAdd.setAddress1(address1);
-//            }
+            userToAdd.setAddress1(address1);
+
             String rolesId = newUser.getString("roleId");
 
             //ArrayList<Role> RoleList = new ArrayList<>();

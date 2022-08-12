@@ -7,26 +7,20 @@ import java.util.Date;
 @Entity
 public class Status {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String status;
     private String foodImages;
     private String userPoster;
 
-
-
-
-
-
+    public Status(){
+    }
 
     public Status(String foodImages,String userPoster,String status) {
         this.foodImages = foodImages;
-
         this.userPoster=userPoster;
         this.status=status;
-
-
     }
 
     public String getStatus() {
@@ -37,10 +31,9 @@ public class Status {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId() {
+        this.id = 100L;
     }
-
 
     public String getFoodImages() {
         return foodImages;
@@ -65,9 +58,4 @@ public class Status {
         this.userPoster = userPoster;
     }
 
-
-
-    public Status(){
-
-    }
 }
