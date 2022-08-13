@@ -160,7 +160,7 @@ const SignUp = () => {
                     }
                     <div className={style.action}>
                     <button type = "submit" id = "userSubmit">Add User</button>
-                    </div>
+                </div>
                 </form>
             </div>
             

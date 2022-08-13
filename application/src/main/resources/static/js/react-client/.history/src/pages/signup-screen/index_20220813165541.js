@@ -149,7 +149,6 @@ const SignUp = () => {
                     <input type="text" id ="avatar" name = "avatar"  placeholder="Enter your avatar URL" />
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="userId" name = "userId"  value="0" />
-                    </div>
                     { loadingRole ? <h3>Loading ...</h3> :
                         <select id="roleId" name="roleId" multiple required>
                             <option disabled>Please Select Role (required)</option>
@@ -158,9 +157,7 @@ const SignUp = () => {
                         ))}
                         </select>
                     }
-                    <div className={style.action}>
                     <button type = "submit" id = "userSubmit">Add User</button>
-                    </div>
                 </form>
             </div>
             

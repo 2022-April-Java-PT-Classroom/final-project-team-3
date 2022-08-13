@@ -158,9 +158,8 @@ const SignUp = () => {
                         ))}
                         </select>
                     }
-                    <div className={style.action}>
+                    <div className={style.action}></div>
                     <button type = "submit" id = "userSubmit">Add User</button>
-                    </div>
                 </form>
             </div>
             

@@ -134,11 +134,6 @@ const SignUp = () => {
                 <h3 id="resultSignup"></h3>
                 <form className={style.signupform} onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} title="reset">reset</span>
-                    <Avatar className={style.lockicon}>
-                    <LockOutlinedIcon />
-                    </Avatar>
-            <h1 className={style.signuptitle}>Sign up</h1>
-                    <div className={style.content}>
                     <input type="text" id ="firstName" name = "firstName"  placeholder="Enter your first name (required)" required/>
                     <input type="text" id ="lastName" name = "lastName"  placeholder="Enter your last name (required)" required/>
                     <input type="phone" id ="phone" name = "phone"  placeholder="Enter your phone number (required)" required/>
@@ -149,7 +144,6 @@ const SignUp = () => {
                     <input type="text" id ="avatar" name = "avatar"  placeholder="Enter your avatar URL" />
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="userId" name = "userId"  value="0" />
-                    </div>
                     { loadingRole ? <h3>Loading ...</h3> :
                         <select id="roleId" name="roleId" multiple required>
                             <option disabled>Please Select Role (required)</option>
@@ -158,9 +152,7 @@ const SignUp = () => {
                         ))}
                         </select>
                     }
-                    <div className={style.action}>
                     <button type = "submit" id = "userSubmit">Add User</button>
-                    </div>
                 </form>
             </div>
             
