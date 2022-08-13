@@ -109,7 +109,7 @@ const Login = () => {
           { //loading ? <h3>Loading ...</h3> :
             <>
                 <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
-                <form  className={style.loginform} onSubmit={handleSubmit} id="formLogin">
+                <form  classNameonSubmit={handleSubmit} id="formLogin">
                     <input type="email" id="email" name ="email"  placeholder='Enter your email' required/>
                     <input type="password" name="password" id="password" placeholder="Enter password"required/>
                 
