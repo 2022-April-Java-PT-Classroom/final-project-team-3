@@ -45,7 +45,7 @@ const Article = () => {
                     <ArticleForm/>
                     <div >
                     {article.map(article => (
-                        <div >
+                        <div className={style.Acss}>
                             
                             <div key={article.id}>
                             <p >Article Title: {article.articleTitle}</p>
