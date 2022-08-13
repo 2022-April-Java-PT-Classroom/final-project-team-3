@@ -2,31 +2,33 @@ import React, {createElement, useEffect, useState} from 'react';
 
 import Axios from 'axios';
 import style from './style.module.scss';
+import AllFoodPosted from '../../components/all-food-posted';
 
 //import { useState } from 'react';
 
 const Login = () => {
-
+  
      const [loading, setLoading] = useState(true);
-    
-   
-    
-     if(localStorage.getItem("token")!=""){
+    //
+     var chiefId = 0; 
+     
+    // if(!localStorage.getItem("token")) localStorage.setItem("token","");
+    if(localStorage.getItem("token")!=""){
  
         const resObj = JSON.parse(localStorage.getItem("token")); 
-
-    
+        chiefId = resObj.userId; 
+        
             const lance = async () => { 
             document.querySelector("#formLogin").style.display = "none"; 
             document.querySelector("#logout").style.display = "block";
-            const  xaccount = document.querySelector("#account") ; //alert(2);
-            xaccount.style.fontSize = "12px";
-            xaccount.style.fontWeight = "600";
-            xaccount.textContent = "Hi, "+resObj.firstName; 
+            const  xlogin = document.querySelector("#login") ; 
+            xlogin.style.fontSize = "12px";
+            xlogin.style.fontWeight = "600";
+            xlogin.textContent = "Hi, "+resObj.firstName; 
         }
         const timer = setTimeout(() =>{lance();},20);
-    }
-
+    } else 
+    setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20); //document.querySelector("#operatingFood").setAttribute("style","display:none");
 
     const handleLogout = ()=>{
         //localStorage.removeItem("token"); alert(1);
@@ -34,9 +36,12 @@ const Login = () => {
         document.querySelector("#logout").style.display = "none";
         //document.querySelector("#formLogin").style.display = "block";
         document.querySelector("#formLogin").style.display = "flex";
-        document.querySelector("#account").textContent = "Login";
-        document.querySelector("#account").style.fontSize = "";
-        document.querySelector("#account").style.fontWeight = "";
+        document.querySelector("#login").textContent = "Login";
+        document.querySelector("#login").style.fontSize = "";
+        document.querySelector("#login").style.fontWeight = "";
+        localStorage.setItem("roleId","");
+        document.querySelector("#operatingFood").style.display = "none";
+
     }
 
     const handleSubmit = (e) => {
@@ -44,7 +49,7 @@ const Login = () => {
 
         const xemail = document.querySelector("#email") ,
         xpassword = document.querySelector("#password") ,
-        xaccount = document.querySelector("#account") ;
+        xlogin = document.querySelector("#login") ;
         const userData = {
             
             email: xemail.value,
@@ -54,8 +59,8 @@ const Login = () => {
         
             
             Axios.post('http://localhost:8080/api/user/login', userData).then((response) => {
-                console.log("Status",response.status);
-                console.log('DATA', response.data);
+                console.log("Status",response.status); 
+                console.log('DATA', response.data); 
                 //setUserState(response.data);
                if(response.data.email){
                     const tokenObj = {
@@ -69,33 +74,39 @@ const Login = () => {
                 
                 const resObj = JSON.parse(localStorage.getItem("token"));
                 
-                xaccount.style.fontSize = "12px";
-                xaccount.style.fontWeight = "600";
-                xaccount.textContent = "Hi, "+resObj.firstName; 
-
+                xlogin.style.fontSize = "12px";
+                xlogin.style.fontWeight = "600";
+                xlogin.textContent = "Hi, "+resObj.firstName; 
+                
+                let role ="";
+                for(let i=0; i < response.data.roles.length; i++){if(i>0)role +=","; role +=response.data.roles[i].id; }
+                localStorage.setItem("roleId", role); 
+               
                 xemail.value = "";
-                xpassword.value = ""; 
+                xpassword.value = "";   
 
                 document.querySelector("#formLogin").style.display = "none";
                 document.querySelector("#logout").style.display = "block";
+               document.querySelector("#operatingFood").style.display = "block"; 
 
                 console.log(JSON.parse(resObj));
                 //window.location.replace("/");
+                //setTimeout(window.location.reload(),1000);
             }
             }).catch(function (err) {
                 console.log("Incorrect email or password " + err.message);
                 //console.log("Incorrect email or password ");
               }); 
-        
-    
-        
-     
+   
     }
+///////////////////////////////////////////////////////
+
+
   
    
     return (
-        <div>
-            { //loading ? <h3>Loading ...</h3> :
+        <div style={{margin:"40px auto", maxWidth:"792px"}}>
+          { //loading ? <h3>Loading ...</h3> :
             <>
                 <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
                 <form onSubmit={handleSubmit} id="formLogin">
@@ -106,6 +117,9 @@ const Login = () => {
                 </form>
             </>   
             }
+
+            <AllFoodPosted />
+
         </div>
      
     );

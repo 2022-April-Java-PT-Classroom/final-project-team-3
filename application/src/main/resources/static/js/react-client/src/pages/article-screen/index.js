@@ -49,6 +49,7 @@ const Article = () => {
                             
                             <div key={article.id}>
                             <p >Article Title: {article.articleTitle}</p>
+                            {/* <p><ImageComponent url={article.articleImage}/></p> */}
                             <p><ImageComponent url={article.articleImage}/></p>
                              <p >Content: {article.articleBody}</p> 
                              <p >Published by: {article.authorName}</p>  

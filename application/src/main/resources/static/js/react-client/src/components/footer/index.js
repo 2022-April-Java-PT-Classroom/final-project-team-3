@@ -2,25 +2,12 @@ import React from 'react';
 import emailicon from '../../assets/footerimgs/EmailIcon.png';
 import helpicon from '../../assets/footerimgs/HelpIcon.png';
 import style from './style.module.scss';
+import Axios from 'axios';
+
 import twittericon from '../../assets/footerimgs/TwitterIcon.png';
+import SetToken from '../set-token';
 
 const Footer = () => {
-
-   if(localStorage.getItem("token")!=""){
- 
-        const resObj = JSON.parse(localStorage.getItem("token")); 
-
-    
-            const lance = async () => {
-           // document.querySelector("#formLogin").style.display = "none"; 
-           //document.querySelector("#logout").style.display = "block"; 
-            const  xaccount = document.querySelector("#account") ; 
-            xaccount.style.fontSize = "12px";
-            xaccount.style.fontWeight = "600";
-            xaccount.textContent = "Hi, "+resObj.firstName; 
-        }
-        const timer = setTimeout(() =>{lance();},20);
-    }
 
     return (
         <div className={style.footer}>
@@ -35,7 +22,7 @@ const Footer = () => {
             <div className={style.secondContainer}>
             <small className={style.small}> &copy; wcci 2022</small>
             </div>
-            
+            <SetToken/>
         </div>
     )
 }
