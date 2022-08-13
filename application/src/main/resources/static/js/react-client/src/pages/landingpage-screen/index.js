@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import StatusPost from "../Post-status";
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/chefOfTheMonth.png';
@@ -90,7 +90,7 @@ const LandingpageScreen = () => {
                 </div>
                 
             {/* You can move this to change location just added it to test. */}
-            <StatusPost/>
+            
                 {/* You can move this to change location just added it to test. */}
             <div className={style.IG}>
                 <div>
