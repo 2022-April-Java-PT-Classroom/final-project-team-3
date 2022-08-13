@@ -168,18 +168,24 @@ table {
   border-radius: 4px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
   .logintitle{
-    padding: 0 35px 0 35px;
-    font-weight: 300;
+    padding: 35px 35px 0 35px;
+  font-weight: 300;
   }
-  .action{
-    padding: 1rem;
-  }
-  .lockicon{
-  background:#6D8021;
-  width: 50px;
-  top: 2rem;
-  margin: 35px auto;
-  display: flex;
+  .action button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background:#6D8021;
+    color: rgb(255, 255, 255);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
   }
 }
 .displayNone{display: none;}

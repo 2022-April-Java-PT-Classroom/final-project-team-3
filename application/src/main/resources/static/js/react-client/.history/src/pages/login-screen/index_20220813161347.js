@@ -1,9 +1,7 @@
 import React, {createElement, useEffect, useState} from 'react';
 
 import AllFoodPosted from '../../components/all-food-posted';
-import {Avatar} from '@mui/material';
 import Axios from 'axios';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import style from './style.module.scss';
 
 //import { useState } from 'react';
@@ -111,23 +109,17 @@ const Login = () => {
           { //loading ? <h3>Loading ...</h3> :
             <>
             <form  className={style.loginform} onSubmit={handleSubmit} id="formLogin">
-            <Avatar className={style.lockicon}>
-            <LockOutlinedIcon />
-            </Avatar>
-            <h1 className={style.logintitle}>Login</h1>
-                
+            <h1> Login</h1>
+                <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
                 <div className={style.content}>
-                    <div className={style.inputfield}>
+                    <div>
                     <input type="email" id="email" name ="email"  placeholder='Enter your email' required/>
                     </div>
-                    <div className={style.inputfield}>
+                    <div></div>
+                    
                     <input type="password" name="password" id="password" placeholder="Enter password"required/>
-                    </div>
                 </div>
-                <div className={style.action}>
-                <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
                 <button type="submit"> Submit</button> <div>Don't have a account, please <a href="/signup">signup</a></div>   
-                </div>
                 </form>
             </>   
             }

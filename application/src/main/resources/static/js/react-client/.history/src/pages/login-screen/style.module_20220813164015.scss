@@ -168,18 +168,12 @@ table {
   border-radius: 4px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
   .logintitle{
-    padding: 0 35px 0 35px;
-    font-weight: 300;
+    padding: 35px 35px 0 35px;
+  font-weight: 300;
   }
   .action{
     padding: 1rem;
   }
-  .lockicon{
-  background:#6D8021;
-  width: 50px;
-  top: 2rem;
-  margin: 35px auto;
-  display: flex;
-  }
+  
 }
 .displayNone{display: none;}

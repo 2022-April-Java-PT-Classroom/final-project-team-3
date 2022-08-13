@@ -111,7 +111,7 @@ const Login = () => {
           { //loading ? <h3>Loading ...</h3> :
             <>
             <form  className={style.loginform} onSubmit={handleSubmit} id="formLogin">
-            <Avatar className={style.lockicon}>
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
             </Avatar>
             <h1 className={style.logintitle}>Login</h1>
