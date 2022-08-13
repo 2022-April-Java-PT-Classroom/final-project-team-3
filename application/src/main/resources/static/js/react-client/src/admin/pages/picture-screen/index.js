@@ -139,7 +139,7 @@ const AdminPictureScreen = () =>{
             { loadingPicture ? <h3>Loading ...</h3> :
                 <>
                     <h3>Pictures</h3>
-                    <table>
+                    <table className={style.table}>
                         <tr>
                             <th>Name</th><th>PictureUrl</th><th>Title</th><th>Subtitle</th>
                             <th>Description</th><th>Commentary</th><th></th><th></th>
@@ -147,7 +147,7 @@ const AdminPictureScreen = () =>{
                         {pictures.map(picture =>(
                             <tr key={picture.id}>
                                 <td>{picture.pictureName}</td>
-                                <td style={{width:"120px"}}><img src={picture.pictureUrl}  title={picture.pictureUrl} className={style.img}  /></td>
+                                <td  className={style.picTd}><img src={picture.pictureUrl}  title={picture.pictureUrl} className={style.img}  /></td>
                                 <td>{picture.title}</td>
                                 <td>{picture.subtitle}</td>
                                 <td className={style.fixLenght}>{picture.description}</td>

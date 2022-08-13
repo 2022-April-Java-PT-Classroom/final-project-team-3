@@ -1,11 +1,31 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import Axios from 'axios';
 import logo from '../../assets/logo/CommunityLogo.png';
 import style from './style.module.scss';
 
 const Header = () => {
-    
+    var chiefId = 0; 
+   //localStorage.removeItem("token"); localStorage.setItem("token","");
+    if(localStorage.getItem("token")!=""){
   
+     const resObj = JSON.parse(localStorage.getItem("token")); 
+ 
+     chiefId= resObj.userId; //console.log(chiefId); 
+    let roles, role=""; //set role to local storage
+    Axios.get(`http://localhost:8080/api/user/${chiefId}`).then((response) => {
+        console.log('DATA', response.data);
+        console.log(response.data);
+        roles = response.data.roles; console.log(roles);  //
+       //alert(roles.length);
+        for(let i=0; i < roles.length; i++){if(i>0)role +=","; role +=roles[i].id; }
+        localStorage.setItem("roleId", role);  //alert(localStorage.getItem("roleId"));
+    }).catch(function (err) {
+        console.log("error " + err.message);
+      }); 
+
+    }
+
     const link = window.location.href;
     if(link.search("/admin")<0)
     return (
@@ -23,7 +43,7 @@ const Header = () => {
                 <NavLink to={'/findfood'}>Find Food</NavLink>
                 <NavLink to={'/profile'}>Profile</NavLink>
                 <NavLink to={'/review'}>Review</NavLink>
-                <NavLink to={'/login'} id="account">Login</NavLink>
+                <NavLink to={'/login'} id="login">Login</NavLink>
                 {/* <NavLink to={'/signup'}>Sign Up</NavLink> */}
             </div>
         </div>
@@ -31,12 +51,13 @@ const Header = () => {
     else return (
         <div className={style.header}>
             <div className={style.navListAdmin}>
-                <span>ADMIN</span>
+                <span><b>ADMIN</b></span>
+                <a href={'/'} style={{color:"#c30", fontWeight:"600"}}>Back to Home page</a>
                 <NavLink to={'/admin/role'}>Role</NavLink>
                 <NavLink to={'/admin/user'}>User</NavLink>
                 <NavLink to={'/admin/picture'}>Picture</NavLink>
                 <NavLink to={'/admin/content'}>Content</NavLink>
-                <NavLink  id="account" to={'/login'}>Login</NavLink>
+                <a  id="login" href={'/login'} style={{color:"#c30", fontWeight:"600"}}>Login</a>
             </div>
         </div>
     ); 

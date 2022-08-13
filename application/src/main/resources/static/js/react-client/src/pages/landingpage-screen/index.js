@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import articles from '../../assets/landingpageimgs/Articles.png';
 import cof from '../../assets/landingpageimgs/chefOfTheMonth.png';
 import communityVideo from '../../assets/landingpageimgs/CommunityVideo.mp4';
 import event from '../../assets/landingpageimgs/FoodPresentation.jpg';
-import meal1 from '../../assets/foodslideshowimgs/meal1.jpg';
-import meal2 from '../../assets/foodslideshowimgs/meal2.jpg';
+import instructionchef from '../../assets/landingpageimgs/instructionchef.png';
+import instructionguest from '../../assets/landingpageimgs/instructionguest.png';
 import meal3 from '../../assets/foodslideshowimgs/meal3.jpg';
 import style from './style.module.scss';
+import AllPost from "../../components/all-posts";
 
 const LandingpageScreen = () => {
 
@@ -44,6 +46,13 @@ const LandingpageScreen = () => {
 
         <div>
             <section>
+                <img className={style.instructionchef} src={instructionchef} alt="Step by Step guide on how to sign up as a chef" />
+                <img className={style.instructionguest} src={instructionguest} alt="Step by Step guide on how to sign up as a guest" />
+            </section>
+        </div>
+
+        <div>
+            <section>
                 <div className="Reviews">
                     
                 </div>
@@ -54,7 +63,6 @@ const LandingpageScreen = () => {
                 
                     
                 <div className={style.chefOfTheMonth}>
-                    {/* <h3>Chef of the Month </h3> */}
                     <img className={style.chef} src={cof} alt="Chef of the Month" />
                 </div>
                     
@@ -68,6 +76,8 @@ const LandingpageScreen = () => {
                     </div>
                 </div>
             </div>    
+           
+
             
             <div className={style.featuredArticle}>
                     <img className={style.articlesPic} src={articles} />
@@ -79,14 +89,17 @@ const LandingpageScreen = () => {
                         <a href="/events"><img className={style.event} src={event} alt="Events Picture" /></a>
                     </div>
                 </div>
-
+                
+            {/* You can move this to change location just added it to test. */}
+            
+                {/* You can move this to change location just added it to test. */}
             <div className={style.IG}>
                 <div>
                     
                 </div>
             </div>
             
-            
+            <AllPost/>
 
     </div>
 

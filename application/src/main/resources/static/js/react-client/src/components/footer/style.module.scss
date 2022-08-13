@@ -1,7 +1,41 @@
 .footer{
     
     margin: 0;
-    align-items: center;
-    background-color: #6d8021;
-    position: relative;
+    // align-items: center;
+    // position: relative;
+    padding-top: 20px;
+}
+
+.firstContainer {
+    float: left;
+ 
+
+    & a {
+        color: black;
+        
+    }
+}
+.link {
+    padding-right: 20px;
+    color: black;
+}
+
+.secondContainter {
+    float: left;
+    padding-top: 20px;
+}
+
+.thirdContainter {
+    float: left;
+}
+
+
+.contacticons {
+    width: 30px;
+    height: 30px;
+    list-style-type: none;
+}
+
+.small {
+    padding-top: 20px;
 }

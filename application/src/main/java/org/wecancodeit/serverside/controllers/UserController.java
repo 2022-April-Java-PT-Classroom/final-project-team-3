@@ -10,6 +10,8 @@ import org.wecancodeit.serverside.repositories.UserRepository;
 import javax.annotation.Resource;
 import java.util.*;
 
+import static java.awt.SystemColor.info;
+
 @RestController
 @CrossOrigin
 public class UserController {
@@ -55,11 +57,14 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password= newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userSelectedOpt = userRepo.findById(id);
 
         if (userSelectedOpt.isPresent()) {
-            userSelectedOpt.get().setUserAll(firstName, lastName, email, phone, avatar, description, password);
+            userSelectedOpt.get().setUserAll(firstName, lastName, email, phone, avatar, password, description);
+
+            userSelectedOpt.get().setAddress1(address1);
 
             String rolesId = newUser.getString("roleId");
             String[] roleS = rolesId.split(",");
@@ -93,14 +98,17 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password = newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userToAddOpt = userRepo.findByEmail(email);
         //add user if not already in the database
         if (userToAddOpt.isEmpty()) {
 
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
-            String rolesId = newUser.getString("roleId");
+            User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
 
+            userToAdd.setAddress1(address1);
+
+            String rolesId = newUser.getString("roleId");
             //ArrayList<Role> RoleList = new ArrayList<>();
             String[] roleS = rolesId.split(",");
             for (String roleIdString : roleS) {
@@ -125,12 +133,16 @@ public class UserController {
         String avatar = newUser.getString("avatar");
         String description = newUser.getString("description");
         String password = newUser.getString("password");
+        String address1 = newUser.getString("address");
 
         Optional<User> userToAddOpt = userRepo.findByEmail(email);
         //add user if not already in the database
         if (userToAddOpt.isEmpty()) {
 
-            User userToAdd = new User(firstName, lastName, email, phone, avatar, description, password);
+            User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
+
+            userToAdd.setAddress1(address1);
+
             String rolesId = newUser.getString("roleId");
 
             //ArrayList<Role> RoleList = new ArrayList<>();
@@ -142,6 +154,39 @@ public class UserController {
             userRepo.save(userToAdd);
         }
         return (email!="" && password!="") ? "Successfully" : "Error";
+    }
+
+    @PostMapping("/api/user/signup-new")
+    public User signUpNew(@RequestBody String body) throws JSONException{
+        JSONObject newUser = new JSONObject(body);
+        String firstName = newUser.getString("firstName");
+        String lastName = newUser.getString("lastName");
+        String email = newUser.getString("email");
+        String phone = newUser.getString("phone");
+        String avatar = newUser.getString("avatar");
+        String description = newUser.getString("description");
+        String password = newUser.getString("password");
+        String address1 = newUser.getString("address");
+
+        Optional<User> userToAddOpt = userRepo.findByEmail(email);
+        //add user if not already in the database
+        if (userToAddOpt.isEmpty()) {
+
+            User userToAdd = new User(firstName, lastName, email, phone, avatar, password, description);
+
+            userToAdd.setAddress1(address1);
+
+            String rolesId = newUser.getString("roleId");
+
+            //ArrayList<Role> RoleList = new ArrayList<>();
+            String[] roleS = rolesId.split(",");
+            for (String roleIdString : roleS) {
+                Long roleId = Long.parseLong(roleIdString);
+                userToAdd.addRole(roleRepo.findById(roleId).get());
+            }
+            userRepo.save(userToAdd);
+        }
+        return userRepo.findByEmail(email).get(); // (email!="" && password!="") ? "Successfully" : "Error";
     }
 
     @PostMapping("/api/user/login")
