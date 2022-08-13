@@ -42,19 +42,27 @@ const Article = () => {
                 <>
                     <h2>Articles In Today!</h2>
                     
-                    <ArticleForm/>
+                    {/* <ArticleForm/> */}
                     <div >
                     {article.map(article => (
                         <div className={style.Acss}>
                             
                             <div key={article.id}>
-                            <p >Article Title: {article.articleTitle}</p>
-                            {/* <p><ImageComponent url={article.articleImage}/></p> */}
-                            <p><ImageComponent url={article.articleImage}/></p>
-                             <p >Content: {article.articleBody}</p> 
-                             <p >Published by: {article.authorName}</p>  
-                            <p >Date Created: <br /> {article.date}</p>
-                               
+                                <div className={style.ImgA}>
+                                <div >
+                            <h1 className={style.Tcss}>{article.articleTitle}</h1>
+                           
+                            <p ><ImageComponent url={article.articleImage}/></p>
+                            </div>
+
+                            
+                             <p > {article.articleBody}</p> 
+
+                             <div className={style.Ccss}>
+                             <p >Published by {article.authorName}</p>  
+                            <p >Date Created  {article.date}</p>
+                            </div>
+                               </div>
                             </div>    
                             
                         </div>
