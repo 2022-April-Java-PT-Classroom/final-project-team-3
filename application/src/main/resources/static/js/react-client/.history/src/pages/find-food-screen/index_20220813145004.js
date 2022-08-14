@@ -1,4 +1,6 @@
 import "@reach/combobox/styles.css";
+import Popup from "../../components/popup";
+import AllPost from "../../components/all-posts";
 
 import {
     Combobox,
@@ -18,8 +20,6 @@ import usePlacesAutocomplete, {
     getLatLng,
 } from "use-places-autocomplete";
 
-import AllPost from "../../components/all-posts";
-import Popup from "../../components/popup";
 import React from "react";
 import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
@@ -44,9 +44,10 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: ["places"],
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+      libraries,
     });
+    // AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E
     
     const [markers, setMarkers]  = React.useState([]);
     
@@ -143,6 +144,7 @@ function Locate({ panTo }) {
     return (
       <button 
         className={style.compassBtn}
+        className="locate"
         onClick={() => {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -193,10 +195,28 @@ function Search({ panTo }) {
       };
 
       return (
+<<<<<<< HEAD
+        <div className={style.search}>
+          <Combobox onSelect={handleSelect}>
+            <ComboboxInput
+              value={value}
+              onChange={handleInput}
+              disabled={!ready}
+              placeholder="Search your location"
+            />
+            <ComboboxPopover>
+              <ComboboxList>
+                {status === "OK" &&
+                  data.map(({ id, description }) => (
+                    <ComboboxOption key={id} value={description} />
+                  ))}
+              </ComboboxList>
+            </ComboboxPopover>
+          </Combobox>
+=======
         <div>
             <AllPost/>
-            <center>
-              <div className={style.search} >
+            <center><div className="search" >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
@@ -215,6 +235,7 @@ function Search({ panTo }) {
             </Combobox>
             </div>
             </center>
+>>>>>>> main
         </div>
       );
     }
