@@ -20,9 +20,12 @@ import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
+import AllUsers from '../all-users';
+import OneUser from '../one-user';
 
 import AllPost from '../all-posts';
 import AllFoodPosted from '../all-food-posted';
+import HOmeSlider from '../home-slider';
 
 import feeds from '../../feeds';
 import posts from '../../post';
@@ -57,6 +60,10 @@ const AppRouter = () => {
             <Route exact path={'/admin/picture'} component={AdminPictureScreen} /> 
             <Route exact path={'/all-post'} component={AllPost} /> 
             <Route exact path={'/all-food-posted'} component={AllFoodPosted} />
+            <Route exact path={'/all-users'} component={AllUsers} />
+            <Route exact path={'/one-user'} component={OneUser} />
+            <Route exact path={'/home-slider'} component={HOmeSlider} />
+            
             <Route exact path={'*'} component={ErrorPage} /> 
             
         </Switch>

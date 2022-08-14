@@ -1,8 +1,10 @@
 import React from 'react'
 import style from './style.module.scss';
+import OneUser from '../components/one-user';
 
 function UserInfo() {
   return (
+    <>
     <div className={style.mainUserInfoContainer}>
       <h4>UserInfo</h4>
       <hr className={style.hrInfo}/>
@@ -15,6 +17,13 @@ function UserInfo() {
           </div>
         </div>
       </div>
+
+      <div className={style.mainUserInfoContainer}>
+      <h4>Data</h4>
+      <hr className={style.hrInfo}/>
+        <OneUser />
+      </div>
+    </>
   )
 }
 
