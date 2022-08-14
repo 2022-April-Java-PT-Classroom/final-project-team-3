@@ -1,6 +1,4 @@
 import "@reach/combobox/styles.css";
-import Popup from "../../components/popup";
-import AllPost from "../../components/all-posts";
 
 import {
     Combobox,
@@ -20,6 +18,8 @@ import usePlacesAutocomplete, {
     getLatLng,
 } from "use-places-autocomplete";
 
+import AllPost from "../../components/all-posts";
+import Popup from "../../components/popup";
 import React from "react";
 import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
@@ -28,8 +28,9 @@ import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
-    width: "50vw",
+    width: "100vw",
     height: "50vh",
+    
 };
 const center = {
     lat:37.090240,
@@ -43,8 +44,8 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-      libraries,
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+      libraries: ["places"],
     });
     
     const [markers, setMarkers]  = React.useState([]);
@@ -141,7 +142,7 @@ export default function App() {
 function Locate({ panTo }) {
     return (
       <button 
-        className="locate"
+        className={style.compassBtn}
         onClick={() => {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -194,7 +195,8 @@ function Search({ panTo }) {
       return (
         <div >
             <AllPost/>
-            <center><div className="search" >
+            <center>
+              <div className={style.search} >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}

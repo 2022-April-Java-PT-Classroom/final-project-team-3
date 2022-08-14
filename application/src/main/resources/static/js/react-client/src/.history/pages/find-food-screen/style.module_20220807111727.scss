@@ -1,0 +1,24 @@
+.compassBtn{
+    position: absolute;
+    top: 16rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    z-index: 10;
+
+}
+
+.compassimg {
+    height: 50px;
+    width: 50px;    
+}
+.search{
+    position: absolute;
+    top: 16rem;
+    right: 8.5rem;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 10;
+    
+}
