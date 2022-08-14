@@ -1,12 +1,6 @@
-
-
 .compassBtn{
-    display: center;
-}
-.compassBtn{
-
     position: absolute;
-    top: 23rem;
+    top: 18rem;
     right: 1rem;
     background: none;
     border: none;
@@ -15,26 +9,15 @@
 }
 
 .compassimg {
-    display: center;
     height: 50px;
     width: 50px;    
 }
 .search{
-    display: center;
-    width: 50px;    
-}
-.search{
     position: absolute;
-    top: 23rem;
-    right: 35rem;
+    top: 17rem;
+    right: 8.5rem;
     transform: translateX(-50%);
     width: 100%;
     max-width: 400px;
     z-index: 10;
-    input {
-        padding: 0.5rem;
-        font-size: 1.5rem;
-        width: 100%;
-        
-      }
 }

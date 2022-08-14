@@ -18,8 +18,6 @@ import usePlacesAutocomplete, {
     getLatLng,
 } from "use-places-autocomplete";
 
-import AllPost from "../../components/all-posts";
-import Popup from "../../components/popup";
 import React from "react";
 import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
@@ -44,8 +42,8 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: ["places"],
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+      libraries,
     });
     
     const [markers, setMarkers]  = React.useState([]);
@@ -79,7 +77,7 @@ export default function App() {
 
 
    return (
-   <center><div>
+   <div>
     <h1>Community{" "}
     <span role="img" aria-label="chef">
         🧑‍🍳
@@ -135,7 +133,7 @@ export default function App() {
           </InfoWindow>
         ) : null}
       </GoogleMap>
-    </div></center>
+    </div>
   );
 }
 
@@ -193,28 +191,23 @@ function Search({ panTo }) {
       };
 
       return (
-        <div>
-            <AllPost/>
-            <center>
-              <div className={style.search} >
-            <Combobox onSelect={handleSelect}>
-                <ComboboxInput
-                value={value}
-                onChange={handleInput}
-                disabled={!ready}
-                placeholder="Search your location"
-                />
-                <ComboboxPopover>
-                <ComboboxList>
-                    {status === "OK" &&
-                    data.map(({ id, description }) => (
-                        <ComboboxOption key={id} value={description} />
-                    ))}
-                </ComboboxList>
-                </ComboboxPopover>
-            </Combobox>
-            </div>
-            </center>
+        <div className={style.sear}>
+          <Combobox onSelect={handleSelect}>
+            <ComboboxInput
+              value={value}
+              onChange={handleInput}
+              disabled={!ready}
+              placeholder="Search your location"
+            />
+            <ComboboxPopover>
+              <ComboboxList>
+                {status === "OK" &&
+                  data.map(({ id, description }) => (
+                    <ComboboxOption key={id} value={description} />
+                  ))}
+              </ComboboxList>
+            </ComboboxPopover>
+          </Combobox>
         </div>
       );
     }

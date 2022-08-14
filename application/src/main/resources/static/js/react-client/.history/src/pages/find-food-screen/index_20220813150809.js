@@ -44,9 +44,10 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: ["places"],
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+      libraries,
     });
+    // AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E
     
     const [markers, setMarkers]  = React.useState([]);
     
@@ -195,8 +196,7 @@ function Search({ panTo }) {
       return (
         <div>
             <AllPost/>
-            <center>
-              <div className={style.search} >
+            <center><div className="search" >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
