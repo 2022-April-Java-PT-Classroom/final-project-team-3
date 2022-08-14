@@ -1,0 +1,30 @@
+#resultSignup{
+    margin:30px;
+}
+.signupform{
+    background: #fff;
+    width: 500px;
+    margin: 65px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+    .signuptitle{
+      padding: 0 35px 0 35px;
+      font-weight: 300;
+    }
+    .action{
+      padding: 1rem;
+    }
+    .lockicon{
+    background:#6D8021;
+    width: 50px;
+    top: 2rem;
+    left: ;
+    margin: 10px auto;
+    display: flex;
+    }
+  }
