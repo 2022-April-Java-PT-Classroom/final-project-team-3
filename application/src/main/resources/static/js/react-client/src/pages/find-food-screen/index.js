@@ -79,8 +79,8 @@ export default function App() {
 
 
    return (
-   <center><div>
-    <h1>Community{" "}
+   <center ><div style={{paddingBottom:"50px"}}>
+    <h1 className={style.h1}>Community{" "}
     <span role="img" aria-label="chef">
         🧑‍🍳
     </span>
@@ -99,7 +99,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -193,7 +193,7 @@ function Search({ panTo }) {
       };
 
       return (
-        <div>
+        <div >
             <AllPost/>
             <center>
               <div className={style.search} >

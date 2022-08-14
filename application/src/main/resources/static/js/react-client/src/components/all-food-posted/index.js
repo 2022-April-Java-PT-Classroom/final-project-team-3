@@ -133,7 +133,7 @@ const AllFoodPosted = () => {
            <div id="operatingFood"> 
             { loadingFood ? <h3>Loading ...</h3> :
                 <>
-                    <h3>All posted food</h3>
+                    <h3 className={style.h3}>All posted food</h3>
                     <table>
                       <tbody>
                         

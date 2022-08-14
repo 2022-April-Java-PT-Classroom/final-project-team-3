@@ -15,6 +15,7 @@ const SetToken = ()=> {
            
            setTimeout(()=>{document.querySelector("#login").style.fontSize = "12px";
            document.querySelector("#login").style.fontWeight = "600";
+           document.querySelector("#logoutTop").style.display = "block";
            document.querySelector("#login").textContent = "Hi, "+resObj.firstName;},20 );
           
        }

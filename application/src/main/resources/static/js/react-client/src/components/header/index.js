@@ -3,6 +3,7 @@ import React from "react";
 import Axios from 'axios';
 import logo from '../../assets/logo/CommunityLogo.png';
 import style from './style.module.scss';
+import styleLink from '../../assets/css/style.css';
 
 const Header = () => {
     var chiefId = 0; 
@@ -17,7 +18,7 @@ const Header = () => {
         console.log('DATA', response.data);
         console.log(response.data);
         roles = response.data.roles; console.log(roles);  //
-       //alert(roles.length);
+       document.querySelector("#logoutTop").style.display = "block";
         for(let i=0; i < roles.length; i++){if(i>0)role +=","; role +=roles[i].id; }
         localStorage.setItem("roleId", role);  //alert(localStorage.getItem("roleId"));
     }).catch(function (err) {
@@ -25,11 +26,19 @@ const Header = () => {
       }); 
 
     }
+    const handleLogout = ()=>{ 
+        document.querySelector("#logoutTop").style.display = "none";
+        localStorage.setItem("token","");
+        window.location.reload();
+
+    }
 
     const link = window.location.href;
     if(link.search("/admin")<0)
     return (
         <div className={style.header}>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
+            <link rel="stylesheet" href={styleLink}></link>
             <div className={style.navList}>
                 <img className={style.image} src={logo} alt='Community Logo' />
                 <NavLink to={'/'}>Home</NavLink>
@@ -41,9 +50,10 @@ const Header = () => {
                 <NavLink to={'/events'}>Events</NavLink>
                 <NavLink to={'/faq'}>FAQ</NavLink>
                 <NavLink to={'/findfood'}>Find Food</NavLink>
-                <NavLink to={'/profile'}>Profile</NavLink>
+                {/* <NavLink to={'/profile'}>Profile</NavLink> */}
                 <NavLink to={'/review'}>Review</NavLink>
                 <NavLink to={'/login'} id="login">Login</NavLink>
+                <i className="fa fa-sign-out fa-2x" onClick={()=>handleLogout()} id="logoutTop" ></i>
                 {/* <NavLink to={'/signup'}>Sign Up</NavLink> */}
             </div>
         </div>

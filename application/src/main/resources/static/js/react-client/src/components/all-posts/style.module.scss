@@ -1,10 +1,10 @@
 .mainPostContainer{
-    height: 100%;
-    width: 95%;
-    margin: 2rem;
-    padding: 1rem;
-    box-shadow: 0rem 0rem 1rem 0.5rem lightgray;
-    border-radius: 0.5rem;
+    // height: 100%;
+    // width: 95%;
+    // margin: 2rem;
+    // padding: 1rem;
+    // box-shadow: 0rem 0rem 1rem 0.5rem lightgray;
+    // border-radius: 0.5rem;
     .headPosition{
         display: flex;
         align-items: flex-start;
@@ -83,25 +83,29 @@
 .pictures div{ display:inline;}
 
 .container{
+    background-color: #6D8021;
     display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: 100%;   
-  margin: 50px 0 0 0;
-  flex-wrap: wrap;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;   
+    margin: auto; 
+    width: 100%;
+    padding: 2px;
   }
   
   .item{
     width: 300px;
     height: 420px;
-    border: 1px rgb(153, 89, 105) solid;
+    border: 1px rgb(170, 234, 7) solid;
     overflow: hidden;
-    margin-top: 20px 0;
-    margin-bottom: 70px;
+    //margin-top: 20px 0;
+   // margin-bottom: 70px;
+    margin: 50px 20px ;
     border-radius:20px;
     box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
-  -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
-  -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+   -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+   background: #fff;
 
   & div{
     padding:6px 6px 0 6px;
@@ -134,3 +138,6 @@
     box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
   }
   }
+
+  h3{color:#fff; 
+    margin: 15px 0 0 0;}

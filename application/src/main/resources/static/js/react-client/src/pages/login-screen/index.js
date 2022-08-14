@@ -27,6 +27,8 @@ const Login = () => {
             xlogin.style.fontSize = "12px";
             xlogin.style.fontWeight = "600";
             xlogin.textContent = "Hi, "+resObj.firstName; 
+            document.querySelector("#logoutTop").style.display = "block";
+            
         }
         const timer = setTimeout(() =>{lance();},20);
     } else 
@@ -43,6 +45,8 @@ const Login = () => {
         document.querySelector("#login").style.fontWeight = "";
         localStorage.setItem("roleId","");
         document.querySelector("#operatingFood").style.display = "none";
+        document.querySelector("#logoutTop").style.display = "none";
+        
 
     }
 
@@ -90,6 +94,7 @@ const Login = () => {
                 document.querySelector("#formLogin").style.display = "none";
                 document.querySelector("#logout").style.display = "block";
                document.querySelector("#operatingFood").style.display = "block"; 
+               document.querySelector("#logoutTop").style.display = "block";
 
                 console.log(JSON.parse(resObj));
                 //window.location.replace("/");
