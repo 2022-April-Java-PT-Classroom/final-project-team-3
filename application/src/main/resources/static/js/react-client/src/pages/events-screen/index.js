@@ -11,11 +11,13 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
     const fetchData = async () => {
         const result = await Axios('https://newsapi.org/v2/everything?' +
-        'q=Apple&' +
+        'q=food%20hungry%20america&' +
+        'language=en&' +
         'sortBy=publishedAt&' +
         'apiKey=0c749615e4f54f1892a566d56dbdca85');
         setNews(result.data.articles);
         console.log(result.data.articles);
+        
     };
 
     if (news) {
@@ -32,24 +34,41 @@ useEffect(() => {
 
 return ( 
     loading ? <h3>Loading Events...</h3> :
-    <div className={style.newsGrid}>
-       
+  
+    < div className={style.newsGrid}>
+        <div className={style.container1}>
+      
            {news.map(news1 =>
-          
-                    <div className={style.sections}>
-                      
-                        <h1>{news1.source.name}</h1>
-                        <h2>{news1.title} </h2>
-                        <h5>Published At: {news1.publishedAt}</h5> 
-                            <a href={news1.url}> <img src={news1.urlToImage} ></img></a>
-                              <div className={style.container}>
-                                <parseFloat>{news1.content} <a href={news1.url}>more...</a></parseFloat>
-                              </div>
+                  
+                    // <div className={style.sections}>
+                     
+                    //     <h1>{news1.source.name}</h1>
+                    //     <h2 className={style.title}>{news1.title} </h2>
+                    //     <h5>Published At: {news1.publishedAt}</h5> 
+                    //         {/* <a href={news1.url}> <img src={news1.urlToImage} ></img></a> */}
+                    //         <a href={news1.url} target="_blank"> <div style={{width:"100%", height:"200px",background:`url(${news1.urlToImage}) no-repeat`, backgroundSize:"390px"}}></div></a>
                             
+                    //           <div className={style.container}>
+                    //             <parseFloat>{news1.content} <a href={news1.url}>more...</a></parseFloat>
+                    //           </div>
+                            
+                    // </div>
+
+                    
+                        <div className={style.item}>
+                        <h1>{news1.source.name}</h1>
+                        <h5>Published At: {news1.publishedAt}</h5>
+                        <a href={news1.url} target="_blank"> <div style={{width:"100%", height:"200px",background:`url(${news1.urlToImage}) no-repeat`, backgroundSize:"390px"}}></div></a>
+                        <div className={style.container}>
+                        <parseFloat> {news1.content} <a href={news1.url}>more...</a></parseFloat>
                         </div>
+
+                        </div>
+                    
                   
            
                 )} 
+                </div>
          
    </div>
     );

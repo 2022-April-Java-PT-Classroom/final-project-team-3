@@ -174,5 +174,7 @@ public class Food {
       this.commentary = commentary;
    }
 
-
+   public void setDeliveredDate(String deliveredDate) {
+      this.deliveredDate = deliveredDate;
+   }
 }

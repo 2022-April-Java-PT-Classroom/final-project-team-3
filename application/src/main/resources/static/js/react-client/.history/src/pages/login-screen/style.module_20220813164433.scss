@@ -1,0 +1,185 @@
+.logout{
+    margin: 50px;
+    display:none;
+    cursor: pointer;
+}
+
+
+.img{
+    //  position: absolute;
+    //  z-index: 1;
+    width: 30px;
+    margin: 0 0 4px 0;
+    padding:0 0 4px 0;
+    
+    border:#ccc 3px solid;
+    cursor: pointer;
+}
+
+.img:hover{
+   // width: 100px; top:0;
+    
+    
+}
+.pictures div{ display:inline;}
+
+.container{
+    display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;   
+  margin: 50px 0 0 0;
+  flex-wrap: wrap;
+  }
+  
+  .item{
+    width: 300px;
+    height: 420px;
+    border: 1px rgb(153, 89, 105) solid;
+    overflow: hidden;
+    margin-top: 20px 0;
+    margin-bottom: 70px;
+    border-radius:20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+  -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+
+  & div{
+    padding:6px 6px 0 6px;
+    text-align: center;
+  }
+  
+  & .foodDescription{
+    height:65px;
+    overflow-y:scroll;
+    font-size: 12px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  & .foodOrder{
+    cursor: pointer;
+    background:#6D8021;
+    border-radius: 10px;
+    border:0;
+    padding:15px;
+    color:#fff;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.32);
+  }
+  & .foodOrder:hover{
+   
+    background:#6D8021;
+    border-radius: 10px;
+    border:0;
+    padding:15px;
+    color:rgb(254, 170, 2);
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+  }
+  }
+
+  form {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    & input, textarea, span, select {
+        // background-color: lightgreen;
+        border: 2px solid #333;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        width:300px;
+    }
+
+    & span {
+        border:0;
+    }
+
+    & button {
+        border-radius: 8px; 
+        cursor: pointer;
+        width:300px;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+        font-family: impact;
+        background:#6D8021;
+        border:0;
+        color:#fff;
+        box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.32);
+        
+    }
+    & button:hover{
+        border:2px dashed #c31;
+        color:rgb(254, 170, 2);
+        box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.22);
+    }
+
+    & span {
+        cursor: pointer;
+        text-align: right;
+        color: green;
+        margin-right:10px;
+        font-weight: 100;
+        font-size: 12px;
+        font-family: Impact;
+    }
+}
+
+table {
+    margin: 20px auto;
+    td{ 
+        
+        background: #ccc;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 10px;
+
+        & button {
+        border-radius: 4px; 
+        cursor: pointer;
+        min-width: 30px;
+        min-height: 30px;
+        
+        }
+        
+        & button:hover{
+        border:2px dashed #c31;
+        color:rgb(20, 0, 204);
+
+        }
+        .fixLenght{
+            max-width:200px;
+            overflow: scroll;
+            margin:10px;
+            height: 70px;
+        }
+    }
+}
+.loginform{
+  background: #fff;
+  width: 500px;
+  margin: 65px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  .logintitle{
+    padding: 0 35px 0 35px;
+  font-weight: 300;
+  }
+  .action{
+    padding: 1rem;
+  }
+  .lockicon{
+  background:#6D8021;
+  width: 50px;
+  top: rem;
+  margin: 35px auto;
+  display: flex;
+  }
+}
+.displayNone{display: none;}

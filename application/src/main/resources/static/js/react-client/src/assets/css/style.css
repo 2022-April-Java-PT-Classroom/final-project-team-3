@@ -1,0 +1,6 @@
+.fa-sign-out{
+    color:red;
+    cursor: pointer;
+    
+}
+#logoutTop{display: none;}

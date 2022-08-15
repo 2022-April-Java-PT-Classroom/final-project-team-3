@@ -58,7 +58,7 @@ const Feeds = () => {
 
   return (
     <div className={style.mainFeedsContainer}>
-        <div className={style.topContainer}>
+        {/* <div className={style.topContainer}>
         <div className={style.feedInputContainer}>
             <div className={style.avatarContainer}><Avatar src=""></Avatar></div>
             <div className={style.inputContainer}>
@@ -90,13 +90,13 @@ const Feeds = () => {
             <label for="imageFile">
               <input type="file" id="imageFile" accept="image/*" hidden='true'/>
             <IconButton id='addAPhotoIc' component="span">
-            {/* <AddPhotoIcon /> */}
+            <AddPhotoIcon />
             </IconButton>
             </label>
             <h5 className={style.actionButtonText}>Upload Photo</h5>
           </div>
         </div>
-       </div> 
+       </div>  */}
        <div className={style.bottomContainer}>
         <h3 className={style.usersPost}>User Posts</h3>
         <Post/>

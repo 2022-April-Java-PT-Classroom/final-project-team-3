@@ -1,32 +1,38 @@
 import React, {createElement, useEffect, useState} from 'react';
 
+import AllFoodPosted from '../../components/all-food-posted';
+import {Avatar} from '@mui/material';
 import Axios from 'axios';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import style from './style.module.scss';
 
 //import { useState } from 'react';
 
 const Login = () => {
-
+  
      const [loading, setLoading] = useState(true);
-    
-   
-    
-     if(localStorage.getItem("token")!=""){
+    //
+     var chiefId = 0; 
+     
+    // if(!localStorage.getItem("token")) localStorage.setItem("token","");
+    if(localStorage.getItem("token")!=""){
  
         const resObj = JSON.parse(localStorage.getItem("token")); 
-
-    
+        chiefId = resObj.userId; 
+        
             const lance = async () => { 
             document.querySelector("#formLogin").style.display = "none"; 
             document.querySelector("#logout").style.display = "block";
-            const  xaccount = document.querySelector("#account") ; //alert(2);
-            xaccount.style.fontSize = "12px";
-            xaccount.style.fontWeight = "600";
-            xaccount.textContent = "Hi, "+resObj.firstName; 
+            const  xlogin = document.querySelector("#login") ; 
+            xlogin.style.fontSize = "12px";
+            xlogin.style.fontWeight = "600";
+            xlogin.textContent = "Hi, "+resObj.firstName; 
+            document.querySelector("#logoutTop").style.display = "block";
+            
         }
         const timer = setTimeout(() =>{lance();},20);
-    }
-
+    } else 
+    setTimeout(() =>{document.querySelector("#operatingFood").style.display = "none";},20); //document.querySelector("#operatingFood").setAttribute("style","display:none");
 
     const handleLogout = ()=>{
         //localStorage.removeItem("token"); alert(1);
@@ -34,9 +40,14 @@ const Login = () => {
         document.querySelector("#logout").style.display = "none";
         //document.querySelector("#formLogin").style.display = "block";
         document.querySelector("#formLogin").style.display = "flex";
-        document.querySelector("#account").textContent = "Login";
-        document.querySelector("#account").style.fontSize = "";
-        document.querySelector("#account").style.fontWeight = "";
+        document.querySelector("#login").textContent = "Login";
+        document.querySelector("#login").style.fontSize = "";
+        document.querySelector("#login").style.fontWeight = "";
+        localStorage.setItem("roleId","");
+        document.querySelector("#operatingFood").style.display = "none";
+        document.querySelector("#logoutTop").style.display = "none";
+        
+
     }
 
     const handleSubmit = (e) => {
@@ -44,7 +55,7 @@ const Login = () => {
 
         const xemail = document.querySelector("#email") ,
         xpassword = document.querySelector("#password") ,
-        xaccount = document.querySelector("#account") ;
+        xlogin = document.querySelector("#login") ;
         const userData = {
             
             email: xemail.value,
@@ -54,8 +65,8 @@ const Login = () => {
         
             
             Axios.post('http://localhost:8080/api/user/login', userData).then((response) => {
-                console.log("Status",response.status);
-                console.log('DATA', response.data);
+                console.log("Status",response.status); 
+                console.log('DATA', response.data); 
                 //setUserState(response.data);
                if(response.data.email){
                     const tokenObj = {
@@ -69,43 +80,65 @@ const Login = () => {
                 
                 const resObj = JSON.parse(localStorage.getItem("token"));
                 
-                xaccount.style.fontSize = "12px";
-                xaccount.style.fontWeight = "600";
-                xaccount.textContent = "Hi, "+resObj.firstName; 
-
+                xlogin.style.fontSize = "12px";
+                xlogin.style.fontWeight = "600";
+                xlogin.textContent = "Hi, "+resObj.firstName; 
+                
+                let role ="";
+                for(let i=0; i < response.data.roles.length; i++){if(i>0)role +=","; role +=response.data.roles[i].id; }
+                localStorage.setItem("roleId", role); 
+               
                 xemail.value = "";
-                xpassword.value = ""; 
+                xpassword.value = "";   
 
                 document.querySelector("#formLogin").style.display = "none";
                 document.querySelector("#logout").style.display = "block";
+               document.querySelector("#operatingFood").style.display = "block"; 
+               document.querySelector("#logoutTop").style.display = "block";
 
                 console.log(JSON.parse(resObj));
                 //window.location.replace("/");
+                //setTimeout(window.location.reload(),1000);
             }
             }).catch(function (err) {
                 console.log("Incorrect email or password " + err.message);
                 //console.log("Incorrect email or password ");
               }); 
-        
-    
-        
-     
+   
     }
+///////////////////////////////////////////////////////
+
+
   
    
     return (
-        <div>
-            { //loading ? <h3>Loading ...</h3> :
+        <div className={style.loginform}>
+          { //loading ? <h3>Loading ...</h3> :
             <>
-                <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
-                <form onSubmit={handleSubmit} id="formLogin">
-                    <input type="email" id="email" name ="email"  placeholder='Enter your email' required/>
-                    <input type="password" name="password" id="password" placeholder="Enter password"required/>
+            <form  className={style.loginform} onSubmit={handleSubmit} id="formLogin">
+            <Avatar className={style.lockicon}>
+            <LockOutlinedIcon />
+            </Avatar>
+            <h1 className={style.logintitle}>Login</h1>
                 
+                <div className={style.content}>
+                    <div className={style.inputfield}>
+                    <input type="email" id="email" name ="email"  placeholder='Enter your email' required/>
+                    </div>
+                    <div className={style.inputfield}>
+                    <input type="password" name="password" id="password" placeholder="Enter password"required/>
+                    </div>
+                </div>
+                <div className={style.action}>
+                <button onClick={() => handleLogout()} id="logout" className={style.logout}>Logout</button>
                 <button type="submit"> Submit</button> <div>Don't have a account, please <a href="/signup">signup</a></div>   
+                </div>
                 </form>
             </>   
             }
+
+            <AllFoodPosted />
+
         </div>
      
     );

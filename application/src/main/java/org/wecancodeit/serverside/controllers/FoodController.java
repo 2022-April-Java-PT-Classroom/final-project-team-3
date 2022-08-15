@@ -32,6 +32,7 @@ public class FoodController {
     public Collection<Food> getAllFood(){
         return (Collection<Food>) foodRepo.findAll();
     }
+
 //chiefId, foodTypes, foodName, foodDescription, cookingTime, estimatedCost, postedDate, expirationTime)
     @PostMapping("/api/food/add-food")
     public Collection<Food> addFood(@RequestBody String body) throws JSONException {
@@ -115,7 +116,7 @@ public class FoodController {
             foodSelectedOpt.get().setFoodGuest(guestId, orderedDate);
             foodRepo.save(foodSelectedOpt.get());
         }
-        return foodSelectedOpt.isPresent() ? "Successfully" : "Error"; //foodSelectedOpt.get();
+        return foodSelectedOpt.isPresent() ? "Successfully 5 " : "Error"; //foodSelectedOpt.get();
     }
 
 
@@ -138,6 +139,20 @@ public class FoodController {
         return foodSelectedOpt.isPresent() ? "Successfully" : "Error"; //foodSelectedOpt.get();
     }
 
+    @PutMapping ("/api/food/{id}/food-delivered")
+    public String deliveredFoodByDeliveryman(@PathVariable Long id, @RequestBody String body) throws JSONException {
+        JSONObject newFood = new JSONObject(body);
+        String deliveredDate = newFood.getString("deliveredDate");
+
+        Optional<Food> foodSelectedOpt = foodRepo.findById(id);
+
+        if (foodSelectedOpt.isPresent()) {
+            foodSelectedOpt.get().setDeliveredDate(deliveredDate);
+            foodRepo.save(foodSelectedOpt.get());
+        }
+        return foodSelectedOpt.isPresent() ? "Successfully" : "Error"; //foodSelectedOpt.get();
+    }
+
     @GetMapping("/api/food/chief/{chiefId}")
     public Collection<Food> getAllFoodByOneChief(@PathVariable Long chiefId)  throws JSONException{
         Collection<Food> findFoodsByChief = foodRepo.findAllByChiefId(chiefId);
@@ -146,13 +161,13 @@ public class FoodController {
 
     @GetMapping("/api/food/guest/{guestId}")
     public Collection<Food> getAllFoodByGuest(@PathVariable Long guestId)  throws JSONException{
-        Collection<Food> findFoodsByGuest = foodRepo.findAllByChiefId(guestId);
+        Collection<Food> findFoodsByGuest = foodRepo.findAllByGuestId(guestId);
         return   findFoodsByGuest;
     }
 
     @GetMapping("/api/food/deliveryman/{deliverymanId}")
     public Collection<Food> getAllFoodByDeliveryman(@PathVariable Long deliverymanId)  throws JSONException{
-        Collection<Food> findFoodsByDeliveryman = foodRepo.findAllByChiefId(deliverymanId);
+        Collection<Food> findFoodsByDeliveryman = foodRepo.findAllByDeliverymanId(deliverymanId);
         return   findFoodsByDeliveryman;
     }
 

@@ -18,6 +18,8 @@ import usePlacesAutocomplete, {
     getLatLng,
 } from "use-places-autocomplete";
 
+import AllPost from "../../components/all-posts";
+import Popup from "../../components/popup";
 import React from "react";
 import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
@@ -26,8 +28,9 @@ import style from './style.module.scss';
 
 const libraries = ["places"];
 const mapContainerStyle ={
-    width: "50vw",
+    width: "100vw",
     height: "50vh",
+    
 };
 const center = {
     lat:37.090240,
@@ -41,8 +44,8 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-      libraries,
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+      libraries: ["places"],
     });
     
     const [markers, setMarkers]  = React.useState([]);
@@ -76,8 +79,8 @@ export default function App() {
 
 
    return (
-   <div>
-    <h1>Community{" "}
+   <center ><div style={{paddingBottom:"50px"}}>
+    <h1 className={style.h1}>Community{" "}
     <span role="img" aria-label="chef">
         🧑‍🍳
     </span>
@@ -96,7 +99,7 @@ export default function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-    >
+      >
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -132,14 +135,14 @@ export default function App() {
           </InfoWindow>
         ) : null}
       </GoogleMap>
-    </div>
+    </div></center>
   );
 }
 
 function Locate({ panTo }) {
     return (
-      <button
-        className="locate"
+      <button 
+        className={style.compassBtn}
         onClick={() => {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -190,23 +193,28 @@ function Search({ panTo }) {
       };
 
       return (
-        <div className="search">
-          <Combobox onSelect={handleSelect}>
-            <ComboboxInput
-              value={value}
-              onChange={handleInput}
-              disabled={!ready}
-              placeholder="Search your location"
-            />
-            <ComboboxPopover>
-              <ComboboxList>
-                {status === "OK" &&
-                  data.map(({ id, description }) => (
-                    <ComboboxOption key={id} value={description} />
-                  ))}
-              </ComboboxList>
-            </ComboboxPopover>
-          </Combobox>
+        <div >
+            <AllPost/>
+            <center>
+              <div className={style.search} >
+            <Combobox onSelect={handleSelect}>
+                <ComboboxInput
+                value={value}
+                onChange={handleInput}
+                disabled={!ready}
+                placeholder="Search your location"
+                />
+                <ComboboxPopover>
+                <ComboboxList>
+                    {status === "OK" &&
+                    data.map(({ id, description }) => (
+                        <ComboboxOption key={id} value={description} />
+                    ))}
+                </ComboboxList>
+                </ComboboxPopover>
+            </Combobox>
+            </div>
+            </center>
         </div>
       );
     }

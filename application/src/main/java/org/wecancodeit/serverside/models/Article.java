@@ -5,19 +5,27 @@ package org.wecancodeit.serverside.models;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String authorName;
 
     private String articleTitle;
+
+    //@Column(columnDefinition = "varchar(1080)")
+    @Lob
     private String articleBody;
-    private Instant date;
+
+    private LocalDate date;
+
+    private String articleImage;
+
 
     public String getAuthorName() {
         return authorName;
@@ -43,19 +51,28 @@ public class Article {
         this.articleBody = articleBody;
     }
 
-    public Instant getDate() {
+    public String getArticleImage() {
+        return articleImage;
+    }
+
+    public void setArticleImage(String articleImage) {
+        this.articleImage = articleImage;
+    }
+
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Instant date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Article(String authorName, String articleTitle, String articleBody, Instant date) {
+    public Article(String authorName, String articleTitle, String articleBody, LocalDate date, String articleImage) {
         this.authorName = authorName;
         this.articleTitle = articleTitle;
         this.articleBody = articleBody;
         this.date = date;
+        this.articleImage= articleImage;
     }
     public Article(){
 
