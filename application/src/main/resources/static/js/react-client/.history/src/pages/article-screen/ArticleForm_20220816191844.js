@@ -49,7 +49,7 @@ const ArticleForm = ({articleForm }) => {
     return (
         <div className={style.articleform} >
     <form  className={style.articleform} onSubmit={handleSubmit}>
-         <h1 className={style.artletitle}>Post An Article</h1>
+        
          <div className={style.content}>
                 <div className={style.inputfield}>
                     <input type="text" name="authorName" value={Article.authorName} onChange={handleChange} placeholder='Enter The Author Name' />

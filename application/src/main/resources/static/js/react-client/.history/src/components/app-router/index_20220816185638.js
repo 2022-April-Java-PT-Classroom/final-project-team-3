@@ -51,7 +51,7 @@ const AppRouter = () => {
             <Route exact path={'/signup'} component={SignupScreen} />
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/posts'} component={UserHomeScreen} />
-            {/* <Route exact path={'/review'} component={ReviewScreen} /> */}
+            <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
