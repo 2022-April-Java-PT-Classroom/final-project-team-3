@@ -137,7 +137,7 @@ const SignUp = () => {
                     <Avatar className={style.lockicon}>
                     <LockOutlinedIcon />
                     </Avatar>
-            <h1 className={style.signuptitle}>Sign up</h1>
+                    <h1 className={style.signuptitle}>Sign up</h1>
                     <div className={style.content}>
                     <input type="text" id ="firstName" name = "firstName"  placeholder="Enter your first name (required)" required/>
                     <input type="text" id ="lastName" name = "lastName"  placeholder="Enter your last name (required)" required/>
@@ -151,7 +151,7 @@ const SignUp = () => {
                     <input type="hidden" id ="userId" name = "userId"  value="0" />
                     </div>
                     { loadingRole ? <h3>Loading ...</h3> :
-                        <select id="roleId" name="roleId" multiple required>
+                        <select id="roleId" name="roleId" className={style.roleId} multiple required>
                             <option disabled>Please Select Role (required)</option>
                         {roles.map(role =>(
                             <option key={role.id} value={role.id}>{role.roleName}</option>
