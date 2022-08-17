@@ -7,25 +7,25 @@ import AdminContentScreen from '../../admin/pages/content-screen';
 import AdminPictureScreen from '../../admin/pages/picture-screen';
 import AdminRoleScreen from '../../admin/pages/role-screen';
 import AdminUserScreen from '../../admin/pages/user-screen';
+import AllFoodPosted from '../all-food-posted';
+import AllPost from '../all-posts';
+import AllUsers from '../all-users';
 import ArticleScreen from '../../pages/article-screen';
 import ContactScreen from '../../pages/contact-screen';
 import ErrorPage from '../../pages/error-page';
 import EventsScreen from '../../pages/events-screen';
 import FaqScreen from '../../pages/faq-screen';
 import FindFoodScreen from '../../pages/find-food-screen';
+import HOmeSlider from '../home-slider';
 import LandingpageScreen from '../../pages/landingpage-screen';
 import LoginScreen from '../../pages/login-screen';
+import OneUser from '../one-user';
 import ProfileScreen from '../../pages/profile-screen';
 import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
-import AllUsers from '../all-users';
-import OneUser from '../one-user';
 
-import AllPost from '../all-posts';
-import AllFoodPosted from '../all-food-posted';
-import HOmeSlider from '../home-slider';
 import AdminScreen from '../../admin/pages/admin';
 
 import feeds from '../../feeds';
@@ -43,7 +43,7 @@ const AppRouter = () => {
             <Route exact path={'/about-developers'} component={AboutDevs} />
             <Route exact path={'/about-company'} component={AboutCompany} />
             <Route exact path={'/about-company-value'} component={Accordion} />
-            <Route exact path={'/contact'} component={ContactScreen} />
+            {/* <Route exact path={'/contact'} component={ContactScreen} /> */}
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
             <Route exact path={'/faq'} component={FaqScreen}/>
@@ -54,8 +54,12 @@ const AppRouter = () => {
             <Route exact path={'/signup'} component={SignupScreen} />
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/posts'} component={UserHomeScreen} />
+
             <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/admin/'} component={AdminScreen} />
+
+            {/* <Route exact path={'/review'} component={ReviewScreen} /> */}
+
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 

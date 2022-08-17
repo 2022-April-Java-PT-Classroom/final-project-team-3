@@ -1,6 +1,6 @@
+import Axios from 'axios';
 import { NavLink } from "react-router-dom";
 import React from "react";
-import Axios from 'axios';
 import logo from '../../assets/logo/CommunityLogo.png';
 import style from './style.module.scss';
 import styleLink from '../../assets/css/style.css';
@@ -45,13 +45,13 @@ const Header = () => {
                 <NavLink to={'/userhome'}>UserHome</NavLink>
                 <NavLink to={'/about-developers'}>Team</NavLink>
                 <NavLink to={'/about-company'}>Who We Are</NavLink>
-                <NavLink to={'/contact'}>Contact</NavLink>
+                {/* <NavLink to={'/contact'}>Contact</NavLink> */}
                 <NavLink to={'/article'}>Article</NavLink>
                 <NavLink to={'/events'}>Events</NavLink>
                 <NavLink to={'/faq'}>FAQ</NavLink>
                 <NavLink to={'/findfood'}>Find Food</NavLink>
                 {/* <NavLink to={'/profile'}>Profile</NavLink> */}
-                <NavLink to={'/review'}>Review</NavLink>
+                {/* <NavLink to={'/review'}>Review</NavLink> */}
                 <NavLink to={'/login'} id="login">Login</NavLink>
                 <i className="fa fa-sign-out fa-2x" onClick={()=>handleLogout()} id="logoutTop" ></i>
                 {/* <NavLink to={'/signup'}>Sign Up</NavLink> */}

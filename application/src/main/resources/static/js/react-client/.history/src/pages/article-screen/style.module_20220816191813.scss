@@ -1,0 +1,177 @@
+// .sections{
+//     font-size: medium;
+//     align-content: flex-start;
+// color:black;
+// border: 1rem;
+// padding:initial;
+// align-content: center;
+// border-color: black;
+// text-align:center;
+// box-sizing: border-box;
+// width: fit-content;
+// height: fit-content;
+
+// }
+
+.newsGrid {
+    & body {
+      margin:25px;
+    }
+  
+    & img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 100%;
+    }
+  
+    & h1 {
+      font-size: 15pt;
+      color: rgba(100, 125, 70, 1);
+      padding: 1%;
+      margin: 5%;
+      word-wrap: break-word;
+    }
+  
+    // & h2 {
+    //   padding-bottom: 5%;
+    //   padding-left: 2%;
+    //   padding-right: 2%;
+    //   text-align: left;
+    //   word-wrap: break-word;
+  
+      
+    // }
+  
+    & p {
+      word-wrap: break-word;
+      width:29%;
+      font-family: 'Open Sans', sans-serif;
+      float: left;
+      margin: 5% 2% 10% 2%;
+      padding: 0px;
+      height: 100%;
+    }
+  }
+  
+  
+    
+  
+  div.sections {
+      width: 65%;
+      height: auto;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+      margin:auto;
+     // display: flex;
+      //flex-direction: column;
+  
+  }
+    
+  div.container {
+      text-align: left;
+      //text-size-adjust: 10px;
+      padding: 10px 2%;
+      font-size: 15px;
+  }
+  div.newsGrid{
+     // margin:auto;
+      //background-color: rgb(100, 125, 60);
+     
+      //padding-top: 1%;
+      //display:flex;
+      //justify-content: space-around;
+      // display:flex;
+      // grid-template-columns: repeat(3, 3fr);
+      // align-items: center;
+      // padding-bottom: 2%;
+      //flex-direction: column;
+     // flex-wrap: wrap;
+  }
+  .title{
+      display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+      //padding-bottom: 5%;
+       padding-left: 2%;
+      padding-right: 2%;
+      text-align: left;
+      word-wrap: break-word;
+      
+  }
+  h5 {
+    padding: 0 3px;
+    //word-wrap:normal;
+  }
+    
+  .container1{
+   // background-color: rgb(100, 125, 60);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;   
+    margin: auto; 
+    width: 100%;
+    padding: 50px;
+    }
+    
+    .item{
+      width: 300px;
+      height: 420px;
+      border: 1px rgb(170, 234, 7) solid;
+      overflow: hidden;
+      //margin-top: 20px 0;
+     // margin-bottom: 70px;
+      margin: 50px 30px;
+      border-radius:0px;
+      box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+      -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+     -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+     background: #fff;
+  
+      & div{
+      padding:6px 6px 0 6px;
+      text-align: center;
+      }
+      & div.stitle {
+      text-align: left;
+      text-size-adjust: 10px;
+      padding: 10px 2%;
+     }
+     & a{
+      cursor:pointer;
+      text-decoration: none;
+      color: rgb(100, 125, 60);
+      font-weight: 600;
+  
+    }
+    & a:hover{
+      color:#c30;
+      font-weight: 600;
+    }
+  }
+  
+  .ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /*No of lines after which the ellipsis needs to be added*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }text-align: justify;
+
+.articleform{
+  background: #fff;
+  width: 500px;
+  margin: 65px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+
+  .action{
+    padding: 1rem;
+  }
+}

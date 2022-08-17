@@ -1,0 +1,48 @@
+
+
+.compassBtn{
+    display: center;
+}
+.compassBtn{
+
+    position: relative;
+    top: 23rem;
+    left: 25rem;
+    background: none;
+    border: none;
+    z-index: 10;
+
+}
+
+.compassimg {
+    display: center;
+    height: 50px;
+    width: 50px;
+}
+.h1{
+    margin:0rem 0 1rem 0;
+    padding:2rem 0 0 0;
+    color: #fff;
+}
+
+center{background:#6D8021;}
+.search{
+    display: center;
+    width: 50px;    
+}
+.search{
+    position: relative;
+    margin: 10px auto;
+   
+    // top: 23rem;
+    // right: 35rem;
+    // transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    input {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        width: 100%;
+        
+      }
+}
