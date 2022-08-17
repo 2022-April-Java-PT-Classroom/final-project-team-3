@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios'; 
 import style from './style.module.scss';
+import NeedLogin from "../../../components/need-login";
 
 const AdminPictureScreen = () =>{
     const xpictureName = document.querySelector("#pictureName"),
@@ -120,6 +121,7 @@ const AdminPictureScreen = () =>{
 
     return(
         <div>
+            <NeedLogin/>
             <div className={style.picture}>
                 <form onSubmit={handleSubmit}> 
                     <span id = "reset" onClick={() => handleReset()} >reset</span>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios'; 
 import style from './style.module.scss';
-
+import NeedLogin from "../../../components/need-login";
 
 const AdminContentScreen = () => {
     // contentName, title, subtitle, description, commentary, content
@@ -172,7 +172,7 @@ const AdminContentScreen = () => {
 
     return(
         <div>
-            
+            <NeedLogin/>
             <div className={style.content}>
                 <form onSubmit={handleSubmit}>  
                     <span id = "reset" onClick={() => handleReset()} >reset</span>

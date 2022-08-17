@@ -31,21 +31,21 @@ const OneUser = () => {
         xdescription = document.querySelector("#description") ,
         xpassword = document.querySelector("#password") ,
         xroleId = document.querySelector("#roleId") ,
-        xaddress = document.querySelector("#address") ,
+        xaddress1 = document.querySelector("#address1") ,
         xuserSubmit =  document.querySelector("#userSubmit") ;
 
         
 
    
     const handlePreUpdate = (userId, firstName, lastName, email, 
-        phone, avatar, address, description, password, roles) => {
+        phone, avatar, address1, description, password, roles) => {
        document.querySelector("#form").style.display = "block";
         xfirstName.value = firstName;
         xlastName.value = lastName;
         xemail.value = email;
         xphone.value = phone;
         xavatar.value = avatar;
-        xaddress.value = address;
+        xaddress1.value = address1;
         xdescription.value = description;
         xpassword.value = password;
 
@@ -74,7 +74,7 @@ const OneUser = () => {
             email: xemail.value,
             phone:  xphone.value,
             avatar: xavatar.value,
-            address: xaddress.value,
+            address: xaddress1.value,
             description : xdescription.value,
             password: xpassword.value,
             roleId: xroleId.value
@@ -132,8 +132,8 @@ const OneUser = () => {
                     <input type="phone" id ="phone" name = "phone"  placeholder="Enter you phone number (required)" required/>
                     <input type="email" id ="email" name = "email"  placeholder="Enter your email (required)" required/>
                     <input type="password" id ="password" name = "password"  placeholder="Enter password (required)" required/>
-                    <textarea id = "address" name = "address"  placeholder="Enter your address" />
-                    <textarea id = "description" name = "description"  placeholder="Enter the description" />
+                    <textarea id = "address1" name = "address1"  placeholder="Enter your address" ></textarea>
+                    <textarea id = "description" name = "description"  placeholder="Enter the description"></textarea>
                     <input type="text" id ="avatar" name = "avatar"  placeholder="Enter avatar URL" />
                     <input type="hidden" id ="up" name = "up"  value="0" />
                     <input type="hidden" id ="userId" name = "userId"  value="0" />

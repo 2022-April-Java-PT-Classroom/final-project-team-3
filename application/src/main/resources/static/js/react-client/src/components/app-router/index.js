@@ -26,6 +26,7 @@ import OneUser from '../one-user';
 import AllPost from '../all-posts';
 import AllFoodPosted from '../all-food-posted';
 import HOmeSlider from '../home-slider';
+import AdminScreen from '../../admin/pages/admin';
 
 import feeds from '../../feeds';
 import posts from '../../post';
@@ -54,6 +55,7 @@ const AppRouter = () => {
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/posts'} component={UserHomeScreen} />
             <Route exact path={'/review'} component={ReviewScreen} />
+            <Route exact path={'/admin/'} component={AdminScreen} />
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 
