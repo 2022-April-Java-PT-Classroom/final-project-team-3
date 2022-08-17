@@ -19,6 +19,8 @@ const Header = () => {
         console.log(response.data);
         roles = response.data.roles; console.log(roles);  //
         document.querySelector("#logoutTop").style.display = "block";
+        if(window.location.href.search("/userhome")>0)
+        document.querySelector("#userHomeNow").style.display = "block";
         for(let i=0; i < roles.length; i++){if(i>0)role +=","; role +=roles[i].id; }
         localStorage.setItem("roleId", role);  //alert(localStorage.getItem("roleId"));
     }).catch(function (err) {
@@ -28,6 +30,8 @@ const Header = () => {
     }
     const handleLogout = ()=>{ 
         document.querySelector("#logoutTop").style.display = "none";
+        if(window.location.href.search("/userhome")>0)
+        document.querySelector("#userHomeNow").style.display = "none";
         localStorage.setItem("token","");
         window.location.reload();
 
@@ -42,11 +46,11 @@ const Header = () => {
             <div className={style.navList}>
                 <NavLink to={'/'} title="Home"><img className={style.image} src={logo} alt='Community Logo' /></NavLink>
                 <NavLink to={'/'}>Home</NavLink>
-                <NavLink to={'/userhome'}>UserHome</NavLink>
+                <NavLink to={'/userhome'} id="userHomeNow">UserHome</NavLink>
                 <NavLink to={'/about-developers'}>Team</NavLink>
                 <NavLink to={'/about-company'}>Who We Are</NavLink>
                 {/* <NavLink to={'/contact'}>Contact</NavLink> */}
-                <NavLink to={'/article'}>Article</NavLink>
+                <NavLink to={'/article'} >Article</NavLink>
                 <NavLink to={'/events'}>Events</NavLink>
                 <NavLink to={'/faq'}>FAQ</NavLink>
                 <NavLink to={'/findfood'}>Find Food</NavLink>

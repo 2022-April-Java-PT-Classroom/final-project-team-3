@@ -3,7 +3,7 @@ import picFarida from '../../assets/teampics/farida.jpg'
 import picGian from '../../assets/teampics/gian.jpg'
 import picHailey from '../../assets/teampics/hailey.jpg'
 import picHakan from '../../assets/teampics/hakan.jpg'
-import picLouis from '../../assets/teampics/louis2.jpg'
+import picLouis from '../../assets/teampics/louis3.jpg'
 import picVictor from '../../assets/teampics/victor.jpg'
 import style from './style.module.scss'
 
@@ -67,7 +67,7 @@ const AboutDevs =() => {
                         <h2 className={style.name}>Louis Tchamda</h2>
                     </div>
                         {/* <img className={style.image} src={picLouis} alt='louis'/> */}
-                        <div className={style.picFrame} style={{width:"180px", height:"180px", margin:"0 auto", borderRadius:"10px", background:`url(${picLouis}) no-repeat`, backgroundSize:"180px", backgroundPositionY:"60%"}}></div>
+                        <div className={style.picFrame} style={{width:"180px", height:"180px", margin:"0 auto", borderRadius:"10px", background:`url(${picLouis}) no-repeat`, backgroundSize:"110%", backgroundPosition:"60% 40%"}}></div>
                         <br></br>
                         <p><b>Full stack developer.</b> For the past 15 years I have designed, developed and maintained different systems, specifically commercial websites, CRM(customer relationship management) and software.
                             I have advanced experience in code analysis, written by other developers. <font size="2"><em>"Performance is what to aspire to. However, be aware that racing is not for the fastest..."</em></font></p><br></br>

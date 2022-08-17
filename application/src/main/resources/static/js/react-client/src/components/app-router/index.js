@@ -43,7 +43,7 @@ const AppRouter = () => {
             <Route exact path={'/about-developers'} component={AboutDevs} />
             <Route exact path={'/about-company'} component={AboutCompany} />
             <Route exact path={'/about-company-value'} component={Accordion} />
-            {/* <Route exact path={'/contact'} component={ContactScreen} /> */}
+            <Route exact path={'/contact'} component={ContactScreen} />
             <Route exact path={'/article'} component={ArticleScreen} />
             <Route exact path={'/events'} component={EventsScreen} />
             <Route exact path={'/faq'} component={FaqScreen}/>
@@ -58,7 +58,7 @@ const AppRouter = () => {
             <Route exact path={'/review'} component={ReviewScreen} />
             <Route exact path={'/admin/'} component={AdminScreen} />
 
-            {/* <Route exact path={'/review'} component={ReviewScreen} /> */}
+            <Route exact path={'/review'} component={ReviewScreen} />
 
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 

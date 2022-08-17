@@ -28,6 +28,7 @@ const Login = () => {
             xlogin.style.fontWeight = "600";
             xlogin.textContent = "Hi, "+resObj.firstName; 
             document.querySelector("#logoutTop").style.display = "block";
+            document.querySelector("#userHomeNow").style.display = "block";
             
         }
         const timer = setTimeout(() =>{lance();},20);
@@ -46,6 +47,7 @@ const Login = () => {
         localStorage.setItem("roleId","");
         document.querySelector("#operatingFood").style.display = "none";
         document.querySelector("#logoutTop").style.display = "none";
+        document.querySelector("#userHomeNow").style.display = "none";
         
 
     }
@@ -95,6 +97,7 @@ const Login = () => {
                 document.querySelector("#logout").style.display = "block";
                document.querySelector("#operatingFood").style.display = "block"; 
                document.querySelector("#logoutTop").style.display = "block";
+               document.querySelector("#userHomeNow").style.display = "block";
 
                 console.log(JSON.parse(resObj));
                 //window.location.replace("/");
