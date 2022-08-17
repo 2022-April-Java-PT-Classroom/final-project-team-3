@@ -18,7 +18,7 @@ const Header = () => {
         console.log('DATA', response.data);
         console.log(response.data);
         roles = response.data.roles; console.log(roles);  //
-       document.querySelector("#logoutTop").style.display = "block";
+        document.querySelector("#logoutTop").style.display = "block";
         for(let i=0; i < roles.length; i++){if(i>0)role +=","; role +=roles[i].id; }
         localStorage.setItem("roleId", role);  //alert(localStorage.getItem("roleId"));
     }).catch(function (err) {
@@ -40,7 +40,7 @@ const Header = () => {
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
             <link rel="stylesheet" href={styleLink}></link>
             <div className={style.navList}>
-                <img className={style.image} src={logo} alt='Community Logo' />
+                <NavLink to={'/'} title="Home"><img className={style.image} src={logo} alt='Community Logo' /></NavLink>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/userhome'}>UserHome</NavLink>
                 <NavLink to={'/about-developers'}>Team</NavLink>
@@ -58,8 +58,13 @@ const Header = () => {
             </div>
         </div>
     )
-    else return (
+    else 
+    {
+       //setTimeout(()=>{if(localStorage.getItem("token")!="") document.querySelector("#logoutTop").style.display = "block";},10);
+        return (
         <div className={style.header}>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
+            <link rel="stylesheet" href={styleLink}></link>
             <div className={style.navListAdmin}>
                 <span><b>ADMIN</b></span>
                 <a href={'/'} style={{color:"#c30", fontWeight:"600"}}>Back to Home page</a>
@@ -68,9 +73,12 @@ const Header = () => {
                 <NavLink to={'/admin/picture'}>Picture</NavLink>
                 <NavLink to={'/admin/content'}>Content</NavLink>
                 <a  id="login" href={'/login'} style={{color:"#c30", fontWeight:"600"}}>Login</a>
+                <i className="fa fa-sign-out fa-2x" onClick={()=>handleLogout()} id="logoutTop" ></i>
+                
             </div>
         </div>
-    ); 
+        ); 
+    }
 }
 
 export default Header;

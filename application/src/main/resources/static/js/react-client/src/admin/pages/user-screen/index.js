@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios'; 
 import style from './style.module.scss';
+import NeedLogin from "../../../components/need-login";
 
 
 const AdminUserScreen = () => {
@@ -194,7 +195,7 @@ const AdminUserScreen = () => {
 
     return(
         <div>
-            
+            <NeedLogin/>
             <div className={style.user}>
                 <h3 id="resultStatus"></h3>
                 <form onSubmit={handleSubmit}> 

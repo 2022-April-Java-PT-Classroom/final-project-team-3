@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 import Roles from '../../components/roles';
 import style from './style.module.scss';
+import NeedLogin from "../../../components/need-login";
 
 const AdminRoleScreen = () =>{
 
@@ -30,6 +31,7 @@ const AdminRoleScreen = () =>{
 
     return(
         <div>
+            <NeedLogin/>
             <div >
                 <section className={style.roleList}>
                     {loadingRole ? <h3>Loading ...</h3> :

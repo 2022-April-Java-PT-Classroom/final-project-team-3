@@ -25,6 +25,9 @@ import React from "react";
 import ReviewScreen from '../../pages/review-screen';
 import SignupScreen from '../../pages/signup-screen';
 import UserHomeScreen from '../../pages/userhome-screen';
+
+import AdminScreen from '../../admin/pages/admin';
+
 import feeds from '../../feeds';
 import posts from '../../post';
 import userinfo from '../../userinfo';
@@ -51,7 +54,12 @@ const AppRouter = () => {
             <Route exact path={'/signup'} component={SignupScreen} />
             <Route exact path={'/profile'} component={ProfileScreen} />
             <Route exact path={'/posts'} component={UserHomeScreen} />
+
+            <Route exact path={'/review'} component={ReviewScreen} />
+            <Route exact path={'/admin/'} component={AdminScreen} />
+
             {/* <Route exact path={'/review'} component={ReviewScreen} /> */}
+
             <Route exact path={'/admin/role'} component={AdminRoleScreen} />
             <Route exact path={'/admin/user'} component={AdminUserScreen} /> 
             <Route exact path={'/admin/content'} component={AdminContentScreen} /> 

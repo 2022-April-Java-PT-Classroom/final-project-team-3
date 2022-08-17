@@ -170,5 +170,28 @@ p{
 }
 
 
+.picFrame {
+    // width:180px; 
+    // height:180px;
+    // margin:0 auto; 
+    // border-radius:10px;
+    // background-size:180px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+   -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.52);
+}
 
+a{
+    text-decoration: none;
+    color:rgb(100, 125, 60);
+}
+.section1 a, .section2 a, .section3 a, .section4 a, .section5 a, .section6 a 
+{
+    text-decoration: none;
+    color:rgb(100, 125, 60);
+}
 
+.section1 a:hover, .section2 a:hover, .section3 a:hover, .section4 a:hover, .section5 a:hover, .section6 a:hover 
+{
+  color:#c30;
+}
