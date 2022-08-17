@@ -44,7 +44,7 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: "AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E",
+      googleMapsApiKey: "AIzaSyBmmiiSoq3uDOFcr3jyhuSZBUBLIC_GOOGLE_MAPS_APlOvxbeyD6E",
       libraries,
       
     });

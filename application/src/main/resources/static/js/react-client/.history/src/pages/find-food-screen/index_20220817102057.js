@@ -44,11 +44,11 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: "AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E",
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
       libraries,
-      
+      co
     });
-    console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+    
     const [markers, setMarkers]  = React.useState([]);
     
     const [selected, setSelected] = React.useState(null);
