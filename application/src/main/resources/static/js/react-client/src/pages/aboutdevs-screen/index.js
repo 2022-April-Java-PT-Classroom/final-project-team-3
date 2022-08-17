@@ -39,7 +39,7 @@ const AboutDevs =() => {
                     </div>
                         <img className={style.image} src={picFarida} alt='farida'/>
                         <br></br>
-                        <p>Hello, I'm Farida. I have an Associate degree and 2 years+ of experience in Business Management, Biology, Chemistry, and Geology. I am passionate about traveling and discovering. I love trying/learning new skills and taking on professional challenges. I'm currently learning Web Development at Columbus State Community College and at We Can Code IT (Bootcamp). I am excited to be learning a lot of new skills and really hope to be able to put that into practice full time as a career soon.</p><br></br>
+                        <p>Hello, I'm Farida. I have an Associate degree and 2 years+ of experience in Business Management, Biology, Chemistry, and Geology. I am passionate about traveling, discovering, and love trying/learning new skills. I'm currently learning Web Development at Columbus State Community College and at We Can Code IT (Bootcamp). I am excited to be learning a lot of new skills and really hope to be able to put that into practice full time as a career soon.</p><br></br>
                         
                             <a href="https://www.linkedin.com/in/faridandiaye/"><h5 className={style.linked}>LinkedIn</h5></a>
                         
@@ -52,7 +52,7 @@ const AboutDevs =() => {
                     </div>
                         <img className={style.image} src={picHakan} alt='hakan'/>
                         <br></br>
-                        <p>I work as a Clinical lab scientist at AmazonDx and am an Ohio Army National Guard member. Additionally, I am a PhD candidate in Biomedical Engineering, and my course projects are mostly concerned with programming and machine learning techniques. Up to this point, I've taken graduate-level Machine learning-related courses such as Applied Statistics, Machine Learning in Biomedical Engineering, Computational Biology, Computational Imaging, and Machine Learning. I am quite interested in the profession of Machine Learning, Data Science and Research Science, and I have made a concerted effort to further my knowledge in these sectors.</p><br></br>                       
+                        <p>I work as a Clinical lab scientist at AmazonDx and am an Ohio Army National Guard member. I am a PhD candidate in Biomedical Engineering and have taken graduate-level Machine learning-related courses. I am quite interested in the profession of Machine Learning, Data Science and Research Science, and I have made a concerted effort to further my knowledge in these sectors.</p><br></br>                       
                           <a href="www.linkedin.com/in/hakan-celik-84818347"><h5 className={style.linked}>LinkedIn</h5></a>
                         
                 </div>
