@@ -51,7 +51,7 @@ const Header = () => {
                 <NavLink to={'/faq'}>FAQ</NavLink>
                 <NavLink to={'/findfood'}>Find Food</NavLink>
                 {/* <NavLink to={'/profile'}>Profile</NavLink> */}
-                {/* <NavLink to={'/review'}>Review</NavLink> */}
+                <NavLink to={'/review'}>Review</NavLink>
                 <NavLink to={'/login'} id="login">Login</NavLink>
                 <i className="fa fa-sign-out fa-2x" onClick={()=>handleLogout()} id="logoutTop" ></i>
                 {/* <NavLink to={'/signup'}>Sign Up</NavLink> */}
