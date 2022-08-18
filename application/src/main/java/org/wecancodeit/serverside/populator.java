@@ -137,9 +137,17 @@ public class populator implements CommandLineRunner {
                 ,LocalDate.now(),"https://www.unitedway.org/i/blog/10.15.19_5_Surprising_Facts_about_Hunger_in_America_Blog-reupload.jpg");
         articleRepository.save(test1);
 
+        Article test2 = new Article("Jayden-James Winters","How We can help!","We at the community can help you by pointing you in the direction of food for you, Locally for you! If your are someone who has extra food that would like to give away! please email us at communitywcci@gmail.com or please reach out to us at 555-555-5555!",LocalDate.now(),"https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2021-03/iStock-1283072122-crop.jpg");
+        articleRepository.save(test2);
 
+        Article test3 = new Article("Alayna Smith","Thanks for Helping the Cause!","Hey! we did it thanks for helping us Reach 220,000 Order's fullifed and more to come Congrats everyone lets continue to help our community great Job!!!",LocalDate.now(),"https://www.carabinercomms.com/blog1/wp-content/uploads/2014/06/Brainstorm.jpg");
+        articleRepository.save(test3);
+
+        Article test4 = new Article("Mila-Rose Rosas","Food Fair!","Things are happening we have helped soo many people its incredible thank you to each and everyone of you we will be throwing a community Banquet",LocalDate.now(),"https://www.incimages.com/uploaded_files/image/1920x1080/getty_462940167_970647970450062_47269.jpg");
+        articleRepository.save(test4);
         Status t1 = new Status("http://nextrestaurants.com/wp-content/uploads/2019/10/Restaurant-Instagram-Photography.png","Jose","Current Meal!!");
         statusRepository.save(t1);
+
 
         FoodType foodType1 = new FoodType("Breakfast", "");
         foodTypeStorage.save(foodType1);
