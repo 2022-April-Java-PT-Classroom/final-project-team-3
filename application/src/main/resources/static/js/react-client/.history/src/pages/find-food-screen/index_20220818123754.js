@@ -126,8 +126,8 @@ export default function App() {
               setSelected(null);
             }}
           >
-            <div className={style.alert}>
-              <h2>
+            <div>
+              <h2 >
                 <span className={style.alert}role="img" aria-label="chef">
                   🧑‍🍳
                   </span>{" "}
@@ -219,7 +219,7 @@ function Search({ panTo }) {
                 </ComboboxPopover>
             </Combobox>
             </div>
-            {/* <div className={style.searchdestination} >
+            <div className={style.searchdestination} >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
@@ -236,7 +236,7 @@ function Search({ panTo }) {
                 </ComboboxList>
                 </ComboboxPopover>
             </Combobox>
-            </div> */}
+            </div>
             </center>
         </div>
       );
