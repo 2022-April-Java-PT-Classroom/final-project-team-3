@@ -171,7 +171,7 @@ function Search({ panTo }) {
       clearSuggestions,
     } = usePlacesAutocomplete({
       requestOptions: {
-        location: { lat: () => 37.090240, lng: () => -95.712891 },
+        location: { lat: () => 37.090240, lng: () => -79.3832 },
         radius: 100 * 1000,
       },
     });
