@@ -21,7 +21,6 @@ import usePlacesAutocomplete, {
 import AllPost from "../../components/all-posts";
 import Popup from "../../components/popup";
 import React from "react";
-import { Skeleton } from "@mui/material";
 import compass from '../../assets/logo/1f9ed.png';
 import { formatRelative } from "date-fns";
 import mapStyles from "../../pages/find-food-screen/style.module.scss"
@@ -45,11 +44,11 @@ const options = {
 
 export default function App() {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: "AIzaSyBmmiiSoq3uDOFcr3jyhuSZBlOvxbeyD6E",
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
       libraries,
       
     });
-
+    
     const [markers, setMarkers]  = React.useState([]);
     
     const [selected, setSelected] = React.useState(null);
@@ -102,7 +101,6 @@ export default function App() {
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
-        
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -126,9 +124,9 @@ export default function App() {
               setSelected(null);
             }}
           >
-            <div className={style.alert}>
+            <div>
               <h2>
-                <span className={style.alert}role="img" aria-label="chef">
+                <span role="img" aria-label="chef">
                   🧑‍🍳
                   </span>{" "}
                 Alert
@@ -137,10 +135,8 @@ export default function App() {
             </div>
           </InfoWindow>
         ) : null}
-       
       </GoogleMap>
-    </div>
-    </center>
+    </div></center>
   );
 }
 
@@ -175,7 +171,7 @@ function Search({ panTo }) {
       clearSuggestions,
     } = usePlacesAutocomplete({
       requestOptions: {
-        location: { lat: () => 37.090240, lng: () => -95.712891 },
+        location: { lat: () => 43.6532, lng: () => -79.3832 },
         radius: 100 * 1000,
       },
     });
@@ -200,8 +196,8 @@ function Search({ panTo }) {
       return (
         <div >
             <AllPost/>
-            <center className={style.searchcomponents}>
-              <div className={style.searchlocation} >
+            <center>
+              <div className={style.search} >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
@@ -219,24 +215,6 @@ function Search({ panTo }) {
                 </ComboboxPopover>
             </Combobox>
             </div>
-            {/* <div className={style.searchdestination} >
-            <Combobox onSelect={handleSelect}>
-                <ComboboxInput
-                value={value}
-                onChange={handleInput}
-                disabled={!ready}
-                placeholder="Search your destination"
-                />
-                <ComboboxPopover>
-                <ComboboxList>
-                    {status === "OK" &&
-                    data.map(({ id, description }) => (
-                        <ComboboxOption key={id} value={description} />
-                    ))}
-                </ComboboxList>
-                </ComboboxPopover>
-            </Combobox>
-            </div> */}
             </center>
         </div>
       );

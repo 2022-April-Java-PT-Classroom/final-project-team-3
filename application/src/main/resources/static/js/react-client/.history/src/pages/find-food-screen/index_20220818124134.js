@@ -235,8 +235,8 @@ function Search({ panTo }) {
                     ))}
                 </ComboboxList>
                 </ComboboxPopover>
-            </Combobox>
-            </div> */}
+            </Combobox> */}
+            </div>
             </center>
         </div>
       );

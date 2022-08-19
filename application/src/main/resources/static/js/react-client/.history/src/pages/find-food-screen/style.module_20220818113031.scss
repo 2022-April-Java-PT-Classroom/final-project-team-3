@@ -6,7 +6,7 @@
 .compassBtn{
     position: relative;
     margin: 10px auto;
-    top: 13rem;
+    top: 12rem;
     left:55rem;
     background: none;
     border: none;
@@ -26,14 +26,23 @@
 }
 
 center{background:#6D8021;}
-
-
-.searchlocation, .searchdestination{
-    
+.search{
+    display: center;
+    width: 50px;    
+}
+.searchcomponents{
+    text-align: center;
+    float: ;
+}
+.search{
     margin: 10px auto;
     display: inline-block;
     padding: 1rem 1rem;
     vertical-align: middle;
+   
+    // top: 23rem;
+    // right: 35rem;
+    // transform: translateX(-50%);
     width: 100%;
     max-width: 400px;
     input {
@@ -42,7 +51,4 @@ center{background:#6D8021;}
         width: 100%;
         
       }
-}
-.alert{
-    padding-bottom: 1rem;
 }

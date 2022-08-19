@@ -102,7 +102,6 @@ export default function App() {
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
-        
         {markers.map((marker) => (
           <Marker
             key={`${marker.lat}-${marker.lng}`}
@@ -126,9 +125,9 @@ export default function App() {
               setSelected(null);
             }}
           >
-            <div className={style.alert}>
+            <div>
               <h2>
-                <span className={style.alert}role="img" aria-label="chef">
+                <span role="img" aria-label="chef">
                   🧑‍🍳
                   </span>{" "}
                 Alert
@@ -137,7 +136,6 @@ export default function App() {
             </div>
           </InfoWindow>
         ) : null}
-       
       </GoogleMap>
     </div>
     </center>
@@ -200,8 +198,8 @@ function Search({ panTo }) {
       return (
         <div >
             <AllPost/>
-            <center className={style.searchcomponents}>
-              <div className={style.searchlocation} >
+            <center >
+              <div className={style.search} >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
@@ -218,8 +216,6 @@ function Search({ panTo }) {
                 </ComboboxList>
                 </ComboboxPopover>
             </Combobox>
-            </div>
-            {/* <div className={style.searchdestination} >
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
                 value={value}
@@ -236,7 +232,7 @@ function Search({ panTo }) {
                 </ComboboxList>
                 </ComboboxPopover>
             </Combobox>
-            </div> */}
+            </div>
             </center>
         </div>
       );
